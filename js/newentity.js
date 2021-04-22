@@ -7,7 +7,7 @@ async function setNewEntity() {
         'status' : false
     }
     try {
-        saveEntity(data,id)
+        saveEntity(data)
     } catch (error) {
         console.log("Transaction failed" + error);
     }  
