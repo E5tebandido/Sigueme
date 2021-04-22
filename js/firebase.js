@@ -1,11 +1,21 @@
 function saveEntity(entitydata) {
     firebase.database().ref('entity').push(entitydata)
-      .then(function(){
+    .then(function(){
         alert('mensaje guardado');
-      })
-      .catch(function(){
+    })
+    .catch(function(){
         alert('mensaje No guardado'); 
-      });
+    });
+}
+
+function saveTransaction(transactiondata) {
+    firebase.database().ref('transaction').push(transactiondata)
+    .then(function(){
+        alert('mensaje guardado');
+    })
+    .catch(function(){
+        alert('mensaje No guardado'); 
+    });
 }
 
 function saveProject(projectdata,id) {
