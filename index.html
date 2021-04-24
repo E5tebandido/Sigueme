@@ -12,7 +12,7 @@
          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     </head>
-    <body class="w-100 p-3">
+    <body>
         <div id="container">
             <div id="menu">
                 <ul id="slide-out" class="side-nav fixed show-on-large-only">
@@ -23,8 +23,8 @@
                         <a class="collapsible-header">Ong's<i class="material-icons">arrow_drop_down</i></a>
                         <div class="collapsible-body">
                         <ul>
-                            <li><a href="javascript:;">Ver Ong's</a></li>
-                            <li><a href="javascript:;" onclick="setnewentityview()">Crear Ong</a></li>
+                            <li><a href="javascript:;" class="item">Ver Ong's</a></li>
+                            <li><a href="javascript:;" class="item" onclick="setnewentityview()">Crear Ong</a></li>
                         </ul>
                         </div>
                     </li>
@@ -36,8 +36,8 @@
                         <a class="collapsible-header">Proyectos<i class="material-icons">arrow_drop_down</i></a>
                         <div class="collapsible-body">
                             <ul>
-                            <li><a href="javascript:;">Ver proyectos</a></li>
-                            <li><a href="javascript:;" onclick="setnewprojectview()">Crear proyecto</a></li>
+                            <li><a href="javascript:;" class="item" onclick="setseeprojectview()">Ver proyectos</a></li>
+                            <li><a href="javascript:;" class="item" onclick="setnewprojectview()">Crear proyecto</a></li>
                             </ul>
                         </div>
                         </li>
@@ -49,8 +49,8 @@
                         <a class="collapsible-header">Donaciones<i class="material-icons">arrow_drop_down</i></a>
                         <div class="collapsible-body">
                             <ul>
-                            <li><a href="javascript:;" onclick="settransactionview()">Hacer una Donacion</a></li>
-                            <li><a href="javascript:;">Ver donaciones hechas</a></li>
+                            <li><a href="javascript:;" class="item" onclick="settransactionview()">Hacer una Donacion</a></li>
+                            <li><a href="javascript:;" class="item">Ver donaciones hechas</a></li>
                             </ul>
                         </div>
                         </li>
@@ -70,7 +70,9 @@
         <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-database.js"></script>
         <script src="./node_modules/web3/dist/web3.min.js"></script>
-        <script src="assets/metamask/metamask-configuration.js"></script>
+        <script src="assets/metamask/initialization.js"></script>
+        <script src="assets/metamask/data/contract.js"></script>
+        <script src="assets/metamask/data/account.js"></script>
         <script src="assets/js/creation/newentity.js"></script>
         <script src="assets/js/creation/newproject.js"></script>
         <script src="assets/js/transactional/transaction.js"></script>

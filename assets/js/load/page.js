@@ -1,5 +1,6 @@
 $(document).ready(function()
 {
+    metamaskInit()
     firebaseInit()
     contentLoader("contentpage","templates/home.html")
     contentLoader("navsco","templates/navbar.html")
@@ -27,6 +28,6 @@ var sethomeview = function(){
     contentLoader("contentpage","templates/home.html")
 }
 
-async function metamaskconnection (){
-    metamaskInit()
+var setseeprojectview = function(){
+    contentLoader("contentpage","templates/seeproject.html")
 }

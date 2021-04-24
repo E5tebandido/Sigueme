@@ -2,8 +2,8 @@
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
-    height: 160px;
-    width: 160px;
+    height: 90px;
+    width: 90px;
 }
 
 .donationimage {
@@ -16,4 +16,15 @@
 
 .transactionimage {
     width: 30%;
+}
+
+.metamaskcontainer {
+    width: 98%;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contentpage {
+    margin-top: 48px;
 }

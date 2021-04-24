@@ -1,5 +1,5 @@
 #container {
-  padding-left: 300px;
+  padding-left: 19%;
 }
 
 #content {
@@ -14,4 +14,8 @@
 
 .card {
   border-radius: 25px;
+}
+
+#slide-out{
+  width: 19%;
 }

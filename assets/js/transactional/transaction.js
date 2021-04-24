@@ -1,5 +1,6 @@
 async function setNewTransaction() {
     metamaskInit()
+    newContract()
     const account = await getCurrentAccount();
     console.log(account)
     var amount = $("#amount").val();
