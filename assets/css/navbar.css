@@ -1,0 +1,29 @@
+.navbar {
+    background-color: white;
+    height: 5rem;
+  }
+  
+  .App-logo {
+    height: 70%;
+    pointer-events: none;
+    margin: 0.6% 1em 0 2%;
+  }
+
+  .brand-logo {
+    margin: 0.5% 1rem 0 3%; 
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

@@ -1,16 +1,17 @@
 async function setNewProject() {
-    var id = $("#project_id").val();
+    var id = $("#parent_id").val();
     var address = $("#project_address").val();
     var name = $("#project_name").val();
+    const table = {
+        'one': 'failed_project',
+        'two': 'project'
+    }
     const data = {
         'id' : id,
         'address' : address,
         'name' : name,
         'status' : false
     }
-    try {
-        saveProject(data,id)
-    } catch (error) {
-        console.log("Transaction failed" + error);
-    } 
+    var checkrule = failed(id, table, data)
+        
 }

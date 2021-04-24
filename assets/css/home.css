@@ -1,0 +1,19 @@
+.metamask-img {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 160px;
+    width: 160px;
+}
+
+.donationimage {
+    width: 30%;
+}
+
+.projectimage {
+    width: 30%;
+}
+
+.transactionimage {
+    width: 30%;
+}

@@ -1,33 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>  
+
+<section>
     <div class="row">
-        <div class="col s12">
-            <div class="row">
-                <div class="input-field col s6">
-                    <i class="material-icons prefix"></i>
-                    <input type="text" id="project_id" class="autocomplete">
-                    <label for="project_id">parent entity id</label>
-                </div>
-                <div class="input-field col s6">
-                    <i class="material-icons prefix"></i>
-                    <input type="text" id="project_address" class="autocomplete">
-                    <label for="project_address">project address</label>
-                </div>
-                <div class="input-field col s6">
-                    <i class="material-icons prefix"></i>
-                    <input type="text" id="project_name" class="autocomplete">
-                    <label for="project_name">project name</label>
-                </div>
+      <div class="col s12">
+        <div class="col s12 m5">
+          <div class="card white">
+            <div class="card-content blue-grey-text">
+              <span class="card-title">¿Ya creaste el proyecto?</span>
+              <p>No olvides que solo será visible hasta que sea verificado por el quipo sco</p>
             </div>
-            
+          </div>
         </div>
-        <a href="#" onclick="setNewProject()" class="btn btn-primary">Create</a>
+        <div class="col s12 m7">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>   
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s5">
+            <input id="parent_id" type="text" class="validate"></input>
+            <label for="parent_id">Clave privada de la ONG</label>
+          </div>
+          <div class="input-field col s5">
+            <input id="project_address" type="text" class="validate"></input>
+            <label for="project_address">Nueva Dirección blockchain (0x....)</label>
+          </div>
+          <div class="input-field col s5">
+            <input id="project_name" type="text" class="validate"></input>
+            <label for="project_name">Nuevo Nombre del proyecto</label>
+          </div>
+        </div>
+        <button class="btn waves-effect" onclick="setNewProject()">
+            Crear
+        </button>
+        <button class="btn red lighten-1 waves-effect" onclick="sethomeview()">
+            Cancelar
+        </button>
+      </form>
     </div>   
-</body>
-</html>
+</section>  

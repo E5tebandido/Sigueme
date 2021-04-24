@@ -4,11 +4,15 @@ async function setNewTransaction() {
     console.log(account)
     var amount = $("#amount").val();
     var address = $("#project_address").val();
+    const table = {
+        'one' : 'transaction',
+        'two' : 'failed_transaction'
+    }
     try {
         await window.contract.methods.make_transaction(amount,address,true,true).send({ 
             from: account 
-        }).then( function(tx) {
-           // console.log(tx.blockHash +"\n" +tx.root+"\n" + tx.contractAddress+"\n" +tx.cumulativeGasUsed)
+        })
+        .then( function(tx) {
             const data = {
                 'project_address' : address,
                 'blockhash' : tx.blockHash,
@@ -25,14 +29,13 @@ async function setNewTransaction() {
                 'transaction_hash' : tx.transactionHash,
                 'transaction_index' : tx.transactionIndex
             }
-            try {
-                saveTransaction(data)
-            } catch (error) {
-                console.log("Transaction failed" + error);
-            } 
+            querySender(table.one,data)
+        })
+        .catch(function(error){
+            querySender(table.two,error)
         });
     } catch (error) {
-        console.log("Transaction failed : error " + error );
+        querySender(table.two,error);
     }  
 }
 
