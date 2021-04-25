@@ -10,3 +10,14 @@ var failed = function(id,table,data) {
         }
     });
 }
+
+var projectReciever = function(table){
+    firebase.database().ref(table).on('value', function(snapshot) {
+        snapshot.forEach ( function (childSnapshot) {
+            if(childSnapshot.val()['status'] == true){
+                var childData = childSnapshot.val();
+                renderProjects(childData['name'],childData['address'])
+            }
+        });
+    });
+} 

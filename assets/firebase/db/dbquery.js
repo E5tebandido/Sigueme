@@ -1,4 +1,4 @@
-function querySender(table,data) {
+var querySender = function(table,data) {
     firebase.database().ref(table).push(data)
     .then(function(){
         console.log('mensaje guardado');
@@ -7,3 +7,4 @@ function querySender(table,data) {
         console.log('mensaje No guardado'); 
     });
 }
+
