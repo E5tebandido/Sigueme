@@ -16,53 +16,69 @@
         <div id="container">
             <div id="menu">
                 <ul id="slide-out" class="side-nav fixed show-on-large-only">
-                <li><a href="javascript:;" onclick="sethomeview()" >Inicio</a></li>
-                <li class="no-padding">
-                    <ul class="collapsible collapsible-accordion">
                     <li>
-                        <a class="collapsible-header">Ong's<i class="material-icons">arrow_drop_down</i></a>
-                        <div class="collapsible-body">
-                        <ul>
-                            <li><a href="javascript:;" class="item">Ver Ong's</a></li>
-                            <li><a href="javascript:;" class="item" onclick="setnewentityview()">Crear Ong</a></li>
-                        </ul>
-                        </div>
+                        <nav class="navbar">
+                            <div class="nav-wrapper white">
+                                <img src="../assets/images/sigueme.svg" class="App-logo" alt="logo"/>
+                                <p class="brand-logo  blue-grey-text accent-2" >SCO</p>
+                            </div>
+                        </nav> 
+                    </li>  
+                    <li class="homemenu"><a href="javascript:;" onclick="sethomeview()"><i class="material-icons">home</i>Inicio</a></li>
+                    <div class="divider"></div>
+                    <div class="scrollmenu">
+                        <li class="no-padding">
+                            <ul class="collapsible collapsible-accordion">
+                            <li>
+                                <a class="collapsible-header"><i class="material-icons">favorite_border</i>Ong's</a>
+                                <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="javascript:;" class="item">Ver Ong's</a></li>
+                                    <li><a href="javascript:;" class="item" onclick="setnewentityview()">Crear Ong</a></li>
+                                </ul>
+                                </div>
+                            </li>
+                            </ul>
+                        </li>
+                        <li class="no-padding">
+                            <ul class="collapsible collapsible-accordion">
+                                <li>
+                                <a class="collapsible-header"><i class="material-icons">work</i>Proyectos</a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                    <li><a href="javascript:;" class="item" onclick="setseeprojectview()">Ver proyectos</a></li>
+                                    <li><a href="javascript:;" class="item" onclick="setnewprojectview()">Crear proyecto</a></li>
+                                    </ul>
+                                </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="no-padding">
+                            <ul class="collapsible collapsible-accordion">
+                                <li>
+                                <a class="collapsible-header"><i class="material-icons">savings</i>Donaciones</a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                    <li><a href="javascript:;" class="item" onclick="settransactionview()">Hacer una Donacion</a></li>
+                                    <li><a href="javascript:;" class="item">Ver donaciones hechas</a></li>
+                                    </ul>
+                                </div>
+                                </li>
+                            </ul>
+                        </li>        
+                    </div>
+                    <div class="divider"></div>
+                    <li>
+                        <a class="docmenu" href="https://teban18.github.io/siguemeORG_documentation/dist/index.html"  target="_blank" onclick="sethomeview()"><i class="material-icons">description</i>Documentación</a>
                     </li>
-                    </ul>
-                </li>
-                <li class="no-padding">
-                    <ul class="collapsible collapsible-accordion">
-                        <li>
-                        <a class="collapsible-header">Proyectos<i class="material-icons">arrow_drop_down</i></a>
-                        <div class="collapsible-body">
-                            <ul>
-                            <li><a href="javascript:;" class="item" onclick="setseeprojectview()">Ver proyectos</a></li>
-                            <li><a href="javascript:;" class="item" onclick="setnewprojectview()">Crear proyecto</a></li>
-                            </ul>
-                        </div>
-                        </li>
-                    </ul>
-                </li>
-                <li class="no-padding">
-                    <ul class="collapsible collapsible-accordion">
-                        <li>
-                        <a class="collapsible-header">Donaciones<i class="material-icons">arrow_drop_down</i></a>
-                        <div class="collapsible-body">
-                            <ul>
-                            <li><a href="javascript:;" class="item" onclick="settransactionview()">Hacer una Donacion</a></li>
-                            <li><a href="javascript:;" class="item">Ver donaciones hechas</a></li>
-                            </ul>
-                        </div>
-                        </li>
-                    </ul>
-                </li>
+                    <div class="divider"></div>
                 </ul>
             </div>
             <div id="navsco">
             </div>
+            <section class="section"></section>
             <div id="contentpage">  
             </div>       
-            </div>
         </div>
         <!-- Compiled and minified JavaScript -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -82,5 +98,7 @@
         <script src="assets/js/load/content.js"></script>
         <script src="assets/js/load/page.js"></script>
         <script src="assets/js/visualization/seeprojects.js"></script>
+        <script src="assets/js/visualization/obtainproject.js"></script>
+        <script src="assets/js/load/sidenav.js"></script>
     </body>
 </html>

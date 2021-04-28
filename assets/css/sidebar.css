@@ -1,5 +1,6 @@
 #container {
-  padding-left: 19%;
+  padding-left: 256px;
+  
 }
 
 #content {
@@ -12,10 +13,69 @@
   }
 }
 
-.card {
-  border-radius: 25px;
+#slide-out{
+  width: 256px;
 }
 
-#slide-out{
-  width: 19%;
+.homemenu {
+  margin-top: 23%;
+}
+
+.docmenu {
+  margin-top: 5%;
+}
+
+.no-padding {
+  margin-left: 0.5%;
+}
+
+.scrollmenu {
+  height: 35%;
+  overflow-x: hidden;
+  overflow:auto;
+}
+
+.section {
+  height: 30vh;
+  background-color: #1a73e8;
+}
+
+#donationcard {
+  border-radius: 20px;
+}
+
+#projectcard {
+  border-radius: 20px;
+}
+
+#transactioncard {
+  border-radius: 20px;
+}
+
+#newprojectcard {
+  border-radius: 20px;
+}
+
+#newentitycard {
+  border-radius: 20px;
+}
+
+#scocard {
+  border-radius: 20px;
+  background-color: #a0f;
+}
+
+#donationimage {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#transactionimage {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#projectimage {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }

@@ -4,16 +4,11 @@ $(document).ready(function()
     firebaseInit()
     contentLoader("contentpage","templates/home.html")
     contentLoader("navsco","templates/navbar.html")
-    $('.button-collapse').sideNav({
-        menuWidth: 300, 
-        edge: 'left', 
-        closeOnClick: false, 
-        draggable: true
-    });
+    loadSideNav()
 })
 
 var setnewentityview = function(){
-        contentLoader("contentpage","templates/newentity.html")
+    contentLoader("contentpage","templates/newentity.html")
 }
 
 var setnewprojectview = function(){

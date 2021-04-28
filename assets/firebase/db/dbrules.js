@@ -21,3 +21,14 @@ var projectReciever = function(table){
         });
     });
 } 
+
+var specificProject = function(table,address) {
+    firebase.database().ref(table).on('value', function(snapshot) {
+        snapshot.forEach ( function (childSnapshot) {
+            if(childSnapshot.val()['address'] == address){
+                var childData = childSnapshot.val();
+                renderOneProject(childData['id'],childData['name'],childData['address'],childData['status'])
+            }
+        });
+    });
+}

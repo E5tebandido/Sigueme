@@ -1,39 +1,24 @@
-                
-<section>
-    <div class="row">
-      <div class="col s12">
-        <div class="col s12 m5">
-          <div class="card white">
-            <div class="card-content blue-grey-text">
-              <span class="card-title">¿Ya creaste la ONG?</span>
-              <p>No olvides que solo será visible hasta que sea verificada por el equipo sco</p>
-            </div>
-          </div>
+
+<div class="infocontainer">
+  <br>
+  <div id="newentitycard" class="card white">
+    <div class="card-content blue-grey-text">
+      <form class="col">    
+        <div class="input-field">
+          <input id="entity_id" type="text" class="validate"></input>
+          <label for="entity_id">Nueva clave privada</label>
         </div>
-        <div class="col s12 m7">
+        <div class="input-field">
+          <input id="entity_name" type="text" class="validate"></input>
+          <label for="entityname">Nombre de la ONG</label>
         </div>
-      </div>
+      </form> 
+      <button class="btn waves-effect" onclick="setNewEntity()">
+        Crear 
+      </button>
+      <button class="btn red lighten-1 waves-effect" onclick="sethomeview()">
+          Cancelar
+      </button>  
     </div>
-  </section>
-  <section>   
-    <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s5">
-            <input id="entity_id" type="text" class="validate"></input>
-            <label for="entity_id">Nueva clave privada</label>
-          </div>
-          <div class="input-field col s5">
-            <input id="entity_name" type="text" class="validate"></input>
-            <label for="entityname">Nombre de la ONG</label>
-          </div>
-        </div>
-        <button class="btn waves-effect" onclick="setNewEntity()">
-            Crear 
-        </button>
-        <button class="btn red lighten-1 waves-effect" onclick="sethomeview()">
-            Cancelar
-        </button>
-      </form>
-    </div>   
-</section>
+  </div>          
+</div>
