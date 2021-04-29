@@ -16,7 +16,7 @@
   }
 
   #navbarcontent {
-    background-color: blue;
+    background-color: white;
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -35,5 +35,5 @@
   }
 
   .nav-wrapper{
-    background-color: #1a73e8;
+    background-color: white;
   }

@@ -35,11 +35,6 @@
   overflow:auto;
 }
 
-.section {
-  height: 30vh;
-  background-color: #1a73e8;
-}
-
 #donationcard {
   border-radius: 20px;
 }

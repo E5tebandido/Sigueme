@@ -1,20 +1,17 @@
 
-async function metamaskInit(){
-    if (window.ethereum) {
+var metamaskIsAviable = async function () {
+    if (typeof window.ethereum !== 'undefined') {
         try {
-            web3 = new Web3(window.ethereum)
+            console.log("Esta conectado")
         } catch (error) {
             if (error.code === 4001) {
-                console.log("user rejected")
+                console.log("Rechazó la conexión")
             }
         }
     } else {
-        alert("install metamask")
-    }  
+        console.log("install metamask")
+    } 
 }
-
-
-
 
 
 
