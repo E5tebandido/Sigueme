@@ -1,18 +1,19 @@
 .navbar {
-    height: 48px;
+    height: 6.5vh;
     position: fixed;
     top: 0;
     z-index: 100;
   }
   
   .App-logo {
-    height: 60%;
+    height: 5vh;
     pointer-events: none;
-    margin: 4% 1em 0 10%;
+    margin-top: 0.7vh;
+    margin-left: 10%;
   }
 
   .brand-logo {
-    margin-top: -2px;
+    margin-top: 0px;
   }
 
   #navbarcontent {
@@ -22,15 +23,6 @@
   @media (prefers-reduced-motion: no-preference) {
     .App-logo {
       animation: App-logo-spin infinite 20s linear;
-    }
-  }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
     }
   }
 

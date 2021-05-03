@@ -1,24 +1,13 @@
-const Tx = async (amount,address,tab,curaccount,bytecode) => {
-    metamaskIsAviable()
-    getCurrentAccount();
-    try {   
-        /*console.log("hola")
-        const transactionParameters = {
-            from: data.currentaccount, 
-            data: data.bytecode, 
-            gas: 200000
-        };
-            
-        const txHash = await ethereum.request({
-        method: 'eth_sendTransaction',
-        params: [transactionParameters],
-        });
+const Tx = async (amount,address,tab,curaccount,instance) => {
+    console.log(instance)
+    try {  
 
-        console.log(txHash)*/
-            /*await window.contract.methods.make_transaction(amount,address,true,true).send({ 
-                from: data.currentaccount 
+        await instance.methods.make_transaction(amount,address,true,true)
+        .send({ 
+                from: curaccount
             })
             .then( function(tx) {
+                console.log("hola2")
                 const data = {
                     'project_address' : address,
                     'blockhash' : tx.blockHash,
@@ -35,30 +24,20 @@ const Tx = async (amount,address,tab,curaccount,bytecode) => {
                     'transaction_hash' : tx.transactionHash,
                     'transaction_index' : tx.transactionIndex
                 }
-                querySender(table.one,data)
-                console.log('este es el add' + data.currentaccount)
+                querySender(tab.one,data)
             })
             .catch(function(error){
-                querySender(table.two,error)
-            });*/
-        
+                querySender(tab.two,error)
+            })      
     } catch (error) {
         querySender(tab.two,error);
     }  
 }
 
 
-var activateTx = () => {
-    $.getJSON("assets/json/web3account.json", function(data) {
-        var amount = $("#amount").val();
-        var address = $("#project_address").val();
-        var curaccount = data.currentaccount
-        var bytecode = data.bytecode
-        const table = {
-            'one' : 'transaction',
-            'two' : 'failed_transaction'
-        }
-        
-        Tx(amount,address,table,curaccount,bytecode)
-    });
+var activateTx = async () => {
+    var calledaccount = ethereum.selectedAddress
+    console.log(calledaccount)
+    
+    
 }

@@ -2,11 +2,10 @@
 var metamaskIsAviable = async function () {
     if (typeof window.ethereum !== 'undefined') {
         try {
-            console.log("Esta conectado")
+            console.log("Metamask está disponible en este navegador")
+
         } catch (error) {
-            if (error.code === 4001) {
-                console.log("Rechazó la conexión")
-            }
+            console.log(error.message)
         }
     } else {
         console.log("install metamask")
