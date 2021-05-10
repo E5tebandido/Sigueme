@@ -1,4 +1,5 @@
 function contentLoader(contenedor,script) {
-    $("#"+contenedor).load(script)       
+    let a = $("#"+contenedor)
+    a.empty()
+    a.load(script)       
 }
-

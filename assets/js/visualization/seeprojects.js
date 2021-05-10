@@ -1,11 +1,11 @@
 
-var chechForProjects = function() {
-    projectReciever('project')
+var checkForProjects = function() {
+    projectRecieverRule('project')
 }
 
-var renderProjects = function (name,address){
-
-    const projectRender = `
+var renderProjects = (name,address) => {
+    stopping("loadspin")
+    const data = `
     <div class="col s12 m6">
         <div class="card" style="border-radius:20px;">
         <div class="card-image">
@@ -19,8 +19,14 @@ var renderProjects = function (name,address){
         </div>
     </div>
     `;
-
-    $("#projectpanel").append(projectRender)
+    $("#infocontainer").ready(function() {
+        let a= $("#projectpanel")
+        console.log(a.length)
+    }) 
+    addCard("projectpanel",data)
 }
 
 
+var addCard = (panel,data) => {
+    $("#"+panel).append(data)
+}

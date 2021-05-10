@@ -6,24 +6,29 @@ $(document).ready(function()
     loadSideNav()
 })
 
-var setnewentityview = async function (){
-    await contentLoader("contentpage","templates/newentity.html")
+var setnewentityview = () => {
+    contentLoader("contentpage","templates/newentity.html")
 }
 
-var setnewprojectview = async function(){
-    await contentLoader("contentpage","templates/newproject.html")
+var setnewprojectview = () => {
+    contentLoader("contentpage","templates/newproject.html")
 }
 
-var settransactionview = async function(){
-    await contentLoader("contentpage","templates/transaction.html")
+var settransactionview = (address) => {
+    loading("loadspin")
+    contentLoader("contentpage","templates/transaction.html")
+    console.log(address)
+    setTimeout(setAddress, 3000, address)
 }
 
-var sethomeview = async function(){
-    await contentLoader("contentpage","templates/home.html")
+var sethomeview = () => {
+    Materialize.toast('Al inicio', 1000)
+    contentLoader("contentpage","templates/home.html")
 }
 
-var setseeprojectview = async function(){
-    await contentLoader("contentpage","templates/seeproject.html")
-    await chechForProjects()
+var setseeprojectview = () => {
+    loading("loadspin")
+    contentLoader("contentpage","templates/seeproject.html")    
+    setTimeout(checkForProjects, 3000)
 }
 

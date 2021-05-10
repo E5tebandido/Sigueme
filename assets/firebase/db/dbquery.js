@@ -1,10 +1,10 @@
 var querySender = function(table,data) {
     firebase.database().ref(table).push(data)
     .then(function(){
-        console.log('mensaje guardado');
+        Materialize.toast('Transacción almacenada en ' + table, 3000)
     })
     .catch(function(){
-        console.log('mensaje No guardado'); 
+        Materialize.toast('Transacción no almacenada', 2000)
     });
 }
 

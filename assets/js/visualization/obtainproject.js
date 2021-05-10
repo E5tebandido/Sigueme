@@ -1,10 +1,10 @@
 
 
 $(document).on('click', '.btnpro', function (event) {
-    specificProject('project',event.target.id)
+    specificProjectRule('project',event.target.id)
 });
 
-var renderOneProject = async function (address){
-    await contentLoader("contentpage","templates/transaction.html")
-    $("#project_address").val("hola")
+var setAddress = (address) => {
+    stopping("loadspin")
+    $("#p_address").val(address)
 }

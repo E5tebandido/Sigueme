@@ -1,13 +1,12 @@
 const Tx = async (amount,address,tab,curaccount,instance) => {
     console.log(instance)
     try {  
-
         await instance.methods.make_transaction(amount,address,true,true)
         .send({ 
                 from: curaccount
             })
             .then( function(tx) {
-                console.log("hola2")
+                
                 const data = {
                     'project_address' : address,
                     'blockhash' : tx.blockHash,
@@ -25,19 +24,15 @@ const Tx = async (amount,address,tab,curaccount,instance) => {
                     'transaction_index' : tx.transactionIndex
                 }
                 querySender(tab.one,data)
+                Materialize.toast("Transacción exitosa con hash :" +tx.blockHash, 3000)
             })
             .catch(function(error){
                 querySender(tab.two,error)
+                Materialize.toast("Transacción Fallida", 3000)
             })      
     } catch (error) {
         querySender(tab.two,error);
+        Materialize.toast("Transacción Fallida", 3000)
     }  
 }
 
-
-var activateTx = async () => {
-    var calledaccount = ethereum.selectedAddress
-    console.log(calledaccount)
-    
-    
-}
