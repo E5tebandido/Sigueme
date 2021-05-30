@@ -4,7 +4,6 @@ var checkForProjects = function() {
 }
 
 var renderProjects = (name,address) => {
-    stopping("loadspin")
     const data = `
     <div class="col s12 m6">
         <div class="card" style="border-radius:20px;">
@@ -19,14 +18,6 @@ var renderProjects = (name,address) => {
         </div>
     </div>
     `;
-    $("#infocontainer").ready(function() {
-        let a= $("#projectpanel")
-        console.log(a.length)
-    }) 
-    addCard("projectpanel",data)
-}
-
-
-var addCard = (panel,data) => {
-    $("#"+panel).append(data)
+    stopping("loadspin")
+    $("#projectpanel").append(data)
 }

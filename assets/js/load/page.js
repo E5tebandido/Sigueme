@@ -18,7 +18,7 @@ var settransactionview = (address) => {
     loading("loadspin")
     contentLoader("contentpage","templates/transaction.html")
     console.log(address)
-    setTimeout(setAddress, 3000, address)
+    setTimeout(setAddress, 2000, address)
 }
 
 var sethomeview = () => {
@@ -29,6 +29,18 @@ var sethomeview = () => {
 var setseeprojectview = () => {
     loading("loadspin")
     contentLoader("contentpage","templates/seeproject.html")    
-    setTimeout(checkForProjects, 3000)
+    setTimeout(checkForProjects, 2000)
+}
+
+var sethistorialaprove = () => {
+    loading("loadspin")
+    contentLoader("contentpage","templates/historialaprove.html")    
+    setTimeout(checkForAproveds, 2000)
+}
+
+var sethistorialfailed = () => {
+    loading("loadspin")
+    contentLoader("contentpage","templates/historialfailed.html")    
+    setTimeout(checkForFaileds, 2000)
 }
 

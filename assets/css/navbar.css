@@ -1,19 +1,20 @@
 .navbar {
-    height: 6.5vh;
+    height: 4rem;
     position: fixed;
     top: 0;
     z-index: 100;
   }
   
   .App-logo {
-    height: 5vh;
+    height: 3.5rem;
     pointer-events: none;
     margin-top: 0.7vh;
     margin-left: 10%;
   }
 
   .brand-logo {
-    margin-top: 0px;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
   }
 
   #navbarcontent {

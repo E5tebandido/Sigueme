@@ -20,3 +20,4 @@ var loading = (container) => {
 var stopping = (container) => {
     $("#"+container).empty()
 }
+

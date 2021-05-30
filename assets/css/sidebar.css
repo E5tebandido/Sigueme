@@ -1,6 +1,9 @@
 #container {
+  padding-left: 0;  
+}
+
+#contentpage {
   padding-left: 256px;
-  
 }
 
 #content {
@@ -9,6 +12,10 @@
 
 @media only screen and (max-width : 992px) {
   #container {
+    padding-left: 0px;
+  }
+
+  #contentpage {
     padding-left: 0px;
   }
 }

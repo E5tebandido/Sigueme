@@ -31,3 +31,21 @@ var specificProjectRule = function(table,address) {
         });
     });
 }
+
+var historialAproveRule = function(table){
+    firebase.database().ref(table).on('value', function(snapshot) {
+        snapshot.forEach ( function (childSnapshot) {
+            var childData = childSnapshot.val();
+            renderAproveds(childData['blockhash'],childData['contract_address'],childData['origin_account'],childData['project_address'], childData['transaction_amount'],childData['transaction_hash'])
+        });
+    });
+} 
+
+var historialFailedRule = function(table){
+    firebase.database().ref(table).on('value', function(snapshot) {
+        snapshot.forEach ( function (childSnapshot) {
+            var childData = childSnapshot.val();
+            renderFaileds(childData['argument'],childData['reason'],childData['value'])
+        });
+    });
+} 
