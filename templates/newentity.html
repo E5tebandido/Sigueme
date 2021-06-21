@@ -1,24 +1,45 @@
 
 <div class="infocontainer">
-  <br>
-  <div id="newentitycard" class="card white">
-    <div class="card-content blue-grey-text">
-      <form class="col">    
-        <div class="input-field">
-          <input id="entity_id" type="text" class="validate"></input>
-          <label for="entity_id">Nueva clave privada</label>
-        </div>
-        <div class="input-field">
-          <input id="entity_name" type="text" class="validate"></input>
-          <label for="entityname">Nombre de la ONG</label>
-        </div>
-      </form> 
-      <button class="btn waves-effect" onclick="setNewEntity()">
-        Crear 
-      </button>
-      <button class="btn red lighten-1 waves-effect" onclick="sethomeview()">
-          Cancelar
-      </button>  
+
+  <div class="formcontainer">
+    <div class="form-container left">
+      <br>
+      <h2 class="medium-title blue-grey-text accent-2">Vamos a crear tu entidad..</h3>
+        <form id="ong-form">
+            <p class="information">
+                <label for="">Nombre de ONG</label>
+                <input type="text" name="name" id="ename">
+            </p>
+            <p class="information">
+                <label for="">Crear clave única (Más de 8 caracteres alfanuméricos)</label>
+                <input type="text" name="id" id="eid">
+            </p>
+            <p class="information">
+                <label for="">Teléfono</label>
+                <input type="text" name="phone" id="ephone">
+            </p>
+            <p class="information">
+                <label for="">Link Página Web</label>
+                <input type="text" name="url" id="eurl">
+            </p>
+            <p class="information">
+                <label for="">Documento Legal
+                    <input type="text" name="legal-document" id="elegal-document">
+                </label>
+            </p>
+            <p class="information">
+                <a class="btn blue" onclick="setNewEntity()">
+                  Enviar solicitud
+                </a>
+                <a class="btn blue accent-1" onclick="sethomeview()">
+                  Cancelar
+                </a>  
+            </p>
+        </form>
     </div>
-  </div>          
+    <div class="form-containerimg">
+        <img src="../assets/images/donation2.jpeg" alt="" id="ongimg">
+    </div>
+  </div>  
+  <br>     
 </div>

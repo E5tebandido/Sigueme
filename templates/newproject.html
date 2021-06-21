@@ -1,30 +1,47 @@
 
 <div class="infocontainer">
-  <br>
-  <div id="newprojectcard" class="card white">
-    <div class="card-content blue-grey-text">
-      <form class="col s12">
-        <div class="input-field col s5">
-          <input id="parent_id" type="text" class="validate"></input>
-          <label for="parent_id">Clave privada de la ONG</label>
-        </div>
-        <div class="input-field col s5">
-          <input id="project_address" type="text" class="validate"></input>
-          <label for="project_address">Nueva Dirección blockchain (0x....)</label>
-        </div>
-        <div class="input-field col s5">
-          <input id="project_name" type="text" class="validate"></input>
-          <label for="project_name">Nuevo Nombre del proyecto</label>
-        </div>
-      </form>
-      <button class="btn waves-effect" onclick="setNewProject()">
-        Crear
-      </button>
-      <button class="btn red lighten-1 waves-effect" onclick="sethomeview()">
-          Cancelar
-      </button> 
+ 
+  <div class="formcontainer">
+    <div class="form-container left">
+      <br>
+        <h2 class="medium-title blue-grey-text accent-2">Vamos a crear un proyecto..</h3>
+            <form id="ong-form">
+                <p class="information">
+                    <label for="">Nombre del Proyecto</label>
+                    <input type="text" name="name" id="pname" required>
+                </p>
+                <p class="information">
+                    <label for="">Ubicación</label>
+                    <input type="text" name="location" id="plocation" required>
+                </p>
+                <p class="information">
+                    <label for="">Ethereum Adress</label>
+                    <input type="text" name="ethereum-adress" id="pethereum-adress" required>
+                </p>
+                <p class="information">
+                  <label for="">Clave única de la entidad a la que pertenence</label>
+                  <input type="text" name="p_id" id="pid" required>
+                </p>
+                <p class="information">
+                    <label for="">Documento Legal
+                        <input type="text" name="legal-document" id="plegal-document" required>
+                    </label>
+                </p>
+                <p class="information">
+                  <a class="btn blue" onclick="setNewProject()">
+                    Enviar solicitud
+                  </a>
+                  <a class="btn blue accent-1" onclick="sethomeview()">
+                    Cancelar
+                  </a>  
+              </p>
+            </form>
     </div>
-  </div>          
+    <div class="form-containerimg">
+      <img src="../assets/images/ether.jpg" alt="" id="ongimg">
+    </div>
+  </div>
+  <br>     
 </div>
 
   

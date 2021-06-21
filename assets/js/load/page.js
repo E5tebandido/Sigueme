@@ -21,7 +21,7 @@ var settransactionview = (address) => {
     setTimeout(setAddress, 2000, address)
 }
 
-var sethomeview = () => {
+var sethomeview = () => {   
     Materialize.toast('Al inicio', 1000)
     contentLoader("contentpage","templates/home.html")
 }

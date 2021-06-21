@@ -3,8 +3,7 @@ var failed = function(id,table,data) {
     firebase.database().ref("entity").orderByChild("id").equalTo(id).once("value",snapshot => {
         if (snapshot.exists()){
             querySender(table.two,data)
-        }else {
-            Materialize.toast('No encontrado', 2000)
+        }else if (!snapshot.exists()) {
             querySender(table.one,data)
         }
     });
@@ -13,9 +12,9 @@ var failed = function(id,table,data) {
 var projectRecieverRule = function(table){
     firebase.database().ref(table).on('value', function(snapshot) {
         snapshot.forEach ( function (childSnapshot) {
-            if(childSnapshot.val()['status'] == true){
+            if(childSnapshot.val()['status'] == "confirmed"){
                 var childData = childSnapshot.val();
-                renderProjects(childData['name'],childData['address'])
+                renderProjects(childData['name'],childData['eth_address'])
             }
         });
     });
@@ -24,9 +23,9 @@ var projectRecieverRule = function(table){
 var specificProjectRule = function(table,address) {
     firebase.database().ref(table).on('value', function(snapshot) {
         snapshot.forEach ( function (childSnapshot) {
-            if(childSnapshot.val()['address'] == address){
+            if(childSnapshot.val()['eth_address'] == address){
                 var childData = childSnapshot.val();
-                settransactionview(childData['address'])
+                settransactionview(childData['eth_address'])
             }
         });
     });

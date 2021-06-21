@@ -1,6 +1,9 @@
 async function setNewEntity() {
-    var name = $("#entity_name").val();
-    var id = $("#entity_id").val();
+    var name = $("#ename").val();
+    var id = $("#eid").val();
+    var phone = $("#ephone").val();
+    var url = $("#eurl").val();
+    var legaldoc = $("#elegal-document").val();
     const table = {
         'one' : 'entity',
         'two' : 'failed_entity'
@@ -8,7 +11,10 @@ async function setNewEntity() {
     const data = {
         'id' : id,
         'name' : name,
-        'status' : false
+        'phone' : phone,
+        'url' : url,
+        'legaldoc' : legaldoc,
+        'status' : "for-confirmation"
     }
     var checkrule = failed(id,table,data) 
 }
