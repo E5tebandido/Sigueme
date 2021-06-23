@@ -25,7 +25,6 @@ const Tx = async (amount,address,tab,curaccount,instance) => {
                 }
                 querySender(tab.one,data)
                 Materialize.toast("Transacción exitosa con hash :" +tx.blockHash, 3000)
-                $("#btndonate").prop('disabled', true);
             })
             .catch(function(error){
                 querySender(tab.two,error)

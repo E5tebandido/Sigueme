@@ -26,20 +26,19 @@
                         <nav class="navbar">
                             <div class="nav-wrapper white">
                                 <img src="../assets/images/scobrand.png" class="App-logo" alt="logo"/>
-                                <h4 class="brand-logo  medium-title blue-grey-text accent-2" >Sigueme</h4>
+                                <h4 class="brand-logo medium-title blue-grey-text accent-2" >Sigueme</h4>
                             </div>
                         </nav> 
                     </li>  
                     <li class="homemenu"><a href="javascript:;" onclick="sethomeview()"><i class="material-icons">home</i>Inicio</a></li>
-                    <div class="divider"></div>
+    
                     <div class="scrollmenu">
                         <li class="no-padding">
                             <ul class="collapsible collapsible-accordion">
                             <li>
                                 <a class="collapsible-header"><i class="material-icons">favorite_border</i>Ong's</a>
-                                <div class="collapsible-body">
+                                <div class="collapsible-body" style="background-image: linear-gradient(to left, #F2F2F2, #BDD9F2);">
                                 <ul>
-                                    <li><a href="javascript:;" class="item">Ver Ong's</a></li>
                                     <li><a href="javascript:;" class="item" onclick="setnewentityview()">Crear Ong</a></li>
                                 </ul>
                                 </div>
@@ -50,7 +49,7 @@
                             <ul class="collapsible collapsible-accordion">
                                 <li>
                                 <a class="collapsible-header"><i class="material-icons">work</i>Proyectos</a>
-                                <div class="collapsible-body">
+                                <div class="collapsible-body" style="background-image: linear-gradient(to left, #F2F2F2, #BDD9F2);">
                                     <ul>
                                     <li><a href="javascript:;" class="item" onclick="setseeprojectview()">Ver proyectos</a></li>
                                     <li><a href="javascript:;" class="item" onclick="setnewprojectview()">Crear proyecto</a></li>
@@ -63,10 +62,11 @@
                             <ul class="collapsible collapsible-accordion">
                                 <li>
                                 <a class="collapsible-header"><i class="material-icons">savings</i>Donaciones</a>
-                                <div class="collapsible-body">
+                                <div class="collapsible-body" style="background-image: linear-gradient(to left, #F2F2F2, #BDD9F2);">
                                     <ul>
                                     <li><a href="javascript:;" class="item" onclick="setseeprojectview()">Hacer una Donacion</a></li>
-                                    <li><a href="javascript:;" class="item" onclick="sethistorialaprove()">Ver donaciones hechas</a></li>
+                                    <li><a href="javascript:;" class="item" onclick="sethistorialaprove()">Ver donaciones aprobadas</a></li>
+                                    <li><a href="javascript:;" class="item" onclick="sethistorialfailed()">Ver donaciones Fallidas</a></li>
                                     </ul>
                                 </div>
                                 </li>
@@ -103,7 +103,6 @@
         <script src="assets/js/visualization/seeprojects.js"></script>
         <script src="assets/js/visualization/obtainproject.js"></script>
         <script src="assets/js/load/sidenav.js"></script>
-        <script src="assets/js/load/loadingpage.js"></script>
         <script src="assets/js/visualization/seehistorial.js"></script>
     </body>
 </html>

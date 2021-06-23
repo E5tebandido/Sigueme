@@ -14,7 +14,8 @@ async function setNewEntity() {
         'phone' : phone,
         'url' : url,
         'legaldoc' : legaldoc,
-        'status' : "for-confirmation"
+        'status' : "for-confirmation",
+        'balance' : 0
     }
     var checkrule = failed(id,table,data) 
 }

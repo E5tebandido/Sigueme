@@ -16,6 +16,7 @@ var newContract = async function(){
             gas: 441645
         })
         .then((instance) => {
+            console.log(instance)
             Materialize.toast("Contrato minado con dirección de bloque :" + instance.options.address, 3000)
             var amount = $("#amount").val()
             var address = $("#p_address").val()

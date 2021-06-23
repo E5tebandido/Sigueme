@@ -4,6 +4,8 @@ async function setNewProject() {
     var location = $("#plocation").val();
     var eth_address = $("#pethereum-adress").val();
     var legaldoc = $("#plegal-document").val();
+    var maxfounds = $("#pmaxfounds").val();
+    var description = $("#pdescription").val();
     const table = {
         'one': 'failed_project',
         'two': 'project'
@@ -14,7 +16,10 @@ async function setNewProject() {
         'location' : location,
         'eth_address' : eth_address,
         'legaldoc' : legaldoc,
-        'status' : "for-confirmation"
+        'status' : "for-confirmation",
+        'balance': 0,
+        'description' : description,
+        'maxfounds' : maxfounds
     }
     var checkrule = failed(id, table, data)
         

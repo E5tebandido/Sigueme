@@ -14,7 +14,7 @@ var projectRecieverRule = function(table){
         snapshot.forEach ( function (childSnapshot) {
             if(childSnapshot.val()['status'] == "confirmed"){
                 var childData = childSnapshot.val();
-                renderProjects(childData['name'],childData['eth_address'])
+                renderProjects(childData['name'],childData['eth_address'],childData['balance'],childData['description'],childData['maxfounds'])
             }
         });
     });
@@ -25,7 +25,8 @@ var specificProjectRule = function(table,address) {
         snapshot.forEach ( function (childSnapshot) {
             if(childSnapshot.val()['eth_address'] == address){
                 var childData = childSnapshot.val();
-                settransactionview(childData['eth_address'])
+                missingfounds = childData['maxfounds'] - childData['balance']
+                settransactionview(childData['eth_address'],childData['name'],childData['balance'],childData['location'],childData['description'],childData['maxfounds'], missingfounds)
             }
         });
     });
@@ -44,7 +45,7 @@ var historialFailedRule = function(table){
     firebase.database().ref(table).on('value', function(snapshot) {
         snapshot.forEach ( function (childSnapshot) {
             var childData = childSnapshot.val();
-            renderFaileds(childData['argument'],childData['reason'],childData['value'])
+            renderFaileds(childData['argument'],childData['code'],childData['transactionHash'])
         });
     });
 } 
