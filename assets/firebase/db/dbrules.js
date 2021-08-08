@@ -1,5 +1,5 @@
 
-var failed = function(id,table,data) {
+var checkfailed = function(id,table,data) {
     firebase.database().ref("entity").orderByChild("id").equalTo(id).once("value",snapshot => {
         if (snapshot.exists()){
             querySender(table.two,data)

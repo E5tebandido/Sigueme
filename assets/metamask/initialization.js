@@ -2,14 +2,14 @@
 var metamaskIsAviable = async function () {
     if (typeof window.ethereum !== 'undefined') {
         try {
-            Materialize.toast('Metamask está disponible', 3000)
+            console.log('Metamask está disponible')
         } catch (error) {
-            Materialize.toast('Metamask error :' + error.message, 3000)
+            console.log('Metamask error :' + error.message)
         }
     } else {
         Materialize.toast('Instala metamask', 5000)
+        window.location.href = "https://metamask.io/download.html"
     } 
 }
-
 
 

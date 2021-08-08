@@ -5,19 +5,19 @@ var checkForProjects = function() {
 
 var renderProjects = (name,address,balance,description,maxfounds) => {
     const data = `
-    <div class="col s12 m6">
-        <div class="card" style="border-radius:20px;">       
+    <div class="col s12 m12">
+        <div class="card" style="border-radius:20px;"> 
             <div class="card-content gray-text">
-                <h5 class="blue-grey-text accent-2">${name}</h5>
-                <p><b>Descripción</b></P>
-                <p> ${description}<p>
-                <p><b>Fondos recaudados</b></P>
+                <h5 class="blue-grey-text accent-2" style="text-align:justify;">${name}</h5>
+                <p class="blue-grey-text accent-2"><b>Descripción del proyecto</b></P>
+                <p style="text-align:justify;"> ${description}<p>
+                <p class="blue-grey-text accent-2" style="text-align:justify;"><b>Fondos recaudados</b></P>
                 <progress max="${maxfounds}" value="${balance}"></progress>
                 <p> ${balance}<p>
+                <br>
+                <a id="${address}" href="javascript:;" class="btnpro btn halfway-fab purple lighten-3 waves-effect" style="border-radius:20px;">ver y donar &nbsp;<i class="far fa-heart"></i></a> 
             </div>
-            <div class="card-action">
-                <a id="${address}" href="javascript:;" class="btnpro"><i class="material-icons">volunteer_activism</i>Ver más y Donar</a> 
-            </div> 
+            
         </div>
     </div>
     `;

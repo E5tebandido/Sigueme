@@ -11,7 +11,7 @@ var renderAproveds = (blockhash,contract_address,origin_account,project_address,
     <div class="col s12 m12">
         <div class="card" style="border-radius:20px;">       
             <div class="card-content gray-text">
-                <h6 class="blue-grey-text accent-2">Transacción -> ${transaction_hash}</h6>
+                <h6 class="blue-grey-text accent-2">Transacción ${transaction_hash}</h6>
                 <p><b>Hash del bloque</b></P>
                 <p> ${blockhash}<p>
                 <p><b>cuenta ethereum del contrato que aprobó la transacción</b></P>
@@ -34,7 +34,7 @@ var renderFaileds = (argument,code,receipt) => {
     <div class="col s12 m12">
         <div class="card" style="border-radius:20px;">       
             <div class="card-content gray-text">
-                <h6 class="blue-grey-text accent-2">Transacción -> </h6>
+                <h6 class="blue-grey-text accent-2">Transacción</h6>
                 <p><b>Razón de la falla</b></P>
                 <p> ${code}<p>
                 <p><b>Tipo</b></P>

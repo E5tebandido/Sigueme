@@ -4,49 +4,47 @@
   <div class="formcontainer">
     <div class="form-container left">
       <br>
-        <h2 class="medium-title blue-grey-text accent-2">Vamos a crear un proyecto..</h3>
+        <h2 class="medium-title blue-grey-text accent-2">Cuentanos del proyecto</h3>
             <form id="ong-form">
                 <p class="information">
-                    <label for="">Nombre del Proyecto</label>
-                    <input type="text" name="name" id="pname" required>
+                    <label for="">Nombre</label>
+                    <input type="text" name="name" id="pname" >
                 </p>
                 <p class="information">
-                  <label for="">Descripción del Proyecto</label>
-                  <input type="text" name="name" id="pdescription" required>
+                  <label for="">Descripción</label>
+                  <textarea class="materialize-textarea" name="description" id="pdescription" maxlength="200"></textarea>
                 </p>
                 <p class="information">
                     <label for="">Ubicación</label>
-                    <input type="text" name="location" id="plocation" required>
+                    <input type="text" name="location" id="plocation">
                 </p>
                 <p class="information">
-                    <label for="">Ethereum Adress</label>
-                    <input type="text" name="ethereum-adress" id="pethereum-adress" required>
+                    <label for="">Cuenta Ethereum (0x...)</label>
+                    <input type="text" name="ethereum-adress" id="pethereum-adress">
                 </p>
                 <p class="information">
-                  <label for="">Clave única de la entidad a la que pertenence</label>
-                  <input type="text" name="p_id" id="pid" required>
+                  <label for="">Clave única ONG</label>
+                  <input type="text" name="p_id" id="pid">
                 </p>
                 <p class="information">
                   <label for="">Fondos propuestos a recaudar (cantidad que se quiere recibir)</label>
-                  <input type="number" name="p_id" id="pmaxfounds" required>
+                  <input type="number" name="p_id" id="pmaxfounds">
                 </p>
                 <p class="information">
-                    <label for="">Documento Legal
-                        <input type="file" name="legal-document" id="plegal-document" required>
+                    <label for="">PDF del documento de constitución del proyecto
+                        <input type="file" name="legal-document" id="plegaldoc">
                     </label>
                 </p>
                 <p class="information">
-                  <a class="btn blue" onclick="setNewProject()">
+                  <a class="btn waves-effect blue-grey accent-2" style="border-radius:20px;" onclick="setNewProject()">
                     Enviar solicitud
                   </a>
-                  <a class="btn blue accent-1" onclick="sethomeview()">
-                    Cancelar
-                  </a>  
               </p>
             </form>
     </div>
     <div class="form-containerimg">
-      <img src="../assets/images/ether.jpg" alt="" id="ongimg">
+      <img src="" alt="" id="ongimg">
+      <img src="" alt="" id="ongimg">
     </div>
   </div>
   <br>     

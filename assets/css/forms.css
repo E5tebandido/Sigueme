@@ -8,12 +8,13 @@
 }
 
 .form-containerimg {
-    width: 50%;
+    width: 65%;
 }
 
 #ongimg{
   width: 100%;
   margin-top: 10rem;
+  animation-duration: 10s;
 }
 
 .formcontainer {
@@ -53,5 +54,29 @@ input {
 
 .information {
     font-size: 20px;
+}
+
+.tximg {
+    display: block;
+    margin-top: 4rem;
+    position: fixed;
+}
+
+.failedtximg {
+    display: block;
+    margin-top: 4rem;
+    position: fixed;
+}
+
+#gif {
+    display: block;
+    margin-top: 4rem;
+    position: fixed;
+}
+
+#madetximg {
+    display: block;
+    margin-top: 4rem;
+    position: fixed;
 }
 

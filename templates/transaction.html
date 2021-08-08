@@ -1,9 +1,14 @@
-
-      
-
 <div class="infocontainer">
-    <img src="../assets/images/adonar.PNG" alt="">   
     <div id="transactionpanel" class="row">  
-    </div>
-        
+        <div class="col s12 m12">  
+            <p class="information">
+                <label for="">Cantidad de wei a donar</label>
+                <input type="number" id="amount" class="autocomplete" required>
+            </p>
+        </div>
+        <button id="btndonate" class="btnpro btn halfway-fab purple lighten-3 waves-effect" style="border-radius:20px;" onclick="newContract()" disabled>
+            Donar &nbsp;
+            <i class="fab fa-ethereum"></i>
+        </button>
+    </div>     
 </div>

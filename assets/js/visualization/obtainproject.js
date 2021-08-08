@@ -6,24 +6,13 @@ $(document).on('click', '.btnpro', function (event) {
 
 var setAddress = (address,name,balance,location,description,maxfounds,missingfounds) => {
     const data = `
-    <div class="col s12 m6">
+    <div class="col s12 m12">
+    <br>
     <p class="information">
         <label for="">Cuenta ethereum de la entidad</label>
         <input type="text" id="p_address" class="autocomplete" value="${address}" readonly>
     </p>
     </div>
-    <div class="col s12 m6">
-    <p class="information">
-        <label for="">Cantidad de wei a donar</label>
-        <input type="number" id="amount" class="autocomplete" required>
-    </p>
-    </div>
-    <button id="btndonate" class="btn orange lighten-1 waves-effect" onclick="newContract()">
-        Donar
-    </button>
-    <button class="btn red lighten-1 waves-effect" onclick="setseeprojectview()">
-        Cancelar
-    </button>  
     <br><br>
     <div class="row">
         <div class="col s12 m6">
@@ -49,4 +38,5 @@ var setAddress = (address,name,balance,location,description,maxfounds,missingfou
     `;
 
     $("#transactionpanel").append(data)
+    $("#btndonate").prop("disabled",false)
 }

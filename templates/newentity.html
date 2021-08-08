@@ -4,7 +4,7 @@
   <div class="formcontainer">
     <div class="form-container left">
       <br>
-      <h2 class="medium-title blue-grey-text accent-2">Vamos a crear tu entidad..</h3>
+      <h2 class="medium-title blue-grey-text accent-2">Cuentanos de tu entidad</h3>
         <form id="ong-form">
             <p class="information">
                 <label for="">Nombre de ONG</label>
@@ -15,30 +15,49 @@
                 <input type="text" name="id" id="eid">
             </p>
             <p class="information">
-                <label for="">Teléfono</label>
-                <input type="text" name="phone" id="ephone">
+                <label for="">Teléfono de la entidad</label>
+                <input type="tel" name="phone" id="ephone">
+            </p>
+            <p class="information">
+              <label for="">Celular de contacto personal</label>
+              <input type="tel" name="phone" id="ecel">
             </p>
             <p class="information">
                 <label for="">Link Página Web</label>
                 <input type="text" name="url" id="eurl">
             </p>
             <p class="information">
-                <label for="">Documento Legal
-                    <input type="file" name="legal-document" id="elegal-document">
+                <label for="">Correo electronico 
+                    <input type="email" name="email" id="eemail">
                 </label>
             </p>
             <p class="information">
-                <a class="btn blue" onclick="setNewEntity()">
+              <label for="">Cuenta oficial de la ONG en facebook </label>
+              <input type="text" name="facebook" id="efa">
+            </p>
+            <p class="information">
+              <label for="">Cuenta oficial de la ONG en Instagram</label>
+              <input type="text" name="instagram" id="ein">
+            </p>
+            <p class="information">
+              <label for="">PDF de la Cedula (ambas caras) del representante legal de la ONG</label>
+                  <input type="file" name="personal-document" id="epersonaldoc">
+              </label>
+            </p>
+            <p class="information">
+              <label for="">PDF del documento que acredite al representante legal con la ONG</label>
+                  <input type="file" name="legal-document" id="elegaldoc">
+              </label>
+            </p>
+            <p class="information">
+                <a class="btn waves-effect blue-grey accent-2" style="border-radius:20px;" onclick="setNewEntity()">
                   Enviar solicitud
                 </a>
-                <a class="btn blue accent-1" onclick="sethomeview()">
-                  Cancelar
-                </a>  
             </p>
         </form>
     </div>
     <div class="form-containerimg">
-        <img src="../assets/images/donation2.jpeg" alt="" id="ongimg">
+        <img src="" alt="" id="ongimg">
     </div>
   </div>  
   <br>     
