@@ -1,5 +1,4 @@
 async function setNewEntity() {
-    sessionVerification()
     var name = $("#ename").val()
     var id = $("#eid").val()
     var phone = $("#ephone").val()
@@ -12,8 +11,8 @@ async function setNewEntity() {
     var personaldoc = $("#epersonaldoc").val()
    
     const table = {
-        'one' : 'entity',
-        'two' : 'failed_entity'
+        'approved' : 'entity',
+        'failed' : 'failed_entity'
     }
     
     const data = {
@@ -40,9 +39,9 @@ async function setNewEntity() {
         data.legaldoc &&
         data.personaldoc
         ) === "") {
-        Materialize.toast('Faltan datos', 2000)
+        Materialize.toast('Faltan datos', 2000, 'red')
     }else {
-        checkfailed(id,table,data) 
+        entityCheckFailed(id,table,data) 
     }
 
     

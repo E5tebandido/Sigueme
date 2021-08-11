@@ -1,17 +1,23 @@
 $(document).ready(function()
 {
-    firebaseInit()
-    contentLoader("contentpage","templates/home.html")
+    if (!firebase.apps.length) {
+        firebaseInit()
+    } 
     contentLoader("navsco","templates/navbar.html")
+    contentLoader("contentpage","templates/home.html")
     loadSideNav()
+    setTimeout(loadDropdown, 2000)  
+    setTimeout(sessionVerificationForNavBar, 2000)  
 })
 
 var setnewentityview = () => {
     contentLoader("contentpage","templates/newentity.html")
+    sessionVerificationForActions()
 }
 
 var setnewprojectview = () => {
     contentLoader("contentpage","templates/newproject.html")
+    sessionVerificationForActions()
 }
 
 var settransactionview = (address,name,balance,location,description,maxfounds,missingfounds) => {

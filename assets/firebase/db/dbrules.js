@@ -1,10 +1,32 @@
 
-var checkfailed = function(id,table,data) {
-    firebase.database().ref("entity").orderByChild("id").equalTo(id).once("value",snapshot => {
+var entityCheckFailed = function(id,table,data) {
+    firebase.database().ref("entity").orderByChild("id").equalTo(data.id).once("value",snapshot => {
         if (snapshot.exists()){
-            querySender(table.two,data)
+            querySender(table.failed,data)
         }else if (!snapshot.exists()) {
-            querySender(table.one,data)
+            querySender(table.approved,data)
+        }
+    });
+}
+
+var projectCheckFailed = function(id,table,data) {
+    firebase.database().ref("entity").orderByChild("id").equalTo(data.entity_id).once("value",snapshot => {
+        if (snapshot.exists()){
+            firebase.database().ref("project").on('value', function(snapshot) {
+                snapshot.forEach ( function (childSnapshot) {
+                    if(childSnapshot.val()['eth_address'] != data.eth_address){
+                        if(childSnapshot.val()['status'] != "confirmed"){
+                            querySender(table.approved,data)
+                        } else {
+                            querySender(table.failed,data)
+                        }
+                    } else {
+                        querySender(table.failed,data)
+                    }
+                });
+            });
+        }else if (!snapshot.exists()) {
+            querySender(table.failed,data)
         }
     });
 }

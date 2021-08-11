@@ -24,17 +24,16 @@ const Tx = async (amount,address,tab,curaccount,instance) => {
                     'transaction_index' : tx.transactionIndex
                 }
                 querySender(tab.one,data)
-                Materialize.toast("Transacción exitosa con hash :" +tx.blockHash, 3000)
+                Materialize.toast("Transacción exitosa con hash : "+tx.blockHash, 3000, 'green')
             })
             .catch(function(error){
                 querySender(tab.two,error)
-                Materialize.toast("Transacción no aprobada", 3000)
+                Materialize.toast("Transacción no aprobada : "+error, 3000, 'red')
                 
             })      
     } catch (error) {
         querySender(tab.two,error)
-        Materialize.toast("Transacción no aprobada", 3000)
-        $("#btndonate").prop('disabled', true);
+        Materialize.toast("Transacción no aprobada : "+error, 3000, 'red')
     }  
 }
 

@@ -1,64 +1,74 @@
 
 <div class="infocontainer">
-
-  <div class="formcontainer">
-    <div class="form-container left">
-      <br>
-      <h2 class="medium-title blue-grey-text accent-2">Cuentanos de tu entidad</h3>
-        <form id="ong-form">
-            <p class="information">
-                <label for="">Nombre de ONG</label>
-                <input type="text" name="name" id="ename">
-            </p>
-            <p class="information">
-                <label for="">Crear clave única (Más de 8 caracteres alfanuméricos)</label>
-                <input type="text" name="id" id="eid">
-            </p>
-            <p class="information">
-                <label for="">Teléfono de la entidad</label>
-                <input type="tel" name="phone" id="ephone">
-            </p>
-            <p class="information">
-              <label for="">Celular de contacto personal</label>
-              <input type="tel" name="phone" id="ecel">
-            </p>
-            <p class="information">
-                <label for="">Link Página Web</label>
-                <input type="text" name="url" id="eurl">
-            </p>
-            <p class="information">
-                <label for="">Correo electronico 
-                    <input type="email" name="email" id="eemail">
-                </label>
-            </p>
-            <p class="information">
-              <label for="">Cuenta oficial de la ONG en facebook </label>
-              <input type="text" name="facebook" id="efa">
-            </p>
-            <p class="information">
-              <label for="">Cuenta oficial de la ONG en Instagram</label>
-              <input type="text" name="instagram" id="ein">
-            </p>
-            <p class="information">
-              <label for="">PDF de la Cedula (ambas caras) del representante legal de la ONG</label>
-                  <input type="file" name="personal-document" id="epersonaldoc">
-              </label>
-            </p>
-            <p class="information">
-              <label for="">PDF del documento que acredite al representante legal con la ONG</label>
-                  <input type="file" name="legal-document" id="elegaldoc">
-              </label>
-            </p>
-            <p class="information">
-                <a class="btn waves-effect blue-grey accent-2" style="border-radius:20px;" onclick="setNewEntity()">
-                  Enviar solicitud
-                </a>
-            </p>
-        </form>
+  <div class="container">
+    <div class="white" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px;">   
+      <form id="ong-form"  method="post">
+        <div class='input-field'>
+          <label for="ename">Nombre de la ONG</label>
+          <input type="text" name="name" id="ename" class="validate">
+        </div>
+        <div class='input-field'>
+          <label for="eid">Crear clave privada (Más de 8 caracteres alfanuméricos)</label>
+          <input type="text" name="id" id="eid" class="validate">
+        </div>
+        <div class='input-field'>
+          <label for="ephone">Teléfono de la entidad</label>
+          <input type="tel" name="phone" id="ephone" class="validate">
+        </div>
+        <div class='input-field'>
+          <label for="ecel">Celular de contacto del representante legal</label>
+          <input type="tel" name="phone" id="ecel" class="validate">
+        </div>
+        <div class='input-field'>
+          <label for="eurl">Link Página Web</label>
+          <input type="text" name="url" id="eurl" class="validate"> 
+        </div>       
+        <div class='input-field'>
+          <label for="eemail">Correo electronico </label>
+          <input type="email" name="email" id="eemail" class="validate"> 
+        </div>     
+        <div class='input-field'>
+          <label for="efa">Cuenta oficial de la ONG en facebook </label>
+          <input type="text" name="facebook" id="efa" class="validate">
+        </div>
+        <div class='input-field'>
+          <label for="ein">Cuenta oficial de la ONG en Instagram</label>
+          <input type="text" name="instagram" id="ein" class="validate">
+        </div>
+        <div class='row'>
+          <label for="">documento(s) de identificación "ambas caras" del representante legal de la ONG
+            <div class="file-field input-field">
+              <div class="btn">
+                <span>File</span>
+                <input type="file" multiple>
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" id="epersonaldoc" placeholder="Arrastre aquí" style="border-bottom: whitesmoke;">
+              </div>
+            </div>
+          </label>
+        </div>
+        <div class='row'>
+          <label for="">documento(s) que acrediten al representante legal con la ONG
+            <div class="file-field input-field">
+              <div class="btn">
+                <span>File</span>
+                <input type="file" multiple>
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" id="elegaldoc" placeholder="Arrastre aquí" style="border-bottom: whitesmoke;">
+              </div>
+            </div>
+          </label>
+        </div>
+        <center>
+          <div class='row'>
+            <a class="btn waves-effect blue-grey accent-2" style="border-radius:20px;" onclick="setNewEntity()">
+              Enviar solicitud
+            </a>
+          </div>
+        </center>
+      </form>
     </div>
-    <div class="form-containerimg">
-        <img src="" alt="" id="ongimg">
-    </div>
-  </div>  
-  <br>     
+  </div>      
 </div>

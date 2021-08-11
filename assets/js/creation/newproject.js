@@ -1,5 +1,4 @@
 async function setNewProject() {
-    sessionVerification()
     var id = $("#pid").val()
     var name = $("#pname").val()
     var location = $("#plocation").val()
@@ -8,11 +7,11 @@ async function setNewProject() {
     var maxfounds = $("#pmaxfounds").val()
     var description = $("#pdescription").val()
     const table = {
-        'one': 'failed_project',
-        'two': 'project'
+        'approved': 'project',
+        'failed': 'failed_project'
     }
     const data = {
-        'id' : id,
+        'entity_id' : id,
         'name' : name,
         'location' : location,
         'eth_address' : eth_address,
@@ -31,8 +30,9 @@ async function setNewProject() {
         data.description &&
         data.maxfounds
         ) === "") {
-        Materialize.toast('Faltan datos', 2000)
+        Materialize.toast('Faltan datos', 2000, 'red')
     }else {
-        checkfailed(id,table,data) 
+        projectCheckFailed(id,table,data) 
     }    
 }
+
