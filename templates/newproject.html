@@ -1,49 +1,48 @@
 <div class="infocontainer">
   <div class="container">
     <div class="white" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px;">     
-      <form id="project-form">
+      <form id="project-form" action="" onsubmit="sendProject();return false">
         <div class='input-field'>
           <label for="pname">Nombre del proyecto</label>
-          <input type="text" name="name" id="pname" class="validate">
+          <input type="text" name="name" id="pname" class="validate" maxlength="120" minlength="15" required>
         </div>
         <div class='input-field'>
           <label for="pdescription">Descripción</label>
-          <textarea class="materialize-textarea validate" name="description" id="pdescription" maxlength="200"></textarea>
+          <textarea class="materialize-textarea validate" name="description" id="pdescription" minlength="100" maxlength="200" required></textarea>
         </div>
         <div class='input-field'>
           <label for="plocation">Ubicación</label>
-          <input type="text" name="location" id="plocation" class="validate">
+          <input type="text" name="location" id="plocation" class="validate" required>
         </div>
         <div class='input-field'>
           <label for="pethereum-adress">Cuenta Ethereum 0x...</label>
-          <input type="text" name="ethereum-adress" id="pethereum-adress" class="validate">
+          <input type="text" name="ethereum-adress" id="pethereum-adress" class="validate" required>
         </div>
         <div class='input-field'>
           <label for="pid">Clave privada de la ONG a la que pertenece</label>
-          <input type="text" name="p_id" id="pid" class="validate">
+          <input type="text" name="p_id" id="pid" class="validate" required>
         </div>
         <div class='input-field'>
           <label for="pmaxfounds">Meta económica </label>
-          <input type="number" name="p_id" id="pmaxfounds" class="validate">
+          <input type="number" name="p_id" id="pmaxfounds" class="validate" required> 
         </div>
         <div class='row'>
-          <label for="">documento(s) de constitución del proyecto, debe estar aprobado
+          <label for="">documento(s) de constitución del proyecto o legales, debidamente aprobados 
             <div class="file-field input-field">
               <div class="btn">
                 <span>File</span>
                 <input type="file" multiple>
               </div>
               <div class="file-path-wrapper">
-                <input class="file-path validate" type="text" id="plegaldoc" placeholder="Arrastre aquí" style="border-bottom: whitesmoke;">
+                <input class="file-path validate" type="text" id="plegaldoc" placeholder="Arrastre aquí" style="border-bottom: whitesmoke;" required>
               </div>
             </div>
           </label>
         </div>
         <center>
           <div class='row'>
-            <a class="btn waves-effect blue-grey accent-2" style="border-radius:20px;" onclick="setNewProject()">
-              Enviar solicitud
-            </a>
+            <input type="submit" class="btn waves-effect blue-grey accent-2" style="border-radius:20px;">
+            </input>
           </div>
         </center>
       </form>

@@ -32,16 +32,16 @@ var sethomeview = () => {
 
 var setseeprojectview = () => {
     contentLoader("contentpage","templates/seeproject.html")    
-    setTimeout(checkForProjects, 2000)
+    setTimeout(projectStatusVerification, 2000)
 }
 
 var sethistorialaprove = () => {
     contentLoader("contentpage","templates/historialaprove.html")    
-    setTimeout(checkForAproveds, 2000)
+    setTimeout(historialAprovedVerification, 2000)
 }
 
 var sethistorialfailed = () => {
     contentLoader("contentpage","templates/historialfailed.html")    
-    setTimeout(checkForFaileds, 2000)
+    setTimeout(historialFailedVerification, 2000)
 }
 

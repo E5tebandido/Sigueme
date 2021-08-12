@@ -2,38 +2,38 @@
 <div class="infocontainer">
   <div class="container">
     <div class="white" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px;">   
-      <form id="ong-form"  method="post">
+      <form id="ong-form" action="" onsubmit="sendEntity();return false">
         <div class='input-field'>
           <label for="ename">Nombre de la ONG</label>
-          <input type="text" name="name" id="ename" class="validate">
+          <input type="text" name="name" id="ename" class="validate" required>
         </div>
         <div class='input-field'>
-          <label for="eid">Crear clave privada (Más de 8 caracteres alfanuméricos)</label>
-          <input type="text" name="id" id="eid" class="validate">
+          <label for="eid">Crear clave privada (Mínimo 10 caracteres alfanuméricos)</label>
+          <input type="text" name="id" id="eid" class="validate" minlength="10" pattern="[a-zA-Z'-'\s]*" required>
         </div>
         <div class='input-field'>
           <label for="ephone">Teléfono de la entidad</label>
-          <input type="tel" name="phone" id="ephone" class="validate">
+          <input type="tel" name="phone" id="ephone" class="validate" required>
         </div>
         <div class='input-field'>
           <label for="ecel">Celular de contacto del representante legal</label>
-          <input type="tel" name="phone" id="ecel" class="validate">
+          <input type="tel" name="phone" id="ecel" class="validate" required>
         </div>
         <div class='input-field'>
           <label for="eurl">Link Página Web</label>
-          <input type="text" name="url" id="eurl" class="validate"> 
+          <input type="url" name="url" id="eurl" class="validate" required> 
         </div>       
         <div class='input-field'>
           <label for="eemail">Correo electronico </label>
-          <input type="email" name="email" id="eemail" class="validate"> 
+          <input type="email" name="email" id="eemail" class="validate" required> 
         </div>     
         <div class='input-field'>
           <label for="efa">Cuenta oficial de la ONG en facebook </label>
-          <input type="text" name="facebook" id="efa" class="validate">
+          <input type="text" name="facebook" id="efa" class="validate" required>
         </div>
         <div class='input-field'>
           <label for="ein">Cuenta oficial de la ONG en Instagram</label>
-          <input type="text" name="instagram" id="ein" class="validate">
+          <input type="text" name="instagram" id="ein" class="validate" required>
         </div>
         <div class='row'>
           <label for="">documento(s) de identificación "ambas caras" del representante legal de la ONG
@@ -43,7 +43,7 @@
                 <input type="file" multiple>
               </div>
               <div class="file-path-wrapper">
-                <input class="file-path validate" type="text" id="epersonaldoc" placeholder="Arrastre aquí" style="border-bottom: whitesmoke;">
+                <input class="file-path validate" type="text" id="epersonaldoc" placeholder="Arrastre aquí" style="border-bottom: whitesmoke;" required>
               </div>
             </div>
           </label>
@@ -56,16 +56,15 @@
                 <input type="file" multiple>
               </div>
               <div class="file-path-wrapper">
-                <input class="file-path validate" type="text" id="elegaldoc" placeholder="Arrastre aquí" style="border-bottom: whitesmoke;">
+                <input class="file-path validate" type="text" id="elegaldoc" placeholder="Arrastre aquí" style="border-bottom: whitesmoke;" required>
               </div>
             </div>
           </label>
         </div>
         <center>
           <div class='row'>
-            <a class="btn waves-effect blue-grey accent-2" style="border-radius:20px;" onclick="setNewEntity()">
-              Enviar solicitud
-            </a>
+            <input type="submit" class="btn waves-effect blue-grey accent-2" style="border-radius:20px;">
+            </input>
           </div>
         </center>
       </form>

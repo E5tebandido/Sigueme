@@ -1,4 +1,4 @@
-async function setNewEntity() {
+var sendEntity = () => {
     var name = $("#ename").val()
     var id = $("#eid").val()
     var phone = $("#ephone").val()
@@ -9,7 +9,7 @@ async function setNewEntity() {
     var instagram = $("#ein").val()
     var legaldoc = $("#elegaldoc").val()
     var personaldoc = $("#epersonaldoc").val()
-   
+
     const table = {
         'approved' : 'entity',
         'failed' : 'failed_entity'
@@ -28,23 +28,9 @@ async function setNewEntity() {
         'personaldoc' : personaldoc,
         'status' : "for-confirmation",
         'balance' : 0
-    }
-    
-    if ((
-        data.name && 
-        data.id && 
-        data.phone && 
-        data.cel && 
-        data.email && 
-        data.legaldoc &&
-        data.personaldoc
-        ) === "") {
-        Materialize.toast('Faltan datos', 2000, 'red')
-    }else {
-        entityCheckFailed(id,table,data) 
-    }
-
-    
+    }  
+    entityIdVerification(table,data) 
+    $("#ong-form").trigger("reset")
 }
 
 

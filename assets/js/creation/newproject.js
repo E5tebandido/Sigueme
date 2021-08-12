@@ -1,4 +1,4 @@
-async function setNewProject() {
+var sendProject = () => {
     var id = $("#pid").val()
     var name = $("#pname").val()
     var location = $("#plocation").val()
@@ -6,10 +6,12 @@ async function setNewProject() {
     var legaldoc = $("#plegaldoc").val()
     var maxfounds = $("#pmaxfounds").val()
     var description = $("#pdescription").val()
+    
     const table = {
         'approved': 'project',
         'failed': 'failed_project'
     }
+    
     const data = {
         'entity_id' : id,
         'name' : name,
@@ -21,18 +23,6 @@ async function setNewProject() {
         'description' : description,
         'maxfounds' : maxfounds
     }
-    if ((
-        data.name && 
-        data.id && 
-        data.location && 
-        data.eth_address && 
-        data.legaldoc && 
-        data.description &&
-        data.maxfounds
-        ) === "") {
-        Materialize.toast('Faltan datos', 2000, 'red')
-    }else {
-        projectCheckFailed(id,table,data) 
-    }    
+    project_entityIdVerification(table,data)
 }
 
