@@ -2,7 +2,6 @@ var sessionVerificationForActions = () => {
     firebase.auth().onAuthStateChanged(user => {
         if(user){
             console.log("sesión activa, solicitud aceptada", user.email)
-            
         }else{
             window.location.href = "templates/signin.html";
        
@@ -16,6 +15,7 @@ var sessionVerificationForNavBar = () => {
             console.log("sesión activa")
             const signedin = `
             <li><a class=" blue-grey-text accent-2" href="templates/signout.html"><b>signout</b><i class="material-icons">logout</i></li>
+            <li><a class=" blue-grey-text accent-2" href="javascript:;" onclick="setProfile()"><b>Perfil</b><i class="material-icons">how_to_reg</i></li>
             `;
             $("#dropdown1").append(signedin)
             $("#sessionname").append("<b> Hey "+user.email+"</b>")

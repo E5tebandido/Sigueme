@@ -13,7 +13,7 @@ var sendProject = () => {
     }
     
     const data = {
-        'entity_id' : id,
+        'parent_id' : id,
         'name' : name,
         'location' : location,
         'eth_address' : eth_address,

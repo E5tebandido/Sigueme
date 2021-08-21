@@ -45,3 +45,7 @@ var sethistorialfailed = () => {
     setTimeout(historialFailedVerification, 2000)
 }
 
+var setProfile = () => {
+    contentLoader("contentpage","templates/profile.html")    
+    
+}

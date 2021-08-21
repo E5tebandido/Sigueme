@@ -1,4 +1,4 @@
-var renderProjects = (name,address,balance,description,maxfounds) => {
+var renderProfileProjects = (name,address,balance,description,maxfounds) => {
     const data = `
     <div class="col s12 m12">
         <div class="container">
@@ -13,8 +13,7 @@ var renderProjects = (name,address,balance,description,maxfounds) => {
                 <a id="${address}" href="javascript:;" class="btnpro btn halfway-fab purple lighten-3 waves-effect" style="border-radius:20px;">ver y donar &nbsp;<i class="far fa-heart"></i></a> 
             </div>
         </div>
-        <br>
     </div>
     `;
-    $("#projectpanel").append(data)
+    $("#profilepanel").append(data)
 }
