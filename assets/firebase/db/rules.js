@@ -18,11 +18,9 @@ var projectAccountVerification = function(table,data,eth) {
     var userId = firebase.auth().currentUser.uid;
     firebase.database().ref('project').child(userId).orderByChild("eth_address").equalTo(eth).once("value",snapshot => {
         if (!snapshot.exists()){
-            console.log(snapshot.val())
             Materialize.toast('Cuenta ethereum disponible', 4000, 'green')
             querySender(table.approved,data)
         }else {
-            data.key = 'reason'
             data['reason'] = 'Cuenta ethereum en uso'
             querySender(table.failed,data)
             Materialize.toast(data.reason, 4000, 'red')
@@ -96,18 +94,18 @@ var projectsAccountVerification = function(address) {
 }
 
 var historialAprovedVerification = function(){
-    firebase.database().ref('transaction').on('value', function(snapshot) {
+    firebase.database().ref('tx').on('value', function(snapshot) {
         snapshot.forEach ( function (childSnapshotuser) {
             childSnapshotuser.forEach ( function (childSnapshot) {
                 var childData = childSnapshot.val();
-                renderAproveds(childData['blockhash'],childData['contract_address'],childData['origin_account'],childData['project_address'], childData['transaction_amount'],childData['transaction_hash'])
+                renderAproveds(childData['blockHash'],childData['from'],childData['transactionHash'])
             })
         })
     })
 } 
 
 var historialFailedVerification = function(){
-    firebase.database().ref('failed_transaction').on('value', function(snapshot) {
+    firebase.database().ref('tx_failed').on('value', function(snapshot) {
         snapshot.forEach ( function (childSnapshotuser) {
             childSnapshotuser.forEach ( function (childSnapshot) {
                 var childData = childSnapshot.val();
@@ -117,14 +115,42 @@ var historialFailedVerification = function(){
     })
 } 
 
-var projectProfileVerification = function() {
+var myProjectsVerification = function() {
     var userId = firebase.auth().currentUser.uid;
     firebase.database().ref('project/'+userId).on('value', function(snapshot) {
         snapshot.forEach ( function (childSnapshot) {
-            if(childSnapshot.val()['status'] == "confirmed"){
-                var childData = childSnapshot.val();
-                renderProfileProjects(childData['name'],childData['eth_address'],childData['balance'],childData['description'],childData['maxfounds'])
-            }
+            var childData = childSnapshot.val();
+            renderMyProjects(childData['name'],childData['id_for_delete'],childData['status'],childData['balance'],childData['description'],childData['maxfounds'],childData['parent_entity'])
         })
     })
 } 
+
+var myEntitiesVerification = function() {
+    var userId = firebase.auth().currentUser.uid;
+    firebase.database().ref('entity/'+userId).on('value', function(snapshot) {
+        snapshot.forEach ( function (childSnapshot) {
+            var childData = childSnapshot.val();
+            renderMyEntities(childData['name'],childData['status'],childData['id_for_delete'],childData['email'],childData['url'],childData['facebook'],childData['instagram'])
+        })
+    })
+} 
+
+var deleteEntityVerification = function(id_for_delete) {
+    var userId = firebase.auth().currentUser.uid;
+    firebase.database().ref('entity/'+userId).orderByChild("id_for_delete").equalTo(id_for_delete).once("value",snapshot => {
+        snapshot.forEach ( function (childSnapshot) {
+            childSnapshot.ref.remove()
+            Materialize.toast('Entidad eliminada', 4000, 'green')
+        })
+    })
+}
+
+var deleteProjectVerification = function(id_for_delete) {
+    var userId = firebase.auth().currentUser.uid;
+    firebase.database().ref('project').child(userId).orderByChild("id_for_delete").equalTo(id_for_delete).once("value",snapshot => {
+        snapshot.forEach ( function (childSnapshot) {
+            childSnapshot.ref.remove()
+            Materialize.toast('Proyecto eliminado', 4000, 'green')
+        })
+    })
+}

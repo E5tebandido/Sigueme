@@ -1,13 +1,11 @@
-const Tx = async (amount,address,tab,curaccount,instance) => {
-    console.log(instance)
+const Tx = async (amount,address,curaccount,instance) => {
     try {  
         await instance.methods.make_transaction(amount,address,true,true)
         .send({ 
                 from: curaccount
             })
-            .then( function(tx) {
-                
-                const data = {
+            .then( function(tx) {   
+                /*const data = {
                     'project_address' : address,
                     'blockhash' : tx.blockHash,
                     'transaction_amount' : amount,
@@ -22,18 +20,18 @@ const Tx = async (amount,address,tab,curaccount,instance) => {
                     'contract_address' : tx.to,
                     'transaction_hash' : tx.transactionHash,
                     'transaction_index' : tx.transactionIndex
-                }
-                querySender(tab.one,data)
+                }*/
+                querySender("tx",tx)
                 Materialize.toast("Transacción exitosa con hash : "+tx.blockHash, 3000, 'green')
             })
             .catch(function(error){
-                querySender(tab.two,error)
+                querySender("tx_failed",error)
                 Materialize.toast("Transacción no aprobada : "+error, 3000, 'red')
                 
             })      
     } catch (error) {
-        querySender(tab.two,error)
-        Materialize.toast("Transacción no aprobada : "+error, 3000, 'red')
+        querySender("tx_failed",error.message)
+        Materialize.toast("Transacción no aprobada : "+error.message, 3000, 'red')
     }  
 }
 

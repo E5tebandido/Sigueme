@@ -45,7 +45,17 @@ var sethistorialfailed = () => {
     setTimeout(historialFailedVerification, 2000)
 }
 
-var setProfile = () => {
-    contentLoader("contentpage","templates/profile.html")    
-    
+var setMyProjects = () => {
+    contentLoader("contentpage","templates/myprojects.html")    
+    setTimeout(myProjectsVerification, 2000)
+}
+
+var setMyEntities = () => {
+    contentLoader("contentpage","templates/myentities.html")    
+    setTimeout(myEntitiesVerification, 2000)
+}
+
+var setMyTransactions = () => {
+    contentLoader("contentpage","templates/mytransactions.html")    
+    setTimeout(projectProfileVerification, 2000)
 }

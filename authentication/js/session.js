@@ -14,8 +14,10 @@ var sessionVerificationForNavBar = () => {
         if(user){
             console.log("sesión activa")
             const signedin = `
-            <li><a class=" blue-grey-text accent-2" href="templates/signout.html"><b>signout</b><i class="material-icons">logout</i></li>
-            <li><a class=" blue-grey-text accent-2" href="javascript:;" onclick="setProfile()"><b>Perfil</b><i class="material-icons">how_to_reg</i></li>
+            <li><a class=" blue-grey-text accent-2" href="templates/signout.html"><b>signout</b><i class="material-icons">logout</i></a></li>
+            <li><a class=" blue-grey-text accent-2" href="javascript:;" onclick="setMyProjects()"><b>Mis proyectos</b><i class="material-icons">how_to_reg</i></a></li>
+            <li><a class=" blue-grey-text accent-2" href="javascript:;" onclick="setMyEntities()"><b>Mis entidades</b><i class="material-icons">how_to_reg</i></a></li>
+            <li><a class=" blue-grey-text accent-2" href="javascript:;" onclick="setMyTransactions()"><b>Mis transacciones</b><i class="material-icons">how_to_reg</i></a></li>
             `;
             $("#dropdown1").append(signedin)
             $("#sessionname").append("<b> Hey "+user.email+"</b>")

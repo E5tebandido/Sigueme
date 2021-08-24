@@ -6,6 +6,8 @@ var sendProject = () => {
     var legaldoc = $("#plegaldoc").val()
     var maxfounds = $("#pmaxfounds").val()
     var description = $("#pdescription").val()
+    var id_for_update = 'up'+eth_address
+    var id_for_delete = 'del'+eth_address
     
     const table = {
         'approved': 'project',
@@ -14,6 +16,8 @@ var sendProject = () => {
     
     const data = {
         'parent_id' : id,
+        'id_for_update' : id_for_update,
+        'id_for_delete' : id_for_delete,
         'name' : name,
         'location' : location,
         'eth_address' : eth_address,
@@ -24,5 +28,6 @@ var sendProject = () => {
         'maxfounds' : maxfounds
     }
     project_entityIdVerification(table,data)
+    $("#project-form").trigger("reset")
 }
 

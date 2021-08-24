@@ -8,7 +8,7 @@ var setAddress = (address,name,balance,location,description,maxfounds,missingfou
     const data = `
     <div class="col s12 m12">
     <p class="information">
-        <label for="">Cuenta ethereum de la entidad</label>
+        <label for="">Cuenta ethereum del proyecto</label>
         <input type="text" id="p_address" value="${address}" style="border-bottom: whitesmoke;" readonly>
     </p>
     </div>
