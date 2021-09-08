@@ -1,5 +1,5 @@
 
-var newContract = async function(){
+var newContract = async () => {
     sessionVerificationForActions()
     await metamaskIsAviable()
     const abi = JSON.parse('[  {   "anonymous": false,   "inputs": [    {     "indexed": false,     "internalType": "address",     "name": "",     "type": "address"    },    {     "indexed": false,     "internalType": "uint256",     "name": "",     "type": "uint256"    }   ],   "name": "Received",   "type": "event"  },  {   "stateMutability": "payable",   "type": "fallback"  },  {   "inputs": [    {     "internalType": "uint256",     "name": "_amount",     "type": "uint256"    },    {     "internalType": "address",     "name": "_address",     "type": "address"    },    {     "internalType": "bool",     "name": "_entitystatus",     "type": "bool"    },    {     "internalType": "bool",     "name": "_projectstatus",     "type": "bool"    }   ],   "name": "make_transaction",   "outputs": [],   "stateMutability": "payable",   "type": "function"  },  {   "stateMutability": "payable",   "type": "receive"  } ]')
