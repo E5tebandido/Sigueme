@@ -6,10 +6,10 @@ var querySender = function(table,data) {
     console.log(userId)
     firebase.database().ref(table+"/"+userId).push(data)
     .then(function(){
-        Materialize.toast('Solicitud envíada y almacenada en' + table, 3000, 'green')
+        Materialize.toast('Solicitud almacenada en la base de datos', 3000, 'green')
     })
     .catch(function(){
-        Materialize.toast('Solicitud rechazada', 2000, 'red')
+        Materialize.toast('Solicitud rechazada',3000, 'red')
     });
 }
 

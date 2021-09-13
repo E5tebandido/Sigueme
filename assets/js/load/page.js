@@ -1,61 +1,67 @@
-$(document).ready(function()
+$(document).ready( () =>
 {
     if (!firebase.apps.length) {
         firebaseInit()
     } 
-    contentLoader("navsco","templates/navbar.html")
-    contentLoader("contentpage","templates/home.html")
-    loadSideNav()
-    setTimeout(loadDropdown, 2000)  
-    setTimeout(sessionVerificationForNavBar, 2000)  
+    $("#navsco").load("templates/navbar.html", () => {
+        loadSideNav()
+        loadDropdown()
+        sessionVerificationForNavBar()
+    })
+    clearContainer("contentpage")
+    $("#contentpage").load("templates/home.html", () => {
+    })
 })
 
+var sethomeview = () => {   
+    clearContainer("contentpage")
+    $("#contentpage").load("templates/home.html", () => {
+    })
+}
+
 var setnewentityview = () => {
-    contentLoader("contentpage","templates/newentity.html")
-    sessionVerificationForActions()
+    clearContainer("contentpage")
+    $("#contentpage").load("templates/newentity.html", () => {
+        sessionVerificationForActions()
+    })
 }
 
 var setnewprojectview = () => {
-    contentLoader("contentpage","templates/newproject.html")
-    sessionVerificationForActions()
+    clearContainer("contentpage")
+    $("#contentpage").load("templates/newproject.html", () => {
+        sessionVerificationForActions()
+    })
 }
 
 var settransactionview = (address,name,balance,location,description,maxfounds,missingfounds) => {
-    contentLoader("contentpage","templates/transaction.html")
-    console.log(address)
-    setTimeout(setAddress, 2000, address,name,balance,location,description,maxfounds,missingfounds)
+    clearContainer("contentpage")
+    $("#contentpage").load("templates/transaction.html", () => {
+        Materialize.toast(address, 4000, 'blue')
+        getOneProject(address,name,balance,location,description,maxfounds,missingfounds)
+    })
 }
 
-var sethomeview = () => {   
-    contentLoader("contentpage","templates/home.html")
-}
 
 var setseeprojectview = () => {
-    contentLoader("contentpage","templates/seeproject.html")    
-    setTimeout(projectStatusVerification, 2000)
+    clearContainer("contentpage")
+    $("#contentpage").load("templates/seeproject.html", () => {
+        $("#projectpanel").empty() 
+        projectStatusVerification()
+    })
 }
 
 var sethistorialaprove = () => {
-    contentLoader("contentpage","templates/historialaprove.html")    
-    setTimeout(historialAprovedVerification, 2000)
+    clearContainer("contentpage")
+    $("#contentpage").load("templates/historialaprove.html", () => {
+        $("#historialaprovepanel").empty() 
+        historialAprovedVerification()
+    })
 }
 
 var sethistorialfailed = () => {
-    contentLoader("contentpage","templates/historialfailed.html")    
-    setTimeout(historialFailedVerification, 2000)
-}
-
-var setMyProjects = () => {
-    contentLoader("contentpage","templates/myprojects.html")    
-    setTimeout(myProjectsVerification, 2000)
-}
-
-var setMyEntities = () => {
-    contentLoader("contentpage","templates/myentities.html")    
-    setTimeout(myEntitiesVerification, 2000)
-}
-
-var setMyTransactions = () => {
-    contentLoader("contentpage","templates/mytransactions.html")    
-    setTimeout(projectProfileVerification, 2000)
+    clearContainer("contentpage")
+    $("#contentpage").load("templates/historialfailed.html", () => {
+        $("#historialfailedpanel").empty() 
+        historialFailedVerification()
+    })
 }

@@ -1,10 +1,10 @@
 
 
-$(document).on('click', '.btnpro', function (event) {
+$(document).on('click', '.btnpro', (event) => {
     projectsAccountVerification(event.target.id)
 });
 
-var setAddress = (address,name,balance,location,description,maxfounds,missingfounds) => {
+var getOneProject = (address,name,balance,location,description,maxfounds,missingfounds) => {
     const data = `
     <div class="col s12 m12">
     <p class="information">
@@ -36,5 +36,6 @@ var setAddress = (address,name,balance,location,description,maxfounds,missingfou
     `;
 
     $("#transactionpanel").append(data)
+    sessionVerificationForActions()
     $("#btndonate").attr("disabled",false)
 }

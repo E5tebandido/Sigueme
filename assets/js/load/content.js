@@ -1,5 +1,4 @@
-function contentLoader(contenedor,script) {
+var clearContainer = (contenedor) => {
     let a = $("#"+contenedor)
     a.empty()
-    a.load(script)       
 }

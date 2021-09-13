@@ -1,6 +1,6 @@
 <div class="infocontainer">
   <div class="container">
-    <div class="white" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px;">     
+    <div class="white" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px; width: 100%;">     
       <form id="project-form" action="" onsubmit="sendProject();return false">
         <div class='input-field'>
           <label for="pname">Nombre del proyecto</label>
@@ -11,6 +11,10 @@
           <textarea class="materialize-textarea validate" name="description" id="pdescription" minlength="100" maxlength="200" required></textarea>
         </div>
         <div class='input-field'>
+          <label for="pid">Clave privada del proyecto (creéla)</label>
+          <input type="text" name="id" id="pid" class="validate" minlength="2" required>
+        </div>
+        <div class='input-field'>
           <label for="plocation">Ubicación</label>
           <input type="text" name="location" id="plocation" class="validate" required>
         </div>
@@ -19,8 +23,8 @@
           <input type="text" name="ethereum-adress" id="pethereum-adress" class="validate" required>
         </div>
         <div class='input-field'>
-          <label for="pid">Clave privada de la ONG a la que pertenece</label>
-          <input type="text" name="p_id" id="pid" class="validate" required>
+          <label for="parentid">Clave privada de la ONG a la que pertenece el proyecto</label>
+          <input type="text" name="p_id" id="parentid" class="validate" required>
         </div>
         <div class='input-field'>
           <label for="pmaxfounds">Meta económica </label>

@@ -1,20 +1,19 @@
 
-var entityIdVerification = function(table,data)  {
+var entityIdVerification = (table,data) => {
     var userId = firebase.auth().currentUser.uid;
-    firebase.database().ref('entity/'+userId).orderByChild("id").equalTo(data.id).once("value",snapshot => {
+    firebase.database().ref('entity').child(userId).orderByChild("nit").equalTo(data.nit).once("value", snapshot => {
         if (!snapshot.exists()){
-            Materialize.toast('Clave unica disponible', 4000, 'green')
             querySender(table.approved,data)
+            Materialize.toast('Nit disponible', 4000, 'green')
         }else {
-            data.key = 'reason'
-            data['reason'] = 'Clave unica no disponible'
+            data['reason'] = 'Nit no disponible'
             querySender(table.failed,data)
-            Materialize.toast(data.reason, 4000, 'red')
+            Materialize.toast('Nit en uso', 4000, 'red')
         }
     });
 }
 
-var projectAccountVerification = function(table,data,eth) {
+var projectAccountVerification = (table,data,eth) => {
     var userId = firebase.auth().currentUser.uid;
     firebase.database().ref('project').child(userId).orderByChild("eth_address").equalTo(eth).once("value",snapshot => {
         if (!snapshot.exists()){
@@ -28,19 +27,17 @@ var projectAccountVerification = function(table,data,eth) {
     })
 }
 
-var entityStatusVerification = function(table,data,id) {
+var entityStatusVerification = (table,data,id) => {
     var userId = firebase.auth().currentUser.uid;
     firebase.database().ref('entity/'+userId).orderByChild("id").equalTo(id).once("value",snapshot => {
         snapshot.forEach ( function (childSnapshot) {
             if(childSnapshot.val()['status'] == "confirmed"){
-                data.key = 'parent_name'
                 data['parent_entity'] = childSnapshot.val()['name']
-                Materialize.toast('Estado de la entidad  '+childSnapshot.val()['name']+' activo', 4000, 'green')
+                Materialize.toast('Estado de la ONG '+childSnapshot.val()['name']+' activo', 4000, 'green')
                 var auxeth = data.eth_address 
                 projectAccountVerification(table,data,auxeth)
             }else{
-                data.key = 'reason'
-                data['reason'] = 'Estado de la entidad inactivo'
+                data['reason'] = 'Estado de la ONG inactivo'
                 querySender(table.failed,data)
                 Materialize.toast(data.reason, 4000, 'red')
             }
@@ -48,16 +45,15 @@ var entityStatusVerification = function(table,data,id) {
     });
 }
 
-var project_entityIdVerification = function(table,data) {
+var project_entityIdVerification = (table,data) => {
     var userId = firebase.auth().currentUser.uid;
-    firebase.database().ref('entity/'+userId).orderByChild("id").equalTo(data.parent_id).once("value",snapshot => {
+    firebase.database().ref('entity/'+userId).orderByChild("id").equalTo(data.parentid).once("value",snapshot => {
         if (snapshot.exists()){
-            Materialize.toast('Clave unica encontrada', 4000, 'green')
-            var auxid = data.parent_id
+            Materialize.toast('La ONG con la clave ' +data.parentid+ ' existe', 4000, 'green')
+            var auxid = data.parentid
             entityStatusVerification(table,data,auxid)
         }else {
-            data.key = 'reason'
-            data['reason'] = 'Clave unica no existe'
+            data['reason'] = 'Clave unica de la ONG no existe'
             querySender(table.failed,data)
             Materialize.toast(data.reason, 4000, 'red')
         }
@@ -65,10 +61,10 @@ var project_entityIdVerification = function(table,data) {
 }
 
 
-var projectStatusVerification = function() {
-    firebase.database().ref('project').on('value', function(snapshot) {
-        snapshot.forEach ( function (childSnapshotuser) {
-            childSnapshotuser.forEach ( function (childSnapshot) {
+var projectStatusVerification = () => {
+    firebase.database().ref('project').on('value', (snapshot) => {
+        snapshot.forEach ( (childSnapshotuser) => {
+            childSnapshotuser.forEach ( (childSnapshot) => {
                 if(childSnapshot.val()['status'] == "confirmed"){
                     var childData = childSnapshot.val();
                     renderProjects(childData['name'],childData['eth_address'],childData['balance'],childData['description'],childData['maxfounds'])

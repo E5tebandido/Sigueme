@@ -1,13 +1,12 @@
 var sendProject = () => {
-    var id = $("#pid").val()
+    var parentid = $("#parentid").val()
     var name = $("#pname").val()
     var location = $("#plocation").val()
+    var id = $("#pid").val()
     var eth_address = $("#pethereum-adress").val()
     var legaldoc = $("#plegaldoc").val()
     var maxfounds = $("#pmaxfounds").val()
     var description = $("#pdescription").val()
-    var id_for_update = 'up'+eth_address
-    var id_for_delete = 'del'+eth_address
     
     const table = {
         'approved': 'project',
@@ -15,9 +14,8 @@ var sendProject = () => {
     }
     
     const data = {
-        'parent_id' : id,
-        'id_for_update' : id_for_update,
-        'id_for_delete' : id_for_delete,
+        'parentid' : parentid,
+        'id' : id,
         'name' : name,
         'location' : location,
         'eth_address' : eth_address,

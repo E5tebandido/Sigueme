@@ -2,11 +2,11 @@ var renderProjects = (name,address,balance,description,maxfounds) => {
     const data = `
     <div class="col s12 m12">
         <div class="container">
-            <div class="white" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px; width: 100%;"
-                <h5 class="blue-grey-text accent-2" style="text-align:justify;">${name}</h5>
-                <p class="blue-grey-text accent-2"><b>Descripción del proyecto</b></P>
+            <div class="white" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px; width: 100%;">
+                <p class="blue-grey-text accent-3" style="text-align:center;"><b>${name}</b></p>
+                <p class="blue-grey-text accent-2">Descripción del proyecto</P>
                 <p style="text-align:justify;"> ${description}<p>
-                <p class="blue-grey-text accent-2" style="text-align:justify;"><b>Fondos recaudados</b></P>
+                <p class="blue-grey-text accent-2" style="text-align:justify;">Fondos recaudados</P>
                 <progress max="${maxfounds}" value="${balance}"></progress>
                 <p> ${balance}<p>
                 <br>

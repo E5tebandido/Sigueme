@@ -14,7 +14,7 @@ var sessionVerificationForNavBar = () => {
         if(user){
             console.log("sesión activa")
             const signedin = `
-            <li><a class=" blue-grey-text accent-2" href="templates/signout.html"><b>signout</b><i class="material-icons">logout</i></a></li>
+            <li><a class=" blue-grey-text accent-2" href="templates/signout.html"><b>Salir</b><i class="material-icons">logout</i></a></li>
             `;
             $("#dropdown1").append(signedin)
             $("#sessionname").append("<b> Hey "+user.email+"</b>")
@@ -22,11 +22,11 @@ var sessionVerificationForNavBar = () => {
         }else{
             console.log("no hay ninguna sesión activa")
             const signedout = `
-            <li><a class=" blue-grey-text accent-2" href="templates/signin.html"><b>signin</b><i class="material-icons">login</i></a></li>
-            <li><a class=" blue-grey-text accent-2" href="templates/signup.html"><b>signup</b><i class="material-icons">how_to_reg</i></li>
+            <li><a class=" blue-grey-text accent-2" href="templates/signin.html"><b>Ingresa</b><i class="material-icons">login</i></a></li>
+            <li><a class=" blue-grey-text accent-2" href="templates/signup.html"><b>Registrate</b><i class="material-icons">how_to_reg</i></li>
             `;
             $("#dropdown1").append(signedout)
-            $("#sessionname").append("<b> Hey Anonimo! </b>")
+            $("#sessionname").append("<b> Anonimo@ungusto.com </b>")
             $("#sessionlogo").attr('class', 'fas fa-user-secret')
         }
     })   
