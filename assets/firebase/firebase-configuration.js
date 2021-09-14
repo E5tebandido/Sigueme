@@ -1,4 +1,4 @@
-function firebaseInit(){
+var firebaseInit = () => {
     var config = {
         apiKey: "AIzaSyABXha0c6WrTUm-ZRnhyKklddvNDt0lpk0",
         authDomain: "scodb-5c3fd.firebaseapp.com",
@@ -12,3 +12,8 @@ function firebaseInit(){
       firebase.initializeApp(config);
 }
 
+var callFirebase = () => {
+  if (!firebase.apps.length) {
+    firebaseInit()
+  }   
+} 

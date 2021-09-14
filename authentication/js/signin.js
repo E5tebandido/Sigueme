@@ -1,14 +1,10 @@
 var signin = () => {
-    if (!firebase.apps.length) {
-        firebaseInit()
-    } 
+    callFirebase()
     var email = document.getElementById("lemail").value
     var password = document.getElementById("lpassword").value
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(() => {
-        Materialize.toast('Hola de nuevo', 2500, 'green')
-        setTimeout(function(){window.location.href = "../index.html"}, 2500)
-        
+        window.location.href = "../index.html"   
     })
     .catch((error) => {
         var errorMessage = error.message;
@@ -17,14 +13,11 @@ var signin = () => {
 }
 
 var googleSignin = () => {
-    if (!firebase.apps.length) {
-        firebaseInit()
-    } 
+    callFirebase()
     var provider = new firebase.auth.GoogleAuthProvider()
     firebase.auth().signInWithPopup(provider)
     .then(() => {
-        Materialize.toast('Hola de nuevo', 2500, 'green')
-        setTimeout(function(){window.location.href = "../index.html"}, 2500)
+        window.location.href = "../index.html"
     })
     .catch((error) => {
         var errorMessage = error.message;
@@ -33,14 +26,11 @@ var googleSignin = () => {
 }
 
 var facebookSignin = () => {
-    if (!firebase.apps.length) {
-        firebaseInit()
-    } 
+    callFirebase()
     var provider = new firebase.auth.FacebookAuthProvider()
     firebase.auth().signInWithPopup(provider)
     .then(() => {
-        Materialize.toast('Hola de nuevo', 2500, 'green')
-        setTimeout(function(){window.location.href = "../index.html"}, 2500)
+        window.location.href = "../index.html"
     })
     .catch((error) => {
         var errorMessage = error.message;

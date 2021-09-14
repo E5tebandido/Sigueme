@@ -1,4 +1,4 @@
-var loadDropdown = function (){
+var loadDropdown = () => {
     $('.dropdown-button').dropdown({
         inDuration: 300,
         outDuration: 225,

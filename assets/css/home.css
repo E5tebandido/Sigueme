@@ -1,16 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-.donationimage {
-    width: 30%;
-}
-
-.projectimage {
-    width: 30%;
-}
-
-.transactionimage {
-    width: 30%;
-}
 
 .infocontainer {
     width: 83.5%;
@@ -51,3 +40,29 @@
     margin-right: 10px;
   }
 
+.homeimg {
+    width: 60%;
+    height: auto;
+    float: right;
+    max-width: 40rem;
+}
+  
+.carousel  {
+    
+    height: 100vh !important;    
+}
+
+.carousel .carousel-item {
+    filter:brightness(0.5);
+}
+
+@media only screen and (max-width: 800px) {
+    .carousel  {
+        height: 45vh !important;
+    }
+
+    .carousel .carousel-item {
+        filter:brightness(0.5);
+    }
+
+}

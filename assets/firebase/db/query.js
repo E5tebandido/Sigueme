@@ -1,7 +1,5 @@
 var querySender = function(table,data) {
-    if (!firebase.apps.length) {
-        firebaseInit()
-    } 
+    callFirebase()
     var userId = firebase.auth().currentUser.uid;
     console.log(userId)
     firebase.database().ref(table+"/"+userId).push(data)

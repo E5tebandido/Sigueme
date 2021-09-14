@@ -1,13 +1,10 @@
 var signup = () => {
-    if (!firebase.apps.length) {
-        firebaseInit()
-    } 
+    callFirebase()
     var email = document.getElementById("remail").value
     var password = document.getElementById("rpassword").value
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(() => {
-            Materialize.toast('Registrado con éxito '+ email, 2500, 'green')
-            setTimeout(function(){window.location.href = "../index.html"}, 2500)
+            window.location.href = "../index.html"
         })
         .catch((error) => {
             var errorMessage = error.message;

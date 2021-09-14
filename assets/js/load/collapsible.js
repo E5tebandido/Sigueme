@@ -1,0 +1,5 @@
+var loadCollapsible = () => {
+    $('.collapsible').collapsible({
+
+    })
+}

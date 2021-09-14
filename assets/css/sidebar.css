@@ -43,44 +43,9 @@
   overflow:auto;
 }
 
-#donationcard {
-  border-radius: 20px;
-}
 
-#projectcard {
-  border-radius: 20px;
-}
 
-#transactioncard {
-  border-radius: 20px;
-}
 
-#newprojectcard {
-  border-radius: 20px;
-}
 
-#newentitycard {
-  border-radius: 20px;
-}
-
-#scocard {
-  border-radius: 20px;
-  background-color: #a0f;
-}
-
-#donationimage {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-#transactionimage {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-#projectimage {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
 
 

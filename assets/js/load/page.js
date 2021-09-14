@@ -8,14 +8,14 @@ $(document).ready( () =>
         loadDropdown()
         sessionVerificationForNavBar()
     })
-    clearContainer("contentpage")
-    $("#contentpage").load("templates/home.html", () => {
-    })
+    sethomeview()
 })
 
 var sethomeview = () => {   
     clearContainer("contentpage")
     $("#contentpage").load("templates/home.html", () => {
+        loadCarousel()
+        loadCollapsible()
     })
 }
 
@@ -36,7 +36,7 @@ var setnewprojectview = () => {
 var settransactionview = (address,name,balance,location,description,maxfounds,missingfounds) => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/transaction.html", () => {
-        Materialize.toast(address, 4000, 'blue')
+        Materialize.toast('cuenta del proyecto : '+address, 4000, 'blue')
         getOneProject(address,name,balance,location,description,maxfounds,missingfounds)
     })
 }
