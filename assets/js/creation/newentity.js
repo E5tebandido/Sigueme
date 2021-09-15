@@ -28,7 +28,7 @@ var sendEntity = () => {
         'instagram' : instagram,
         'legaldoc' : legaldoc,
         'personaldoc' : personaldoc,
-        'status' : "for-confirmation",
+        'status' : "confirmed",
         'balance' : 0
     }  
     entityIdVerification(table,data) 

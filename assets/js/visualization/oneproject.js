@@ -36,6 +36,6 @@ var getOneProject = (address,name,balance,location,description,maxfounds,missing
     `;
 
     $("#transactionpanel").append(data)
-    sessionVerificationForActions()
     $("#btndonate").attr("disabled",false)
+    sessionVerificationForActions()
 }

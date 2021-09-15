@@ -20,7 +20,7 @@ var sendProject = () => {
         'location' : location,
         'eth_address' : eth_address,
         'legaldoc' : legaldoc,
-        'status' : "for-confirmation",
+        'status' : "confirmed",
         'balance': 0,
         'description' : description,
         'maxfounds' : maxfounds

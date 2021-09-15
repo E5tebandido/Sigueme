@@ -57,7 +57,7 @@
 
 @media only screen and (max-width: 800px) {
     .carousel  {
-        height: 45vh !important;
+        height: 30vh !important;
     }
 
     .carousel .carousel-item {

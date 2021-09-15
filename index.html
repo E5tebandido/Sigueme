@@ -27,54 +27,16 @@
                     <li>
                         <nav class="navbar white">
                             <div class="nav-wrapper">
-                                <img src="../assets/images/scobrand.png" class="App-logo" alt="logo"/>
-                                <h6 class="brand-logo medium-title blue-grey-text text-accent-2" >Sígueme</h6>
+                                <img src="../assets/images/scobrand.png" class="App-logo" alt="logo" style="margin-left: 40%;"/>
                             </div>
                         </nav> 
                     </li>  
                     <li class="homemenu "><a href="javascript:;" onclick="sethomeview()"><i class="material-icons ">home</i>Inicio</a></li>
-    
-                    <div class="scrollmenu">
-                        <li class="no-padding">
-                            <ul class="collapsible collapsible-accordion">
-                            <li>
-                                <a class="collapsible-header"><i class="material-icons">favorite_border</i>Ong's</a>
-                                <div class="collapsible-body" style="background-image: linear-gradient(to left, #F2F2F2, #BDD9F2);">
-                                <ul>
-                                    <li><a href="javascript:;" class="item" onclick="setnewentityview()">Crear una Ong</a></li>
-                                </ul>
-                                </div>
-                            </li>
-                            </ul>
-                        </li>
-                        <li class="no-padding">
-                            <ul class="collapsible collapsible-accordion">
-                                <li>
-                                <a class="collapsible-header"><i class="material-icons">work</i>Proyectos</a>
-                                <div class="collapsible-body" style="background-image: linear-gradient(to left, #F2F2F2, #BDD9F2);">
-                                    <ul>
-                                    <li><a href="javascript:;" class="item" onclick="setseeprojectview()">Ver proyectos</a></li>
-                                    <li><a href="javascript:;" class="item" onclick="setnewprojectview()">Crear un proyecto</a></li>
-                                    </ul>
-                                </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="no-padding">
-                            <ul class="collapsible collapsible-accordion">
-                                <li>
-                                <a class="collapsible-header"><i class="material-icons">savings</i>Donaciones</a>
-                                <div class="collapsible-body" style="background-image: linear-gradient(to left, #F2F2F2, #BDD9F2);">
-                                    <ul>
-                                    <li><a href="javascript:;" class="item" onclick="setseeprojectview()">Hacer una Donacion</a></li>
-                                    <li><a href="javascript:;" class="item" onclick="sethistorialaprove()">Ver donaciones aprobadas</a></li>
-                                    <li><a href="javascript:;" class="item" onclick="sethistorialfailed()">Ver donaciones Fallidas</a></li>
-                                    </ul>
-                                </div>
-                                </li>
-                            </ul>
-                        </li>        
-                    </div>
+                    <li><a href="javascript:;" class="item" onclick="setnewentityview()"><i class="material-icons ">store</i>Crear Ong</a></li>
+                    <li><a href="javascript:;" class="item " onclick="setnewprojectview()"><i class="material-icons ">plus_one</i>Crear proyecto</a></li>
+                    <li><a href="javascript:;" class="item purple-text" onclick="setseeprojectview()"><i class="material-icons purple-text">favorite_border</i>Dona</a></li>
+                    <li><a href="javascript:;" class="item" onclick="sethistorialaprove()"><i class="material-icons ">check</i>Aprobadas</a></li>
+                    <li><a href="javascript:;" class="item" onclick="sethistorialfailed()"><i class="material-icons ">sms_failed</i>Fallidas</a></li>  
                     <li>
                         <a class="docmenu" href="https://teban18.github.io/siguemeORG_documentation/dist/index.html"  target="_blank" onclick="sethomeview()"><i class="material-icons">description</i>Documentación</a>
                         <a class="modal-trigger" href="#modal1"><i class="material-icons">face</i>Autor</a>
@@ -92,10 +54,10 @@
                           <div class="col l4 offset-l2 s12">
                             <h5 class="white-text">Links</h5>
                             <ul>
-                              <li><a class="blue-grey-text text-accent-2" href="https://www.linkedin.com/in/andr%C3%A9s-esteban-posada-rinc%C3%B3n-94424b1a7/" target="blank"><i class="fab fa-linkedin-in"></i> Andrés Esteban Posada</a></li>
-                              <li><a class="blue-grey-text text-accent-2" href="https://github.com/Teban18" target="blank"><i class="fab fa-github"></i> Teban18</a></li>
-                              <li><a class="blue-grey-text text-accent-2" href="https://www.instagram.com/estebandido_18_/?hl=es" target="blank"><i class="fab fa-instagram"></i> Estebandido_18_</a></li>
-                              <li><a class="blue-grey-text text-accent-2" href="https://www.facebook.com/esteban.posada.3154/" target="blank"><i class="fab fa-facebook"></i> Esteban Dido</a></li>
+                              <li><a class="blue-grey-text text-accent-2" href="https://www.linkedin.com/in/andr%C3%A9s-esteban-posada-rinc%C3%B3n-94424b1a7/" target="blank"><i class="fab fa-linkedin-in fa-3x"></i></a></li>
+                              <li><a class="blue-grey-text text-accent-2" href="https://github.com/Teban18" target="blank"><i class="fab fa-github fa-3x"></i></a></li>
+                              <li><a class="blue-grey-text text-accent-2" href="https://www.instagram.com/estebandido_18_/?hl=es" target="blank"><i class="fab fa-instagram fa-3x"></i></a></li>
+                              <li><a class="blue-grey-text text-accent-2" href="https://www.facebook.com/esteban.posada.3154/" target="blank"><i class="fab fa-facebook fa-3x"></i></a></li>
                             </ul>
                           </div>
                         </div>
@@ -112,8 +74,6 @@
             </div>
             <div id="navsco"></div>
             <div id="contentpage"></div> 
-            
-            <br>
         </div>
         <!-- Compiled and minified JavaScript -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -141,5 +101,9 @@
         <script src="./authentication/js/session.js"></script>
         <script src="./assets/js/load/dropdown.js"></script>
         <script src="./assets/js/load/collapsible.js"></script>
+        <script src="../authentication/js/signin.js" type="text/javascript"></script> 
+        <script src="../authentication/js/signup.js" type="text/javascript"></script>
+        <script src="../authentication/js/session.js"></script>
+        <script src="../authentication/js/signout.js"></script>
     </body>
 </html>

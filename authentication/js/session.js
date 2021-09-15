@@ -3,8 +3,7 @@ var sessionVerificationForActions = () => {
         if(user){
             console.log("sesión activa, solicitud aceptada", user.email)
         }else{
-            window.location.href = "templates/signin.html";
-       
+            setsigninview()
         }
     })   
 }
@@ -14,20 +13,21 @@ var sessionVerificationForNavBar = () => {
         if(user){
             console.log("sesión activa")
             const signedin = `
-            <li><a class=" blue-grey-text accent-2" href="templates/signout.html"><b>Salir</b><i class="material-icons">logout</i></a></li>
+            <li><a class=" blue-grey-text accent-2" href="javascript:;"><b>${user.email}</b><i class="material-icons">profile</i></a></li>
+            <li><a class=" blue-grey-text accent-2" href="javascript:;" onClick="signout()"><b>Salir</b><i class="material-icons">logout</i></a></li>
             `;
+            clearContainer("dropdown1")
             $("#dropdown1").append(signedin)
-            $("#sessionname").append("<b> Hey "+user.email+"</b>")
-            $("#sessionlogo").attr('class', 'fas fa-user-astronaut');
+            $("#sessionlogo").attr('class', 'fas fa-user-astronaut fa-2x');
         }else{
             console.log("no hay ninguna sesión activa")
             const signedout = `
-            <li><a class=" blue-grey-text accent-2" href="templates/signin.html"><b>Ingresa</b><i class="material-icons">login</i></a></li>
-            <li><a class=" blue-grey-text accent-2" href="templates/signup.html"><b>Registrate</b><i class="material-icons">how_to_reg</i></li>
+            <li><a class=" blue-grey-text accent-2" href="javascript:;" onClick="setsigninview()"><b>Ingresa</b><i class="material-icons">login</i></a></li>
+            <li><a class=" blue-grey-text accent-2" href="javascript:;" onclick="setsignupview()"><b>Registrate</b><i class="material-icons">how_to_reg</i></li>
             `;
+            clearContainer("dropdown1")
             $("#dropdown1").append(signedout)
-            $("#sessionname").append("<b> Anonimo@ungusto.com </b>")
-            $("#sessionlogo").attr('class', 'fas fa-user-secret')
+            $("#sessionlogo").attr('class', 'fas fa-user-secret fa-2x')
         }
     })   
 }

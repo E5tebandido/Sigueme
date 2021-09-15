@@ -18,6 +18,20 @@ var sethomeview = () => {
     })
 }
 
+var setsigninview = () => {   
+    clearContainer("contentpage")
+    $("#contentpage").load("templates/signin.html", () => {
+        
+    })
+}
+
+var setsignupview = () => {   
+    clearContainer("contentpage")
+    $("#contentpage").load("templates/signup.html", () => {
+        
+    })
+}
+
 var setnewentityview = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/newentity.html", () => {
