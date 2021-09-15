@@ -1,14 +1,13 @@
 $(document).ready( () =>
 {
-    if (!firebase.apps.length) {
-        firebaseInit()
-    } 
+    callFirebase()
     $("#navsco").load("templates/navbar.html", () => {
         loadSideNav()
         loadDropdown()
         sessionVerificationForNavBar()
     })
     sethomeview()
+    $('.modal').modal();
 })
 
 var sethomeview = () => {   

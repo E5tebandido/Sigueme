@@ -1,6 +1,9 @@
 
-<div class="infocontainer">
+<div class="formcontainer">
   <div class="container">
+    <label style='float: right;'>
+      <a class='pink-text' href="javascript:;" onclick="sethomeview()"><b>No sé como crear una entidad</b></a>
+    </label>
     <div class="white" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px; width: 100%;">   
       <form id="ong-form" action="" onsubmit="sendEntity();return false">
         <div class='input-field'>
@@ -12,7 +15,7 @@
           <input type="text" name="nit" id="enit" class="validate" minlength="2" required>
         </div>
         <div class='input-field'>
-          <label for="eid">Clave privada de la ONG (creéla)</label>
+          <label for="eid">Clave privada de la ONG (creéla y guardela!)</label>
           <input type="text" name="id" id="eid" class="validate" minlength="2" required>
         </div>
         <div class='input-field'>
@@ -42,7 +45,7 @@
         <div class='row'>
           <label for="">documento(s) de identificación "ambas caras" del representante legal de la ONG
             <div class="file-field input-field">
-              <div class="btn  cyan lighten-3 ">
+              <div class="btn  N/A transparent grey-text">
                 <span>File</span>
                 <input type="file" multiple>
               </div>
@@ -55,7 +58,7 @@
         <div class='row'>
           <label for="">documento(s) que acrediten al representante legal con la ONG
             <div class="file-field input-field">
-              <div class="btn cyan lighten-3">
+              <div class="btn N/A transparent grey-text">
                 <span>File</span>
                 <input type="file" multiple>
               </div>
@@ -67,7 +70,7 @@
         </div>
         <center>
           <div class='row'>
-            <input type="submit" class="btn halfway-fab purple lighten-3 waves-effect white-text" style="border-radius:20px;">
+            <input type="submit" class="btn halfway-fab N/A transparent blue-grey-text text-accent-2" style="border-radius:20px;" value="Crear entidad">
             </input>
           </div>
         </center>

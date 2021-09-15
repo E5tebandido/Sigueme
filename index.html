@@ -23,16 +23,16 @@
     <body>
         <div id="container">
             <div id="menu">
-                <ul id="slide-out" class="side-nav fixed show-on-large-only">
+                <ul id="slide-out" class="side-nav fixed">
                     <li>
-                        <nav class="navbar">
-                            <div class="nav-wrapper white">
+                        <nav class="navbar white">
+                            <div class="nav-wrapper">
                                 <img src="../assets/images/scobrand.png" class="App-logo" alt="logo"/>
-                                <h6 class="brand-logo medium-title blue-grey-text accent-2" >Sígueme</h6>
+                                <h6 class="brand-logo medium-title blue-grey-text text-accent-2" >Sígueme</h6>
                             </div>
                         </nav> 
                     </li>  
-                    <li class="homemenu"><a href="javascript:;" onclick="sethomeview()"><i class="material-icons">home</i>Inicio</a></li>
+                    <li class="homemenu "><a href="javascript:;" onclick="sethomeview()"><i class="material-icons ">home</i>Inicio</a></li>
     
                     <div class="scrollmenu">
                         <li class="no-padding">
@@ -41,7 +41,7 @@
                                 <a class="collapsible-header"><i class="material-icons">favorite_border</i>Ong's</a>
                                 <div class="collapsible-body" style="background-image: linear-gradient(to left, #F2F2F2, #BDD9F2);">
                                 <ul>
-                                    <li><a href="javascript:;" class="item" onclick="setnewentityview()">Crear Ong</a></li>
+                                    <li><a href="javascript:;" class="item" onclick="setnewentityview()">Crear una Ong</a></li>
                                 </ul>
                                 </div>
                             </li>
@@ -54,7 +54,7 @@
                                 <div class="collapsible-body" style="background-image: linear-gradient(to left, #F2F2F2, #BDD9F2);">
                                     <ul>
                                     <li><a href="javascript:;" class="item" onclick="setseeprojectview()">Ver proyectos</a></li>
-                                    <li><a href="javascript:;" class="item" onclick="setnewprojectview()">Crear proyecto</a></li>
+                                    <li><a href="javascript:;" class="item" onclick="setnewprojectview()">Crear un proyecto</a></li>
                                     </ul>
                                 </div>
                                 </li>
@@ -76,12 +76,44 @@
                         </li>        
                     </div>
                     <li>
-                        <a class="docmenu" href="https://teban18.github.io/siguemeORG_documentation/dist/index.html"  target="_blank" onclick="sethomeview()"><i class="material-icons">description</i>Como usar Sigueme?</a>
-                    </li>
+                        <a class="docmenu" href="https://teban18.github.io/siguemeORG_documentation/dist/index.html"  target="_blank" onclick="sethomeview()"><i class="material-icons">description</i>Documentación</a>
+                        <a class="modal-trigger" href="#modal1"><i class="material-icons">face</i>Autor</a>
+                    </li>  
                 </ul>
             </div>
+            <div id="modal1" class="modal center white">
+                <div class="modal-content center">
+                    <div class="container">
+                        <div class="row">
+                          <div class="col l6 s12">
+                            <img src="assets/images/teban.PNG" alt="" style="width: fit-content;">
+                            <p class="grey-text text-lighten-1">Donde cabe una sonrisa cabe la longaniza</p>
+                          </div>
+                          <div class="col l4 offset-l2 s12">
+                            <h5 class="white-text">Links</h5>
+                            <ul>
+                              <li><a class="blue-grey-text text-accent-2" href="https://www.linkedin.com/in/andr%C3%A9s-esteban-posada-rinc%C3%B3n-94424b1a7/" target="blank"><i class="fab fa-linkedin-in"></i> Andrés Esteban Posada</a></li>
+                              <li><a class="blue-grey-text text-accent-2" href="https://github.com/Teban18" target="blank"><i class="fab fa-github"></i> Teban18</a></li>
+                              <li><a class="blue-grey-text text-accent-2" href="https://www.instagram.com/estebandido_18_/?hl=es" target="blank"><i class="fab fa-instagram"></i> Estebandido_18_</a></li>
+                              <li><a class="blue-grey-text text-accent-2" href="https://www.facebook.com/esteban.posada.3154/" target="blank"><i class="fab fa-facebook"></i> Esteban Dido</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="footer-copyright">
+                        <div class="container">
+                        © 2021
+                        </div>
+                      </div>
+                </div>
+                <div class="modal-footer white">
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Salir</a>
+                </div>
+            </div>
             <div id="navsco"></div>
-            <div id="contentpage"></div>       
+            <div id="contentpage"></div> 
+            
+            <br>
         </div>
         <!-- Compiled and minified JavaScript -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

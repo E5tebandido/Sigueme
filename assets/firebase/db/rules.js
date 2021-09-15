@@ -67,6 +67,7 @@ var projectStatusVerification = () => {
             childSnapshotuser.forEach ( (childSnapshot) => {
                 if(childSnapshot.val()['status'] == "confirmed"){
                     var childData = childSnapshot.val();
+                    console.log("childSnapshot.length")
                     renderProjects(childData['name'],childData['eth_address'],childData['balance'],childData['description'],childData['maxfounds'])
                 }
             })

@@ -1,17 +1,20 @@
-<div class="infocontainer">
+<div class="formcontainer">
   <div class="container">
+    <label style='float: right;'>
+      <a class='pink-text' href="javascript:;" onclick="sethomeview()"><b>No sé como crear un proyecto</b></a>
+    </label>
     <div class="white" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px; width: 100%;">     
       <form id="project-form" action="" onsubmit="sendProject();return false">
         <div class='input-field'>
           <label for="pname">Nombre del proyecto</label>
-          <input type="text" name="name" id="pname" class="validate" maxlength="120" minlength="15" required>
+          <input type="text" name="name" id="pname" class="validate" maxlength="99" minlength="15" required>
         </div>
         <div class='input-field'>
           <label for="pdescription">Descripción</label>
           <textarea class="materialize-textarea validate" name="description" id="pdescription" minlength="100" maxlength="200" required></textarea>
         </div>
         <div class='input-field'>
-          <label for="pid">Clave privada del proyecto (creéla)</label>
+          <label for="pid">Clave privada del proyecto (creéla y guardela)</label>
           <input type="text" name="id" id="pid" class="validate" minlength="2" required>
         </div>
         <div class='input-field'>
@@ -33,7 +36,7 @@
         <div class='row'>
           <label for="">documento(s) de constitución del proyecto o legales, debidamente aprobados 
             <div class="file-field input-field">
-              <div class="btn cyan lighten-3">
+              <div class="btn  N/A transparent grey-text">
                 <span>File</span>
                 <input type="file" multiple>
               </div>
@@ -45,7 +48,7 @@
         </div>
         <center>
           <div class='row'>
-            <input type="submit" class="btn halfway-fab purple lighten-3 waves-effect white-text" style="border-radius:20px;">
+            <input type="submit" class="btn halfway-fab N/A transparent blue-grey-text text-accent-2" style="border-radius:20px;" value="Crear proyecto">
             </input>
           </div>
         </center>

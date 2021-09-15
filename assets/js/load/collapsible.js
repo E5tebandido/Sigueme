@@ -1,5 +1,5 @@
 var loadCollapsible = () => {
-    $('.collapsible').collapsible({
-
+    $('.collapsible.popout').collapsible({
+        
     })
 }

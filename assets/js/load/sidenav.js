@@ -1,6 +1,6 @@
 var loadSideNav = () => {
     $('.button-collapse').sideNav({
-        menuWidth: 300, 
+        menuWidth: 256,
         edge: 'left', 
         closeOnClick: false, 
         draggable: true
