@@ -21,8 +21,9 @@ const Tx = async (amount,address,curaccount,instance) => {
                     'transaction_hash' : tx.transactionHash,
                     'transaction_index' : tx.transactionIndex
                 }*/
-                querySender("tx",tx)
+                querySender(" tx", tx)
                 Materialize.toast("Transacción exitosa con hash : " + tx.blockHash, 3000, 'green')
+                resetForm("donation-form")
             })
             .catch(function(error){
                 querySender("tx_failed",error.message)

@@ -32,7 +32,7 @@ var sendEntity = () => {
         'balance' : 0
     }  
     entityIdVerification(table,data) 
-    $("#ong-form").trigger("reset")
+    resetForm("ong-form")
 }
 
 

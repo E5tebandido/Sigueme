@@ -26,6 +26,6 @@ var sendProject = () => {
         'maxfounds' : maxfounds
     }
     project_entityIdVerification(table,data)
-    $("#project-form").trigger("reset")
+    resetForm("project-form")
 }
 

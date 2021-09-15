@@ -5,6 +5,7 @@ var signin = () => {
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(() => {
         Materialize.toast("Ingreso exitoso", 2000, 'green')
+        resetForm("signinform")
     })
     .catch((error) => {
         var errorMessage = error.message;
