@@ -9,7 +9,7 @@ var getOneProject = (address,name,balance,location,description,maxfounds,missing
     <div class="col s12 m12">
     <p class="information">
         <label for="">Cuenta ethereum del proyecto</label>
-        <input type="text" id="p_address" value="${address}" style="border-bottom: whitesmoke;" readonly>
+        <input type="text" id="p_address" value="${address}" style="border-bottom: whitesmoke; text-align:center;" readonly>
     </p>
     </div>
     <div class="row">
@@ -31,7 +31,8 @@ var getOneProject = (address,name,balance,location,description,maxfounds,missing
             <h6 class="blue-grey-text text-accent-2" >Fondos faltantes</h6>
             <p> ${missingfounds} wei</p>
             <progress max="${missingfounds}" value="0"></progress>
-        </div>  
+        </div> 
+        </center> 
     </div>
     `;
 

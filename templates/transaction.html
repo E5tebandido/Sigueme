@@ -1,21 +1,19 @@
 <div class="infocontainer">
     <div class="container">
+      <center>
       <div id="transactionpanel" class="white" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px; width: 100%;">   
-        <form id="donation-form">
+        <form id="donation-form" action="" onsubmit="newContract();return false">
             <div class='input-field'>
                 <label for="">Cantidad de wei a donar</label>
-                <input type="number" id="amount" class="validate" required>
+                <input type="number" id="amount" class="validate" style="text-align: center;" required>
             </div>
-            <center>
             <div class='row'>
-                <a id="btndonate" class="btnpro btn halfway-fab purple lighten-3 waves-effect white-text" style="border-radius:20px;" onclick="newContract()" disabled>
-                    Donar &nbsp;
-                    <i class="far fa-heart"></i>
-                </a>
+              <input id="btndonate" type="submit" class="btnpro btn halfway-fab purple lighten-3 waves-effect white-text" style="border-radius:20px;" value="Donar" disabled>
+              </input>    
             </div>
-            </center>
         </form>
       </div>
+      </center>
     </div>  
     <br>    
   </div>
