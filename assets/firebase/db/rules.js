@@ -80,7 +80,7 @@ var projectsAccountVerification = function(address) {
         snapshot.forEach ( function (childSnapshotuser) {
             childSnapshotuser.forEach ( function (childSnapshot) {
                 if(childSnapshot.val()['eth_address'] == address){
-                    var childData = childSnapshot.val();
+                    var childData = childSnapshot.val()
                     missingfounds = childData['maxfounds'] - childData['balance']
                     settransactionview(childData['eth_address'],childData['name'],childData['balance'],childData['location'],childData['description'],childData['maxfounds'], missingfounds)
                 }
@@ -89,11 +89,11 @@ var projectsAccountVerification = function(address) {
     })
 }
 
-var historialAprovedVerification = function(){
-    firebase.database().ref('tx').on('value', function(snapshot) {
-        snapshot.forEach ( function (childSnapshotuser) {
-            childSnapshotuser.forEach ( function (childSnapshot) {
-                var childData = childSnapshot.val();
+var historialAprovedVerification = () => {
+    firebase.database().ref('tx').on('value', snapshot => {
+        snapshot.forEach ( childSnapshotuser => {
+            childSnapshotuser.forEach ( childSnapshot => {
+                var childData = childSnapshot.val()
                 renderAproveds(childData['blockHash'],childData['from'],childData['transactionHash'])
             })
         })
@@ -118,5 +118,25 @@ var seeMyProjects = () => {
             var childData = childSnapshot.val() 
             renderProjects(childData['name'],childData['eth_address'],childData['balance'],childData['description'],childData['maxfounds'])
         })
-    });
+    })
+}
+
+var seeMyFaileds = () => {
+    var userId = firebase.auth().currentUser.uid;
+    firebase.database().ref('tx_failed/'+userId).on("value", snapshot => {
+        snapshot.forEach ( childSnapshot => {
+            var childData = childSnapshot.val() 
+            renderFaileds(childData['value'],childData['reason'],childData['transactionHash'])
+        })
+    })
+}
+
+var seeMyAproveds = () => {
+    var userId = firebase.auth().currentUser.uid;
+    firebase.database().ref('tx/'+userId).on("value", snapshot => {
+        snapshot.forEach ( childSnapshot => {
+            var childData = childSnapshot.val() 
+            renderAproveds(childData['blockHash'],childData['from'],childData['transactionHash'])
+        })
+    })
 }

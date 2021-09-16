@@ -3,6 +3,10 @@ var clearContainer = (contenedor) => {
     a.empty()
 }
 
-var buttonStatus = (idbutton,status) => {
-    $("#"+idbutton).attr("disabled",status)
+var buttonStatus = (idbutton,attr,status) => {
+    $("#"+idbutton).attr(attr,status)
 } 
+
+var loadData = (container,data) => {
+    $("#"+container).append(data)
+}

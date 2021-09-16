@@ -5,7 +5,7 @@ $(document).on('click', '.btnpro', (event) => {
 });
 
 var getOneProject = (address,name,balance,location,description,maxfounds,missingfounds) => {
-    const data = `
+    let data = `
     <div class="col s12 m12">
     <p class="information">
         <label for="">Cuenta ethereum del proyecto</label>
@@ -35,8 +35,7 @@ var getOneProject = (address,name,balance,location,description,maxfounds,missing
         </center> 
     </div>
     `;
-
-    $("#transactionpanel").append(data)
-    $("#btndonate").attr("disabled",false)
+    loadData("transactionpanel",data)
+    buttonStatus( "btndonate", "disabled", false)
     sessionVerificationForActions()
 }

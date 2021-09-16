@@ -43,6 +43,13 @@ var setnewprojectview = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/newproject.html", () => {
         sessionVerificationForActions()
+        if (window.ethereum !== 'undefined') {
+            accountForProject()
+            console.log("metamask esta disponible")
+        } else {
+            Materialize.toast("Instale metamask", 4000, 'red')
+            window.open("https://metamask.io/download.html","_blank")
+        } 
     })
 }
 
@@ -84,5 +91,21 @@ var setSeeMyProjects = () => {
     $("#contentpage").load("templates/seeproject.html", () => {
         sessionVerificationForVisualization()
         seeMyProjects()
+    })
+}
+
+var setSeeMyFaileds = () => {
+    clearContainer("contentpage")
+    $("#contentpage").load("templates/historialfailed.html", () => {
+        sessionVerificationForVisualization()
+        seeMyFaileds()
+    })
+}
+
+var setSeeMyAproveds = () => {
+    clearContainer("contentpage")
+    $("#contentpage").load("templates/historialaprove.html", () => {
+        sessionVerificationForVisualization()
+        seeMyAproveds()
     })
 }

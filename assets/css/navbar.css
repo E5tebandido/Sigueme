@@ -16,12 +16,21 @@
     margin-left: 0.5rem;
   }
 
+  #sessionlogo {
+    margin-top: -9%;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     .App-logo {
       animation: App-logo-spin infinite 20s linear;
     }
   }
 
+  @media only screen and (max-width: 600px) {
+    #sessionlogo {
+      margin-top: 14%;
+    }
+  }
 
 
  

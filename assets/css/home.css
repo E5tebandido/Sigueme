@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-
 .infocontainer {
     width: 90%;
     align-items: center;
@@ -55,7 +54,20 @@
     filter:brightness(1.1);
 }
 
+.collapsible {
+    border-radius: 50px;
+}
 
+.collapsible li{
+    border-radius: 50px;
+}
+.collapsible-header {
+    border-radius: 50px;
+}
+
+.collapsible-body {
+    border-radius: 50px;
+}
 
 @media only screen and (max-width: 800px) {
     .carousel  {

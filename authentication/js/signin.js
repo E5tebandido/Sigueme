@@ -5,7 +5,7 @@ var signin = () => {
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(() => {
         Materialize.toast("Ingreso exitoso", 2000, 'green')
-        resetForm("signinform")
+        sethomeview()
     })
     .catch((error) => {
         var errorMessage = error.message;
@@ -19,6 +19,7 @@ var googleSignin = () => {
     firebase.auth().signInWithPopup(provider)
     .then(() => {
         Materialize.toast("Ingreso exitoso", 2000, 'green')
+        sethomeview()
     })
     .catch((error) => {
         var errorMessage = error.message;
@@ -32,6 +33,7 @@ var facebookSignin = () => {
     firebase.auth().signInWithPopup(provider)
     .then(() => {
         Materialize.toast("Ingreso exitoso", 2000, 'green')
+        sethomeview()
     })
     .catch((error) => {
         var errorMessage = error.message;

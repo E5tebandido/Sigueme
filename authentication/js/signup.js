@@ -5,7 +5,7 @@ var signup = () => {
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(() => {
             Materialize.toast("Registrado exitosamente", 2000, 'green')
-            resetForm("signupform")
+            sethomeview()
         })
         .catch((error) => {
             var errorMessage = error.message;

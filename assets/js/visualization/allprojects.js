@@ -1,5 +1,5 @@
 var renderProjects = (name,address,balance,description,maxfounds) => {
-    const data = `
+    let data = `
     <div class="col s12 m12">
         <center>
         <div class="container">
@@ -18,5 +18,5 @@ var renderProjects = (name,address,balance,description,maxfounds) => {
         </center>
     </div>
     `;
-    $("#projectpanel").append(data)
+    loadData("projectpanel",data)
 }

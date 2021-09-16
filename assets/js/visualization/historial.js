@@ -1,5 +1,5 @@
 var renderAproveds = (blockhash,from,transactionhash) => {
-    const data = `
+    let adata = `
     <div class="col s12 m12">
         <div class="container">
             <div class="white" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px; width: 100%;">
@@ -13,11 +13,11 @@ var renderAproveds = (blockhash,from,transactionhash) => {
         <br>
     </div>
     `;
-    $("#historialaprovepanel").append(data)
+    loadData("historialaprovepanel", adata)
 }
 
 var renderFaileds = (accountp,reason,transactionhash) => {
-    const data = `
+    let fdata = `
     <div class="col s12 m12">
         <div class="container">
             <div class="white" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px; width: 100%;"
@@ -31,5 +31,5 @@ var renderFaileds = (accountp,reason,transactionhash) => {
         <br>
     </div>
     `;
-    $("#historialfailedpanel").append(data)
+    loadData("historialfailedpanel", fdata)
 }
