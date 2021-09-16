@@ -105,7 +105,7 @@ var historialFailedVerification = function(){
         snapshot.forEach ( function (childSnapshotuser) {
             childSnapshotuser.forEach ( function (childSnapshot) {
                 var childData = childSnapshot.val();
-                renderFaileds(childData['argument'],childData['code'],childData['transactionHash'])
+                renderFaileds(childData['value'],childData['reason'],childData['transactionHash'])
             })
         })
     })

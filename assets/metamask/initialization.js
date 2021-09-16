@@ -1,14 +1,9 @@
 
-var metamaskIsAviable = async function () {
-    if (typeof window.ethereum !== 'undefined') {
-        try {
-            Materialize.toast('Metamask está disponible',2000,'green')
-        } catch (error) {
-            Materialize.toast('Metamask error :' + error.message,2000,'red')
-        }
+const metamaskIsAviable = () => {
+    if (window.ethereum !== 'undefined') {
+        web3 = new Web3(web3.currentProvider)
     } else {
-        Materialize.toast('Instala metamask', 5000, 'yellow')
-        window.location.href = "https://metamask.io/download.html"
+        window.open("https://metamask.io/download.html","_blank")
     } 
 }
 

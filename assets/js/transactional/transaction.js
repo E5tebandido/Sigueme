@@ -1,4 +1,4 @@
-const Tx = async (amount,address,curaccount,instance) => {
+var Tx = async (amount,address,curaccount,instance) => {
     try {  
         await instance.methods.make_transaction(amount, address, true, true)
         .send({ 
@@ -22,17 +22,18 @@ const Tx = async (amount,address,curaccount,instance) => {
                     'transaction_index' : tx.transactionIndex
                 }*/
                 querySender(" tx", tx)
-                Materialize.toast("Transacción exitosa con hash : " + tx.blockHash, 3000, 'green')
+                Materialize.toast("Transacción aprobada número : " + tx.blockHash, 4000, 'green')
                 resetForm("donation-form")
             })
-            .catch(function(error){
-                querySender("tx_failed",error.message)
-                Materialize.toast("Transacción no aprobada : " + error, 3000, 'red')
-                
+            .catch( (error) => {
+                querySender("tx_failed",error)
+                Materialize.toast("Transacción no aprobada : " + error.message, 4000, 'red')
+                resetForm("donation-form")
             })      
     } catch (error) {
-        querySender("tx_failed",error.message)
+        querySender("tx_failed",error)
         Materialize.toast("Transacción no aprobada : "+error.message, 3000, 'red')
+        resetForm("donation-form")
     }  
 }
 
