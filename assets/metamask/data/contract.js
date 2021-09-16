@@ -6,6 +6,7 @@ var newContract = async () => {
         var amount = $("#amount").val()
         var address = $("#p_address").val() 
         console.log(ethereum.isConnected())
+        buttonStatus( "btndonate", true)
         var currentaccount = await getCurrentAccount()
         Materialize.toast('Cuenta ethereum con la que vas a transferir : '+ currentaccount , 2000, 'blue')
         conn = await new Web3(window.ethereum)    
@@ -23,7 +24,8 @@ var newContract = async () => {
                 Tx(amount,address, currentaccount, instance) 
             })
             .catch((error)=>{
-                Materialize.toast("Transacción rechazada por el usuario" , 2000, 'red')
-                resetForm("donation-form")
+                Materialize.toast( "Transacción rechazada por el usuario" , 2000, 'red')
+                resetForm( "donation-form")
+                buttonStatus( "btndonate", false)
             })
 }

@@ -18,7 +18,7 @@ var sessionVerificationForNavBar = () => {
             `;
             clearContainer("dropdown1")
             $("#dropdown1").append(signedin)
-            $("#sessionlogo").attr('class', 'fas fa-user-astronaut fa-2x');
+            $("#sessionlogo").attr('class', 'fas fa-user-astronaut fa-2x')
         }else{
             console.log("no hay ninguna sesión activa")
             const signedout = `
@@ -32,3 +32,12 @@ var sessionVerificationForNavBar = () => {
     })   
 }
 
+var sessionVerificationForVisualization = () => {
+    firebase.auth().onAuthStateChanged(user => {
+        if(user) {
+            $('#projectlogo').attr('class', 'fas fa-user-astronaut fa-3x')
+            $('#approvedlogo').attr('class', 'fas fa-user-astronaut fa-3x')
+            $('#failedlogo').attr('class', 'fas fa-user-astronaut fa-3x')
+        }
+    })
+}

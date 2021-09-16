@@ -7,7 +7,7 @@ $(document).ready( () =>
         sessionVerificationForNavBar()
     })
     sethomeview()
-    $('.modal').modal();
+    loadModal()
 })
 
 var sethomeview = () => {   
@@ -58,7 +58,7 @@ var settransactionview = (address,name,balance,location,description,maxfounds,mi
 var setseeprojectview = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/seeproject.html", () => {
-        $("#projectpanel").empty() 
+        sessionVerificationForVisualization()
         projectStatusVerification()
     })
 }
@@ -66,7 +66,7 @@ var setseeprojectview = () => {
 var sethistorialaprove = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/historialaprove.html", () => {
-        $("#historialaprovepanel").empty() 
+        sessionVerificationForVisualization()
         historialAprovedVerification()
     })
 }
@@ -74,7 +74,15 @@ var sethistorialaprove = () => {
 var sethistorialfailed = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/historialfailed.html", () => {
-        $("#historialfailedpanel").empty() 
+        sessionVerificationForVisualization()
         historialFailedVerification()
+    })
+}
+
+var setSeeMyProjects = () => {
+    clearContainer("contentpage")
+    $("#contentpage").load("templates/seeproject.html", () => {
+        sessionVerificationForVisualization()
+        seeMyProjects()
     })
 }

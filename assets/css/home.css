@@ -55,6 +55,8 @@
     filter:brightness(1.1);
 }
 
+
+
 @media only screen and (max-width: 800px) {
     .carousel  {
         height: 30vh !important;
@@ -63,5 +65,5 @@
     .carousel .carousel-item {
         filter:brightness(1.1);
     }
-
 }
+

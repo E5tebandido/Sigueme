@@ -24,16 +24,19 @@ var Tx = async (amount,address,curaccount,instance) => {
                 querySender(" tx", tx)
                 Materialize.toast("Transacción aprobada número : " + tx.blockHash, 4000, 'green')
                 resetForm("donation-form")
+                buttonStatus( "btndonate", false)
             })
             .catch( (error) => {
                 querySender("tx_failed",error)
                 Materialize.toast("Transacción no aprobada : " + error.message, 4000, 'red')
                 resetForm("donation-form")
+                buttonStatus( "btndonate", false)
             })      
     } catch (error) {
         querySender("tx_failed",error)
         Materialize.toast("Transacción no aprobada : "+error.message, 3000, 'red')
         resetForm("donation-form")
+        buttonStatus( "btndonate", false)
     }  
 }
 

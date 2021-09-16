@@ -1,0 +1,3 @@
+var loadModal = () => {
+    $('.modal').modal();
+}

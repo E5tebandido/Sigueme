@@ -10,7 +10,7 @@ var entityIdVerification = (table,data) => {
             querySender(table.failed,data)
             Materialize.toast('Nit en uso', 4000, 'red')
         }
-    });
+    })
 }
 
 var projectAccountVerification = (table,data,eth) => {
@@ -49,11 +49,11 @@ var project_entityIdVerification = (table,data) => {
     var userId = firebase.auth().currentUser.uid;
     firebase.database().ref('entity/'+userId).orderByChild("id").equalTo(data.parentid).once("value",snapshot => {
         if (snapshot.exists()){
-            Materialize.toast('La ONG con la clave ' +data.parentid+ ' existe', 4000, 'green')
+            Materialize.toast('La clave de la ONG existe', 4000, 'green')
             var auxid = data.parentid
             entityStatusVerification(table,data,auxid)
         }else {
-            data['reason'] = 'Clave unica de la ONG no existe'
+            data['reason'] = 'La clave unica no existe'
             querySender(table.failed,data)
             Materialize.toast(data.reason, 4000, 'red')
         }
@@ -62,11 +62,11 @@ var project_entityIdVerification = (table,data) => {
 
 
 var projectStatusVerification = () => {
-    firebase.database().ref('project').on('value', (snapshot) => {
-        snapshot.forEach ( (childSnapshotuser) => {
-            childSnapshotuser.forEach ( (childSnapshot) => {
+    firebase.database().ref('project').on('value', snapshot => {
+        snapshot.forEach ( childSnapshotuser => {
+            childSnapshotuser.forEach ( childSnapshot => {
                 if(childSnapshot.val()['status'] == "confirmed"){
-                    var childData = childSnapshot.val();
+                    var childData = childSnapshot.val()
                     renderProjects(childData['name'],childData['eth_address'],childData['balance'],childData['description'],childData['maxfounds'])
                 }
             })
@@ -100,13 +100,23 @@ var historialAprovedVerification = function(){
     })
 } 
 
-var historialFailedVerification = function(){
-    firebase.database().ref('tx_failed').on('value', function(snapshot) {
-        snapshot.forEach ( function (childSnapshotuser) {
-            childSnapshotuser.forEach ( function (childSnapshot) {
-                var childData = childSnapshot.val();
+var historialFailedVerification = () => {
+    firebase.database().ref('tx_failed').on('value', snapshot => {
+        snapshot.forEach ( childSnapshotuser => {
+            childSnapshotuser.forEach ( childSnapshot => {
+                var childData = childSnapshot.val()
                 renderFaileds(childData['value'],childData['reason'],childData['transactionHash'])
             })
         })
     })
 } 
+
+var seeMyProjects = () => {
+    var userId = firebase.auth().currentUser.uid;
+    firebase.database().ref('project/'+userId).on("value", snapshot => {
+        snapshot.forEach ( childSnapshot => {
+            var childData = childSnapshot.val() 
+            renderProjects(childData['name'],childData['eth_address'],childData['balance'],childData['description'],childData['maxfounds'])
+        })
+    });
+}
