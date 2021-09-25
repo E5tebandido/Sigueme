@@ -21,6 +21,9 @@ var Tx = async (amount,address,curaccount,instance) => {
                     'transaction_hash' : tx.transactionHash,
                     'transaction_index' : tx.transactionIndex
                 }*/
+                tx['origin'] = curaccount
+                tx['target'] = address
+                tx['amount'] = amount
                 querySender("tx", tx)
                 Materialize.toast("Transacción aprobada número : " + tx.blockHash, 4000, 'green')
                 resetForm("donation-form")

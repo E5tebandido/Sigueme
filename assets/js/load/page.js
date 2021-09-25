@@ -43,13 +43,6 @@ var setnewprojectview = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/newproject.html", () => {
         sessionVerificationForActions()
-        if (window.ethereum !== 'undefined') {
-            accountForProject()
-            console.log("metamask esta disponible")
-        } else {
-            Materialize.toast("Instale metamask", 4000, 'red')
-            window.open("https://metamask.io/download.html","_blank")
-        } 
     })
 }
 

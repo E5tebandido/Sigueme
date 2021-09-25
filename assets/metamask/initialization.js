@@ -1,10 +1,21 @@
 
-const metamaskIsAviable = () => {
-    if (window.ethereum !== 'undefined') {
-        web3 = new Web3(web3.currentProvider)
-    } else {
-        window.open("https://metamask.io/download.html","_blank")
-    } 
+const metamaskInitializationForAddress = async () => {
+    if (typeof web3 !== 'undefined') {
+        Materialize.toast('Metamask está instalado', 2000, 'green')
+        await accountForProject()
+      } else {
+        Materialize.toast('Metamask no está instalado', 2000, 'red')
+        window.open('https://metamask.io/download', '_blank').focus()
+      }
 }
 
+const metamaskInitializationForContract = async () => {
+    if (typeof web3 !== 'undefined') {
+        Materialize.toast('Metamask está instalado', 2000, 'green')
+        await newContract()
+      } else {
+        Materialize.toast('Metamask no está instalado', 2000, 'red')
+        window.open('https://metamask.io/download', '_blank').focus()
+      }
+}
 
