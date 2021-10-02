@@ -33,7 +33,7 @@
                     </li>  
                     <li class="homemenu "><a href="javascript:;" onclick="sethomeview()"><i class="material-icons ">home</i>Inicio</a></li>
                     <li><a href="javascript:;" class="item" onclick="setnewentityview()"><i class="material-icons ">store</i>Inscribír Ong</a></li>
-                    <li><a href="javascript:;" class="item " onclick="setnewprojectview()"><i class="material-icons ">plus_one</i>Crear proyecto</a></li>
+                    <li><a href="javascript:;" class="item " onclick="setseeentitiyview()"><i class="material-icons ">plus_one</i>Crear proyecto</a></li>
                     <li><a href="javascript:;" class="item purple-text" onclick="setseeprojectview()"><i class="material-icons purple-text">favorite_border</i>Dona</a></li>
                     <li><a href="javascript:;" class="item" onclick="sethistorialaprove()"><i class="material-icons ">check</i>Aprobadas</a></li>
                     <li><a href="javascript:;" class="item" onclick="sethistorialfailed()"><i class="material-icons ">sms_failed</i>Fallidas</a></li>  
@@ -88,8 +88,9 @@
         <script src="assets/js/creation/newentity.js"></script>
         <script src="assets/js/creation/newproject.js"></script>
         <script src="assets/js/transactional/transaction.js"></script>
-        <script src="assets/firebase/db/query.js"></script>
-        <script src="assets/firebase/db/rules.js"></script>
+        <script src="assets/firebase/db/get.js"></script>
+        <script src="assets/firebase/db/delete.js"></script>
+        <script src="assets/firebase/db/set.js"></script>
         <script src="assets/firebase/firebase-configuration.js"></script>
         <script src="assets/js/load/content.js"></script>
         <script src="assets/js/load/carousel.js"></script>
@@ -107,5 +108,6 @@
         <script src="../authentication/js/signup.js" type="text/javascript"></script>
         <script src="../authentication/js/session.js"></script>
         <script src="../authentication/js/signout.js"></script>
+        <script src="./assets/js/visualization/allentities.js"></script>
     </body>
 </html>

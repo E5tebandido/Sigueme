@@ -31,7 +31,7 @@ var sendEntity = () => {
         'status' : "confirmed",
         'balance' : 0
     }  
-    entityIdVerification(table,data) 
+    querySet (table.approved, data, id)
     resetForm("ong-form")
 }
 

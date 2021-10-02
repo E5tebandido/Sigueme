@@ -39,27 +39,29 @@ var setnewentityview = () => {
     })
 }
 
-var setnewprojectview = () => {
-    clearContainer("contentpage")
-    $("#contentpage").load("templates/newproject.html", () => {
-        sessionVerificationForActions()
-    })
-}
-
-var settransactionview = (address,name,balance,location,description,maxfounds,missingfounds) => {
+var getclickedproject = (proj) => {
+    let id = proj.id
     clearContainer("contentpage")
     $("#contentpage").load("templates/transaction.html", () => {
-        Materialize.toast('cuenta del proyecto : '+address, 2000, 'blue')
-        getOneProject(address,name,balance,location,description,maxfounds,missingfounds)
+        sessionVerificationForActions()
+        seeOneProject(id)
     })
 }
 
+var getclickedentity = (ent) => {
+    let id = ent.id
+    clearContainer("contentpage")
+    $("#contentpage").load("templates/newproject.html", () => {
+        formin("parentid",id)
+        buttonStatus("parentid","disabled",true)
+    })
+}
 
 var setseeprojectview = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/seeproject.html", () => {
         sessionVerificationForVisualization()
-        projectStatusVerification()
+        seeAllProjects()
     })
 }
 
@@ -67,7 +69,7 @@ var sethistorialaprove = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/historialaprove.html", () => {
         sessionVerificationForVisualization()
-        historialAprovedVerification()
+        seeAllAproveds()
     })
 }
 
@@ -75,7 +77,7 @@ var sethistorialfailed = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/historialfailed.html", () => {
         sessionVerificationForVisualization()
-        historialFailedVerification()
+        seeAllFaileds()
     })
 }
 
@@ -100,5 +102,24 @@ var setSeeMyAproveds = () => {
     $("#contentpage").load("templates/historialaprove.html", () => {
         sessionVerificationForVisualization()
         seeMyAproveds()
+    })
+}
+
+var deleteMyProjects = (delproj) => {
+    console.log("hola")
+    let id = delproj.id
+    deleteMyProject(id)
+}
+
+var editMyProjects = (edproj) => {
+    console.log("hola")
+    let id = edproj.id
+    editMyProject(id)
+}
+
+var setseeentitiyview = () => {
+    clearContainer("contentpage")
+    $("#contentpage").load("templates/seeentities.html", () => {
+        sessionVerificationForCreateProject()
     })
 }

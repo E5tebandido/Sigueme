@@ -1,14 +1,8 @@
-
-
-$(document).on('click', '.btnpro', (event) => {
-    projectsAccountVerification(event.target.id)
-});
-
 var getOneProject = (address,name,balance,location,description,maxfounds,missingfounds) => {
     let data = `
     <div class="col s12 m12">
     <p class="information">
-        <label for="">Cuenta ethereum del proyecto</label>
+        <label for="p_address">Cuenta ethereum del proyecto</label>
         <input type="text" id="p_address" value="${address}" style="border-bottom: whitesmoke; text-align:center;" readonly>
     </p>
     </div>
@@ -22,15 +16,9 @@ var getOneProject = (address,name,balance,location,description,maxfounds,missing
         <p>${location}</p>
         </div>
         <div class="col s12 m12">
-            <h6 class="blue-grey-text text-accent-2" >Fondos propuestos</h6>
-            <p> ${maxfounds} wei</p>
-            <progress max="${maxfounds}" value="${maxfounds}"></progress>
             <h6 class="blue-grey-text text-accent-2" >Fondos recaudados</h6>
-            <p> ${balance} wei</p>
+            <p> ${maxfounds} wei</p>
             <progress max="${maxfounds}" value="${balance}"></progress>
-            <h6 class="blue-grey-text text-accent-2" >Fondos faltantes</h6>
-            <p> ${missingfounds} wei</p>
-            <progress max="${missingfounds}" value="0"></progress>
         </div> 
         </center> 
     </div>
@@ -39,3 +27,5 @@ var getOneProject = (address,name,balance,location,description,maxfounds,missing
     buttonStatus( "btndonate", "disabled", false)
     sessionVerificationForActions()
 }
+
+

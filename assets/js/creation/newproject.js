@@ -18,14 +18,14 @@ var sendProject = () => {
         'id' : id,
         'name' : name,
         'location' : location,
-        'eth_address' : eth_address,
         'legaldoc' : legaldoc,
+        'eth_address' : eth_address,
         'status' : "confirmed",
         'balance': 0,
         'description' : description,
         'maxfounds' : maxfounds
     }
-    project_entityIdVerification(table,data)
+    querySet (table.approved, data, id)
     resetForm("project-form")
 }
 

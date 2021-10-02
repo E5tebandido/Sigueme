@@ -1,7 +1,7 @@
 var sessionVerificationForActions = () => {
     firebase.auth().onAuthStateChanged(user => {
         if(user){
-            console.log("solicitud aceptada", user.email)
+            
         }else{
             setsigninview()
         }
@@ -44,4 +44,14 @@ var sessionVerificationForVisualization = () => {
             buttonStatus( "failedlogo", "class", "fas fa-user-astronaut fa-3x")
         }
     })
+}
+
+var sessionVerificationForCreateProject = () => {
+    firebase.auth().onAuthStateChanged(user => {
+        if(user){
+            seeMyEntities()
+        }else{
+            setsigninview()
+        }
+    })   
 }

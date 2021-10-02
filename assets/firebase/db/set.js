@@ -1,8 +1,7 @@
-var querySender = function(table,data) {
+var querySet = function(table, data, id) {
     callFirebase()
-    var userId = firebase.auth().currentUser.uid;
-    console.log(userId)
-    firebase.database().ref(table+"/"+userId).push(data)
+    userId = firebase.auth().currentUser.uid
+    firebase.database().ref(table+"/"+userId).child(id).set(data)
     .then(function(){
         Materialize.toast('Solicitud almacenada en la base de datos', 3000, 'green')
     })
@@ -10,4 +9,6 @@ var querySender = function(table,data) {
         Materialize.toast('Solicitud rechazada',3000, 'red')
     });
 }
+
+
 

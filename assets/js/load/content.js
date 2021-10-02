@@ -10,3 +10,7 @@ var buttonStatus = (idbutton,attr,status) => {
 var loadData = (container,data) => {
     $("#"+container).append(data)
 }
+
+var formin = (container,value) => {
+    $("#"+container).val(value)
+}
