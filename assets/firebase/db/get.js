@@ -41,16 +41,17 @@ var seeAllFaileds = () => {
 
 
 var seeOneProject = (id) => {
-    if (firebase.auth().currentUser !== null) {
-        var userId = firebase.auth().currentUser.uid
-        firebase.database().ref('project').child(userId).child(id).on('value', snapshot => {
-            if(snapshot.val()['id'] == id){
-                var childData = snapshot.val()
-                missingfounds = childData['maxfounds'] - childData['balance']
-                getOneProject(childData['eth_address'],childData['name'],childData['balance'],childData['location'],childData['description'],childData['maxfounds'], missingfounds)
-            }
+    firebase.database().ref('project').on('value', snapshot => {
+        snapshot.forEach ( childSnapshotuser => {
+            childSnapshotuser.forEach ( childSnapshotId => {
+                var childData = childSnapshotId.val()
+                if(childData['id'] == id){
+                    missingfounds = childData['maxfounds'] - childData['balance']
+                    getOneProject(childData['eth_address'],childData['name'],childData['balance'],childData['location'],childData['description'],childData['maxfounds'], missingfounds)
+                }      
+            })
         })
-    }
+    })
 }
 
 

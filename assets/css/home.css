@@ -69,9 +69,9 @@
     border-radius: 50px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
     .carousel  {
-        height: 100vh !important;
+        height: 30vh !important;
     }
 
     .carousel .carousel-item {

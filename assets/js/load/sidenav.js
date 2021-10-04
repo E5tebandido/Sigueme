@@ -2,7 +2,7 @@ var loadSideNav = () => {
     $('.button-collapse').sideNav({
         menuWidth: 256,
         edge: 'left', 
-        closeOnClick: false, 
+        closeOnClick: true, 
         draggable: true
     });
 }
