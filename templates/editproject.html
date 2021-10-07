@@ -1,0 +1,69 @@
+<div class="formcontainer">
+    <center>
+    <h5 class="blue-grey-text text-accent-2">Cuéntanos del proyecto de tu ong, no lo inventes!</h5>
+    <br>
+    <div class="container">
+      <div class="row white" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px; width: 100%;">     
+        <form id="project-form" onsubmit="sendEditProject();return false">
+          <div class='input-field'>
+            <label for="pname">Nombre del proyecto</label>
+            <input type="text" name="name" id="epname" class="validate" maxlength="99" minlength="10" required>
+          </div>
+          <div class='input-field'>
+            <label for="pdescription">Descripción</label>
+            <textarea class="materialize-textarea validate" name="description" id="epdescription" minlength="100" maxlength="200" required></textarea>
+          </div>
+          <div class='input-field'>
+            <label for="pid"></label>
+            <input type="text" name="id" id="epid" class="validate" minlength="12" required>
+          </div>
+          <div class='input-field'>
+            <input type="text" name="location" id="eplocation" class="validate" required>
+            <label for="plocation">Ubicación</label>
+          </div>
+          <div class='input-field'>
+            <input type="text"  placeholder="Placeholder" name="p_id" id="eparentid" class="validate" required>
+            <label for="parentid"></label>
+          </div>
+          <div class='input-field'>
+            <label for="pmaxfounds">Meta económica </label>
+            <input type="number" name="p_id" id="epmaxfounds" class="validate" required> 
+          </div>
+          <div class='row'>
+            <label>cuenta ethereum que tendrá el proyecto 
+              <div class="file-field input-field">
+                <div class="btn  N/A transparent grey-text" onclick=" metamaskInitializationForAddress()" style="margin-left: 0cm;">
+                  <span>Obtener desde mi wallet</span>
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="validate" type="text" id="epethereum-adress" placeholder="Address" style="border-bottom: whitesmoke;" disabled required>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class='row'>
+            <label>documento(s) de constitución del proyecto o legales, debidamente aprobados 
+              <div class="file-field input-field">
+                <div class="btn  N/A transparent grey-text">
+                  <span>File</span>
+                  <input type="file" multiple>
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text" id="eplegaldoc" placeholder="Arrastre aquí" style="border-bottom: whitesmoke;" required>
+                </div>
+              </div>
+            </label>
+          </div>
+          <center>
+            <div class='row'>
+              <input type="submit" class="btn halfway-fab N/A transparent blue-grey-text text-accent-2" style="border-radius:20px;" value="Editar proyecto">
+              </input>
+            </div>
+          </center>
+        </form>
+        </form>
+      </div>
+    </div>
+    <br>
+    </center>
+  </div>

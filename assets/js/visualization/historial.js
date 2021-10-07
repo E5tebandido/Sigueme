@@ -1,13 +1,12 @@
-var renderAproveds = (blockhash,from,transactionhash) => {
+var renderAproveds = (donator,amount,target,date) => {
     let adata = `
     <div class="col s12 m12">
         <div class="container">
             <div class="white" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px; width: 100%;">
-                <h6 class="blue-grey-text accent-3" style="text-align:center;"><b>TX : ${transactionhash}</b></h6>
-                <p class="blue-grey-text accent-2">Hash del bloque que minó la transacción</p>
-                <p> ${blockhash}<p>
-                <p class="blue-grey-text accent-2">cuenta pública del donante</p>
-                <p> ${from}<p>     
+                <h6 class="blue-grey-text accent-3" style="text-align:center;"><b> ${donator}</b></h6>
+                <p> ${amount}<p>
+                <p> ${target}<p>
+                <p> ${date}<p>   
             </div>
         </div>
         <br>
@@ -16,16 +15,15 @@ var renderAproveds = (blockhash,from,transactionhash) => {
     loadData("historialaprovepanel", adata)
 }
 
-var renderFaileds = (accountp,reason,transactionhash) => {
+var renderFaileds = (donator,amount,target,date) => {
     let fdata = `
     <div class="col s12 m12">
         <div class="container">
-            <div class="white" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px; width: 100%;"
-                <h6 class="blue-grey-text accent-3" style="text-align:center;"><b>TX-f ${transactionhash}</b></h6>
-                <p class="blue-grey-text accent-2">Cuenta ethereum del proyecto</p>
-                <p> ${accountp}<p>
-                <p class="blue-grey-text accent-2">Razón de la falla</p>
-                <p> ${reason}<p>
+            <div class="white" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px; width: 100%;">
+                <h6 class="blue-grey-text accent-3" style="text-align:center;"><b> ${donator}</b></h6>
+                <p> ${amount}<p>
+                <p> ${target}<p>
+                <p> ${date}<p>   
             </div>
         </div>
         <br>

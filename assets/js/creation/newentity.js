@@ -1,7 +1,7 @@
 var sendEntity = () => {
     var name = $("#ename").val()
     var nit = $("#enit").val()
-    var id = $("#eid").val() 
+    var id = idGenerator()
     var phone = $("#ephone").val()
     var cel = $("#ecel").val()
     var email = $("#eemail").val()

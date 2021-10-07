@@ -16,11 +16,7 @@ var sessionVerificationForNavBar = () => {
             `;
             clearContainer("dropdown1")
             clearContainer("sessionname")
-            if (user.displayName != null) {
-                loadData( "sessionname", "<b>"+user.displayName+"</b>")
-            } else {
-                loadData( "sessionname", "<b>"+user.email+"</b>")
-            }
+            loadData( "sessionname", "<b>"+user.email+"</b>")
             loadData("dropdown1",signedin)
         }else{
             console.log("no hay ninguna sesión activa")
@@ -55,3 +51,4 @@ var sessionVerificationForCreateProject = () => {
         }
     })   
 }
+

@@ -2,12 +2,10 @@ var seeAllProjects = () => {
     firebase.database().ref('project').on('value', snapshot => {
         snapshot.forEach ( childSnapshotuser => {
             childSnapshotuser.forEach ( childSnapshotId => {
-                
-                    if(childSnapshotId.val()['status'] == "confirmed"){
-                        var childData = childSnapshotId.val()
-                        renderProjects(childData['name'],childData['id'],childData['balance'],childData['description'],childData['maxfounds'])
-                    }
-        
+                if(childSnapshotId.val()['status'] == "confirmed"){
+                    var childData = childSnapshotId.val()
+                    renderProjects(childData['name'],childData['id'],childData['balance'],childData['description'],childData['maxfounds'])
+                }
             })
         })
     })
@@ -17,10 +15,8 @@ var seeAllAproveds = () => {
     firebase.database().ref('tx').on('value', snapshot => {
         snapshot.forEach ( childSnapshotuser => {
             childSnapshotuser.forEach ( childSnapshotId => {
-                childSnapshotId.forEach ( child => {
-                    var childData = child.val()
-                    renderAproveds(childData['blockHash'],childData['from'],childData['transactionHash'])
-                })
+                var childData = childSnapshotId.val()
+                renderAproveds(childData['donator'],childData['amount'],childData['target'],childData['date'])
             })
         })
     })
@@ -30,10 +26,8 @@ var seeAllFaileds = () => {
     firebase.database().ref('tx_failed').on('value', snapshot => {
         snapshot.forEach ( childSnapshotuser => {
             childSnapshotuser.forEach ( childSnapshotId => {
-                childSnapshotId.forEach ( child => {
-                    var childData = child.val()
-                    renderFaileds(childData['value'],childData['reason'],childData['transactionHash'])
-                })
+                var childData = childSnapshotId.val()
+                renderFaileds(childData['donator'],childData['amount'],childData['target'],childData['date'])
             })
         })
     })
@@ -72,10 +66,8 @@ var seeMyFaileds = () => {
         var userId = firebase.auth().currentUser.uid
         firebase.database().ref('tx_failed').child(userId).on("value", snapshot => {
             snapshot.forEach ( snapshotId => {
-                snapshotId.forEach ( child => {
-                    var childData = child.val()
-                    renderFaileds(childData['value'],childData['reason'],childData['transactionHash'])
-                })
+                var childData = snapshotId.val()
+                renderFaileds(childData['donator'],childData['amount'],childData['target'],childData['date'])
             })
         })
     }
@@ -84,12 +76,10 @@ var seeMyFaileds = () => {
 var seeMyAproveds = () => {
     if (firebase.auth().currentUser !== null) {
         var userId = firebase.auth().currentUser.uid
-        firebase.database().ref('tx/'+userId).child(userId).on("value", snapshot => {
+        firebase.database().ref('tx').child(userId).on("value", snapshot => {
             snapshot.forEach ( snapshotId => {
-                snapshotId.forEach ( child => {
-                    var childData = child.val()
-                    renderAproveds(childData['blockHash'],childData['from'],childData['transactionHash'])
-                })
+                var childData = snapshotId.val()
+                renderAproveds(childData['donator'],childData['amount'],childData['target'],childData['date'])
             })
         })
     }
@@ -111,17 +101,18 @@ var editMyProject = (id) => {
     if (firebase.auth().currentUser !== null) {
         let userId = firebase.auth().currentUser.uid
         firebase.database().ref('project').child(userId).child(id).once("value",snapshot => {
-            $("#contentpage").load("templates/newproject.html", () => {
+            $("#contentpage").load("templates/editproject.html", () => {
                 let childData = snapshot.val() 
-                formin('parentid',childData['parentid'])
-                buttonStatus("parentid","disabled",true)
-                formin('pname',childData['name'])
-                formin('plocation',childData['location'])
-                formin('pid',childData['id'])
-                formin('pethereum-adress',childData['eth_address'])
-                formin('pdescription',childData['description'])
-                formin('pmaxfounds',childData['maxfounds'])
-                formin('plegaldoc',childData['legaldoc'])
+                formin('eparentid',childData['parentid'])
+                buttonStatus("eparentid","disabled",true)
+                buttonStatus("epid","disabled",true)
+                formin('epname',childData['name'])
+                formin('eplocation',childData['location'])
+                formin('epid',childData['id'])
+                formin('epethereum-adress',childData['eth_address'])
+                formin('epdescription',childData['description'])
+                formin('epmaxfounds',childData['maxfounds'])
+                formin('eplegaldoc',childData['legaldoc'])
             })            
         })
     }

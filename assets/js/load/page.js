@@ -106,13 +106,11 @@ var setSeeMyAproveds = () => {
 }
 
 var deleteMyProjects = (delproj) => {
-    console.log("hola")
     let id = delproj.id
     deleteMyProject(id)
 }
 
 var editMyProjects = (edproj) => {
-    console.log("hola")
     let id = edproj.id
     editMyProject(id)
 }

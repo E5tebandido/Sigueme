@@ -1,12 +1,12 @@
-var sendProject = () => {
-    var parentid = $("#parentid").val()
-    var name = $("#pname").val()
-    var location = $("#plocation").val()
-    var id = idGenerator()
-    var eth_address = $("#pethereum-adress").val()
-    var legaldoc = $("#plegaldoc").val()
-    var maxfounds = $("#pmaxfounds").val()
-    var description = $("#pdescription").val()
+var sendEditProject = () => {
+    var parentid = $("#eparentid").val()
+    var name = $("#epname").val()
+    var location = $("#eplocation").val()
+    var id = $("#epid").val()
+    var eth_address = $("#epethereum-adress").val()
+    var legaldoc = $("#eplegaldoc").val()
+    var maxfounds = $("#epmaxfounds").val()
+    var description = $("#epdescription").val()
     
     const table = {
         'approved': 'project',
@@ -28,4 +28,3 @@ var sendProject = () => {
     querySet (table.approved, data, id)
     resetForm("project-form")
 }
-
