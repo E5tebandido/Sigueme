@@ -1,12 +1,13 @@
 var sendProject = () => {
-    var parentid = $("#parentid").val()
-    var name = $("#pname").val()
-    var location = $("#plocation").val()
-    var id = idGenerator()
-    var eth_address = $("#pethereum-adress").val()
-    var legaldoc = $("#plegaldoc").val()
-    var maxfounds = $("#pmaxfounds").val()
-    var description = $("#pdescription").val()
+    let parentid = $("#parentid").val()
+    let name = $("#pname").val()
+    let location = $("#plocation").val()
+    let id = idGenerator()
+    let icon = a = loadIcon()
+    let eth_address = $("#pethereum-adress").val()
+    let legaldoc = $("#plegaldoc").val()
+    let maxfounds = $("#pmaxfounds").val()
+    let description = $("#pdescription").val()
     
     const table = {
         'approved': 'project',
@@ -23,9 +24,9 @@ var sendProject = () => {
         'status' : "confirmed",
         'balance': 0,
         'description' : description,
-        'maxfounds' : maxfounds
+        'maxfounds' : maxfounds,
+        'icon' : icon
     }
     querySet (table.approved, data, id)
     resetForm("project-form")
 }
-

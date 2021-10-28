@@ -1,0 +1,35 @@
+{
+    "icons":
+    [
+        {
+            "name":"fab fa-mailchimp"
+        },
+        {
+            "name":"far fa-laugh-wink"
+        },
+        {
+            "name":"fas fa-horse"
+        },
+        {
+            "name":"far fa-hand-scissors"
+        },
+        {
+            "name":"fab fa-github-alt"
+        },
+        {
+            "name":"fas fa-ghost"
+        },
+        {
+            "name":"fas fa-dragon"
+        },
+        {
+            "name":"fas fa-chess-rook"
+        },
+        {
+            "name":"fas fa-anchor"
+        },
+        {
+            "name":"fab fa-napster"
+        }
+    ]
+}

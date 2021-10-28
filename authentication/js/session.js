@@ -35,20 +35,12 @@ var sessionVerificationForNavBar = () => {
 var sessionVerificationForVisualization = () => {
     firebase.auth().onAuthStateChanged(user => {
         if(user) {
-            buttonStatus( "projectlogo", "class", "fas fa-user-astronaut fa-3x")
-            buttonStatus( "approvedlogo", "class", "fas fa-user-astronaut fa-3x")
-            buttonStatus( "failedlogo", "class", "fas fa-user-astronaut fa-3x")
+            loadData( "projectlogo", "<b>Ir a mis proyectos</b>")
+            loadData( "approvedlogo", "<b>Ir a mis aprobadas</b>")
+            loadData( "failedlogo", "<b>Ir a mis rechazadas</b>")
         }
     })
 }
 
-var sessionVerificationForCreateProject = () => {
-    firebase.auth().onAuthStateChanged(user => {
-        if(user){
-            seeMyEntities()
-        }else{
-            setsigninview()
-        }
-    })   
-}
+
 

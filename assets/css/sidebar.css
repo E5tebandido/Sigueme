@@ -22,7 +22,7 @@
 
 #slide-out{
   width: 256px;
-  background-image: linear-gradient(to bottom right, #BDD9F2, #F2F2F2);
+  background-image: gradient(to bottom right, #6e96e0, #426683, #467bee , #467bee);
 }
 
 .homemenu {

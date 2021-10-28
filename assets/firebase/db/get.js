@@ -5,7 +5,7 @@ var seeAllProjects = (callback) => {
             childSnapshotuser.forEach ( childSnapshotId => {
                 if(childSnapshotId.val()['status'] == "confirmed"){
                     var childData = childSnapshotId.val()
-                    renderProjects(childData['name'],childData['id'],childData['balance'],childData['description'],childData['maxfounds'])
+                    renderProjects(childData['name'],childData['id'],childData['balance'],childData['description'],childData['maxfounds'],childData['icon'])
                 }
             })
         })
@@ -26,7 +26,7 @@ var seeAllAproveds = (callback) => {
     })
 } 
 
-var seeAllFaileds = () => {
+var seeAllFaileds = (callback) => {
     firebase.database().ref('tx_failed').on('value', snapshot => {
         clearContainer("historialfailedpanel")
         snapshot.forEach ( childSnapshotuser => {
@@ -35,6 +35,7 @@ var seeAllFaileds = () => {
                 renderFaileds(childData['donator'],childData['amount'],childData['target'],childData['date'])
             })
         })
+        callback()
     })
 } 
 
@@ -46,7 +47,7 @@ var seeOneProject = (id) => {
                 var childData = childSnapshotId.val()
                 if(childData['id'] == id){
                     missingfounds = childData['maxfounds'] - childData['balance']
-                    getOneProject(childData['eth_address'],childData['name'],childData['balance'],childData['location'],childData['description'],childData['maxfounds'], missingfounds)
+                    getOneProject(childData['eth_address'],childData['name'],childData['balance'],childData['location'],childData['description'],childData['maxfounds'], childData['icon'])
                 }      
             })
         })
@@ -68,7 +69,7 @@ var seeMyProjects = (callback) => {
     }
 }
 
-var seeMyFaileds = () => {
+var seeMyFaileds = (callback) => {
     if (firebase.auth().currentUser !== null) {
         var userId = firebase.auth().currentUser.uid
         firebase.database().ref('tx_failed').child(userId).on("value", snapshot => {
@@ -78,6 +79,7 @@ var seeMyFaileds = () => {
                 renderFaileds(childData['donator'],childData['amount'],childData['target'],childData['date'])
             })
         })
+        callback()
     }
 }
 

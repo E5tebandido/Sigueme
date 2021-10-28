@@ -7,7 +7,6 @@ $(document).ready( () =>
         sessionVerificationForNavBar()
     })
     sethomeview()
-    loadModal()
 })
 
 var sethomeview = () => {   
@@ -23,6 +22,14 @@ var setsigninview = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/signin.html", () => {
         
+    })
+}
+
+var setseeentitiyview = () => {
+    clearContainer("contentpage")
+    $("#contentpage").load("templates/seeentities.html", () => {
+        sessionVerificationForActions()
+        seeMyEntities()
     })
 }
 
@@ -44,7 +51,6 @@ var getclickedproject = (proj) => {
     let id = proj.id
     clearContainer("contentpage")
     $("#contentpage").load("templates/transaction.html", () => {
-        sessionVerificationForActions()
         seeOneProject(id)
     })
 }
@@ -61,7 +67,6 @@ var getclickedentity = (ent) => {
 var setseeprojectview = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/seeproject.html", () => {
-        clearContainer("projectpanel")
         sessionVerificationForVisualization()
         seeAllProjects(() => {
             makePagination("allprojectstable","allprojectspager")
@@ -83,7 +88,9 @@ var sethistorialfailed = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/historialfailed.html", () => {
         sessionVerificationForVisualization()
-        seeAllFaileds()
+        seeAllFaileds(() => {
+            makePagination("allfailedtable","allfailedpager")
+        })
     })
 }
 
@@ -101,7 +108,9 @@ var setSeeMyFaileds = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/historialfailed.html", () => {
         sessionVerificationForVisualization()
-        seeMyFaileds()
+        seeMyFaileds(() => {
+            makePagination("allfailedtable","allfailedpager")
+        })
     })
 }
 
@@ -125,9 +134,3 @@ var editMyProjects = (edproj) => {
     editMyProject(id)
 }
 
-var setseeentitiyview = () => {
-    clearContainer("contentpage")
-    $("#contentpage").load("templates/seeentities.html", () => {
-        sessionVerificationForCreateProject()
-    })
-}
