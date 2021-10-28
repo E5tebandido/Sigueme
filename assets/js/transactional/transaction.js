@@ -17,7 +17,7 @@ var Tx = async (amount,address,curaccount,instance) => {
                 querySet ("tx", tx, id)
                 Materialize.toast("Transacción aprobada número : " + tx.transactionHash, 6000, 'green')
                 resetForm("donation-form")
-                buttonStatus( "btndonate", "value", "Donar")
+                buttonStatus( "btndonate", "value", "Comenzar transacción")
                 buttonStatus( "btndonate", "disabled", false) 
             })
             .catch( (error) => {
@@ -33,7 +33,7 @@ var Tx = async (amount,address,curaccount,instance) => {
                 querySet ("tx_failed", error, id)
                 Materialize.toast("Transacción no aprobada : " + error.message, 4000, 'red')
                 resetForm("donation-form")
-                buttonStatus( "btndonate", "value", "Donar")
+                buttonStatus( "btndonate", "value", "Comenzar transacción")
                 buttonStatus( "btndonate", "disabled", false)
             })      
     } catch (error) {
@@ -49,7 +49,7 @@ var Tx = async (amount,address,curaccount,instance) => {
         querySet ("tx_failed", error, id)
         Materialize.toast("Transacción no aprobada : "+error.message, 3000, 'red')
         resetForm("donation-form")
-        buttonStatus( "btndonate", "value", "Donar")
+        buttonStatus( "btndonate", "value", "Comenzar transacción")
         buttonStatus( "btndonate", "disabled", false)
     }  
 }

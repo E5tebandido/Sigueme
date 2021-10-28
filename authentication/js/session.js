@@ -26,7 +26,7 @@ var sessionVerificationForNavBar = () => {
             `;
             clearContainer("dropdown1")
             clearContainer("sessionname")
-            loadData( "sessionname", "<i id='sessionlogo' class='fas fa-user-secret fa-3x'></i>")
+            loadData( "sessionname", "<b>Don anónimo</b>")
             loadData("dropdown1",signedout)
         }
     })   

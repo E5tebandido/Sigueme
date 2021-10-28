@@ -1,5 +1,6 @@
-var seeAllProjects = () => {
+var seeAllProjects = (callback) => {
     firebase.database().ref('project').on('value', snapshot => {
+        clearContainer("projectpanel")
         snapshot.forEach ( childSnapshotuser => {
             childSnapshotuser.forEach ( childSnapshotId => {
                 if(childSnapshotId.val()['status'] == "confirmed"){
@@ -8,22 +9,26 @@ var seeAllProjects = () => {
                 }
             })
         })
+        callback()
     })
 }
  
-var seeAllAproveds = () => {
+var seeAllAproveds = (callback) => {
     firebase.database().ref('tx').on('value', snapshot => {
+        clearContainer("historialaprovepanel")
         snapshot.forEach ( childSnapshotuser => {
             childSnapshotuser.forEach ( childSnapshotId => {
                 var childData = childSnapshotId.val()
                 renderAproveds(childData['donator'],childData['amount'],childData['target'],childData['date'])
             })
         })
+        callback()
     })
 } 
 
 var seeAllFaileds = () => {
     firebase.database().ref('tx_failed').on('value', snapshot => {
+        clearContainer("historialfailedpanel")
         snapshot.forEach ( childSnapshotuser => {
             childSnapshotuser.forEach ( childSnapshotId => {
                 var childData = childSnapshotId.val()
@@ -49,15 +54,17 @@ var seeOneProject = (id) => {
 }
 
 
-var seeMyProjects = () => {
+var seeMyProjects = (callback) => {
     if (firebase.auth().currentUser !== null) {
         var userId = firebase.auth().currentUser.uid
         firebase.database().ref('project').child(userId).on("value", snapshot => {
+            clearContainer("projectpanel")
             snapshot.forEach ( snapshotId => {
                 var childData = snapshotId.val()
                 renderMyProjects(childData['name'],childData['id'],childData['balance'],childData['description'],childData['maxfounds'])
             })
         })
+        callback()
     }
 }
 
@@ -65,6 +72,7 @@ var seeMyFaileds = () => {
     if (firebase.auth().currentUser !== null) {
         var userId = firebase.auth().currentUser.uid
         firebase.database().ref('tx_failed').child(userId).on("value", snapshot => {
+            clearContainer("historialfailedpanel")
             snapshot.forEach ( snapshotId => {
                 var childData = snapshotId.val()
                 renderFaileds(childData['donator'],childData['amount'],childData['target'],childData['date'])
@@ -73,15 +81,17 @@ var seeMyFaileds = () => {
     }
 }
 
-var seeMyAproveds = () => {
+var seeMyAproveds = (callback) => {
     if (firebase.auth().currentUser !== null) {
         var userId = firebase.auth().currentUser.uid
         firebase.database().ref('tx').child(userId).on("value", snapshot => {
+            clearContainer("historialaprovepanel")
             snapshot.forEach ( snapshotId => {
                 var childData = snapshotId.val()
                 renderAproveds(childData['donator'],childData['amount'],childData['target'],childData['date'])
             })
         })
+        callback()
     }
 }
 
@@ -89,6 +99,7 @@ var seeMyEntities = () => {
     if (firebase.auth().currentUser !== null) {
         var userId = firebase.auth().currentUser.uid
         firebase.database().ref('entity').child(userId).on("value", snapshot => {
+            clearContainer("entitypanel")
             snapshot.forEach ( child => {
                 var childData = child.val()
                 renderMyEntities(childData['name'],childData['id'],childData['status'])

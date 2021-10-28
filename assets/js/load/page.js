@@ -15,6 +15,7 @@ var sethomeview = () => {
     $("#contentpage").load("templates/home.html", () => {
         loadCarousel()
         loadCollapsible()
+        
     })
 }
 
@@ -60,8 +61,11 @@ var getclickedentity = (ent) => {
 var setseeprojectview = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/seeproject.html", () => {
+        clearContainer("projectpanel")
         sessionVerificationForVisualization()
-        seeAllProjects()
+        seeAllProjects(() => {
+            makePagination("allprojectstable","allprojectspager")
+        })
     })
 }
 
@@ -69,7 +73,9 @@ var sethistorialaprove = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/historialaprove.html", () => {
         sessionVerificationForVisualization()
-        seeAllAproveds()
+        seeAllAproveds(() => {
+            makePagination("allapprovedstable","allapprovedspager")
+        })
     })
 }
 
@@ -85,7 +91,9 @@ var setSeeMyProjects = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/seeproject.html", () => {
         sessionVerificationForVisualization()
-        seeMyProjects()
+        seeMyProjects(() => {
+            makePagination("allprojectstable","allprojectspager")
+        })
     })
 }
 
@@ -101,7 +109,9 @@ var setSeeMyAproveds = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/historialaprove.html", () => {
         sessionVerificationForVisualization()
-        seeMyAproveds()
+        seeMyAproveds(() => {
+            makePagination("allapprovedstable","allapprovedspager")
+        })
     })
 }
 

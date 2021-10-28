@@ -27,7 +27,7 @@ var newContract = async () => {
             .catch((error)=>{
                 Materialize.toast( "Transacción rechazada por el usuario" , 2000, 'red')
                 resetForm( "donation-form")
-                buttonStatus( "btndonate", "value", "Donar")
+                buttonStatus( "btndonate", "value", "Comenzar transacción")
                 buttonStatus( "btndonate", "disabled", false)
             })
     } else {

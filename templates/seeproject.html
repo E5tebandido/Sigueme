@@ -3,16 +3,12 @@
   <div class="container">
     <div class="row">
       <div class="col s10">
-        <nav class="white" style="border-radius: 50px;">
-          <div class="nav-wrapper white" style="border-radius: 50px;">
-            <form>
-              <div class="input-field">
-                <input id="searchprojects" type="search" class="blue-grey-text text-accent-2" placeholder="Busca proyectos aquí" style="border-radius: 50px;">
-                <i class="material-icons">search</i>
-              </div>
-            </form>
+        <form>
+          <div class="input-field">
+            <input id="searchallprojects" type="search" class="blue-grey-text text-accent-4" placeholder="Busca proyectos aquí" style="border-color: white;">
+            <i class="material-icons">search</i>
           </div>
-        </nav>
+        </form>
       </div>
       <div class="col s2">
         <a class="blue-grey-text text-accent-2" href="javascript:;" onclick="setSeeMyProjects()"><i id="projectlogo"></i></a>
@@ -22,7 +18,16 @@
   </center>
 </div>
 <div class="infocontainer">
-  <div id="projectpanel" class="row">    
+  <div class="row"> 
+    <table cellpadding="1" cellspacing="1" class="table table-hover" id="allprojectstable">
+      <tbody id="projectpanel">
+
+      </tbody>
+    </table>  
+    <div class="col-md-12 center text-center ">
+      <p class="grey-text text-accent-1" id="total_reg"></p>
+      <ul class="pagination pager" id="allprojectspager"></ul>
+    </div> 
   </div>
   <br>
 </div>
