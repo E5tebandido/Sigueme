@@ -3,9 +3,14 @@ var signin = () => {
     var email = document.getElementById("lemail").value
     var password = document.getElementById("lpassword").value
     firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(() => {
-        Materialize.toast("Ingreso exitoso", 2000, 'green')
-        sethomeview()
+    .then((user) => {
+        console.log(user.user.emailVerified)
+        if (user.user.emailVerified == true) {
+            Materialize.toast("que hay de nuevo "+user.user.email , 2000, 'green')
+            setseeprojectview()
+        } else {
+            setseenvview()
+        }
     })
     .catch((error) => {
         var errorMessage = error.message;
@@ -19,7 +24,7 @@ var googleSignin = () => {
     firebase.auth().signInWithPopup(provider)
     .then(() => {
         Materialize.toast("Ingreso exitoso", 2000, 'green')
-        sethomeview()
+        setseeprojectview()
     })
     .catch((error) => {
         var errorMessage = error.message;
@@ -33,7 +38,7 @@ var facebookSignin = () => {
     firebase.auth().signInWithPopup(provider)
     .then(() => {
         Materialize.toast("Ingreso exitoso", 2000, 'green')
-        sethomeview()
+        setseeprojectview()
     })
     .catch((error) => {
         var errorMessage = error.message;

@@ -3,7 +3,7 @@ var signout = () => {
     firebase.auth().signOut()
     .then(() => {
         Materialize.toast("Salida exitosa", 2000, 'green')
-        sethomeview()
+        setsigninview()
     })
     .catch((error) => {
         var errorMessage = error.message;

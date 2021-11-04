@@ -1,11 +1,11 @@
 var signup = () => {
     callFirebase()
-    var email = document.getElementById("remail").value
-    var password = document.getElementById("rpassword").value
+    let email = document.getElementById("remail").value
+    let password = document.getElementById("rpassword").value
     firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then(() => {
-            Materialize.toast("Registrado exitosamente", 2000, 'green')
-            sethomeview()
+        .then((user) => {
+            console.log(user.user.emailVerified)
+            emailVerification(user.user)
         })
         .catch((error) => {
             var errorMessage = error.message;

@@ -1,4 +1,4 @@
-var Tx = async (amount,address,curaccount,instance) => {
+var Tx = async (amount, address, name, curaccount, instance) => {
     try {  
         await instance.methods.make_transaction(amount, address, true, true)
         .send({ 
@@ -14,6 +14,7 @@ var Tx = async (amount,address,curaccount,instance) => {
                 tx['amount'] = amount
                 tx['date'] = dateGenerator()
                 tx['hour'] = hourGenerator()
+                tx['projectname'] = name
                 let id = idGenerator()
                 querySet ("tx", tx, id)
                 Materialize.toast("Transacción aprobada número : " + tx.transactionHash, 6000, 'green')
@@ -29,6 +30,7 @@ var Tx = async (amount,address,curaccount,instance) => {
                 error['amount'] = amount
                 error['date'] = dateGenerator()
                 error['hour'] = hourGenerator()
+                error['projectname'] = name
                 let id = idGenerator()
                 querySet ("tx_failed", error, id)
                 Materialize.toast("Transacción no aprobada : " + error.message, 4000, 'red')
@@ -45,6 +47,7 @@ var Tx = async (amount,address,curaccount,instance) => {
         error['amount'] = amount
         error['date'] = dateGenerator()
         error['hour'] = hourGenerator()
+        error['projectname'] = name
         let id = idGenerator()
         querySet ("tx_failed", error, id)
         Materialize.toast("Transacción no aprobada : "+error.message, 3000, 'red')

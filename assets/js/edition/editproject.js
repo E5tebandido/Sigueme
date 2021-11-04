@@ -3,6 +3,7 @@ var sendEditProject = () => {
     var name = $("#epname").val()
     var location = $("#eplocation").val()
     var id = $("#epid").val()
+    let icon = a = loadIcon()
     var eth_address = $("#epethereum-adress").val()
     var legaldoc = $("#eplegaldoc").val()
     var maxfounds = $("#epmaxfounds").val()
@@ -23,7 +24,8 @@ var sendEditProject = () => {
         'status' : "confirmed",
         'balance': 0,
         'description' : description,
-        'maxfounds' : maxfounds
+        'maxfounds' : maxfounds,
+        'icon' : icon
     }
     querySet (table.approved, data, id)
     resetForm("project-form")

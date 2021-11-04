@@ -19,7 +19,7 @@ var seeAllAproveds = (callback) => {
         snapshot.forEach ( childSnapshotuser => {
             childSnapshotuser.forEach ( childSnapshotId => {
                 var childData = childSnapshotId.val()
-                renderAproveds(childData['donator'],childData['amount'],childData['target'],childData['date'])
+                renderAproveds(childData['donator'],childData['amount'],childData['projectname'],childData['date'],childData['hour'])
             })
         })
         callback()
@@ -32,7 +32,7 @@ var seeAllFaileds = (callback) => {
         snapshot.forEach ( childSnapshotuser => {
             childSnapshotuser.forEach ( childSnapshotId => {
                 var childData = childSnapshotId.val()
-                renderFaileds(childData['donator'],childData['amount'],childData['target'],childData['date'])
+                renderFaileds(childData['donator'],childData['amount'],childData['projectname'],childData['date'],childData['hour'])
             })
         })
         callback()
@@ -76,7 +76,7 @@ var seeMyFaileds = (callback) => {
             clearContainer("historialfailedpanel")
             snapshot.forEach ( snapshotId => {
                 var childData = snapshotId.val()
-                renderFaileds(childData['donator'],childData['amount'],childData['target'],childData['date'])
+                renderFaileds(childData['donator'],childData['amount'],childData['projectname'],childData['date'],childData['hour'])
             })
         })
         callback()
@@ -90,7 +90,7 @@ var seeMyAproveds = (callback) => {
             clearContainer("historialaprovepanel")
             snapshot.forEach ( snapshotId => {
                 var childData = snapshotId.val()
-                renderAproveds(childData['donator'],childData['amount'],childData['target'],childData['date'])
+                renderAproveds(childData['donator'],childData['amount'],childData['projectname'],childData['date'],childData['hour'])
             })
         })
         callback()

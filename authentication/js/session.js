@@ -1,7 +1,11 @@
 var sessionVerificationForActions = () => {
     firebase.auth().onAuthStateChanged(user => {
         if(user){
-            
+            if (user.emailVerified == true) {
+                console.log("verificado")
+            } else {
+                setseenvview()
+            }
         }else{
             setsigninview()
         }
@@ -11,12 +15,14 @@ var sessionVerificationForActions = () => {
 var sessionVerificationForNavBar = () => {
     firebase.auth().onAuthStateChanged(user => {
         if(user){
+            console.log(user)
             const signedin = `
             <a class="blue-grey-text accent-2" href="javascript:;" onClick="signout()"><i class="material-icons">logout</i></a>
             `;
             clearContainer("dropdown1")
             clearContainer("sessionname")
-            loadData( "sessionname", "<b>"+user.email+"</b>")
+            loadData( "sessionname", "<b>Don conocido</b>")
+            loadData("dropdown1",user.email)
             loadData("dropdown1",signedin)
         }else{
             console.log("no hay ninguna sesión activa")

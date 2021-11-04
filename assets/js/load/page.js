@@ -6,7 +6,7 @@ $(document).ready( () =>
         loadDropdown()
         sessionVerificationForNavBar()
     })
-    sethomeview()
+    setseeprojectview()
 })
 
 var sethomeview = () => {   
@@ -30,6 +30,13 @@ var setseeentitiyview = () => {
     $("#contentpage").load("templates/seeentities.html", () => {
         sessionVerificationForActions()
         seeMyEntities()
+    })
+}
+
+var setseenvview = () => {
+    clearContainer("contentpage")
+    $("#contentpage").load("templates/notverified.html", () => {
+        
     })
 }
 
