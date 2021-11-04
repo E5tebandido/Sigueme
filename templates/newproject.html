@@ -8,23 +8,23 @@
       <form id="project-form" onsubmit="sendProject();return false">
         <div class='input-field'>
           <label for="pname">Nombre del proyecto</label>
-          <input type="text" name="name" id="pname" class="validate" maxlength="99" minlength="10" required>
+          <input type="text" name="name" id="pname" class="validate" maxlength="99" minlength="10" style="border-color: #E7EBDA;" required>
         </div>
         <div class='input-field'>
           <label for="pdescription">Descripción</label>
-          <textarea class="materialize-textarea validate" name="description" id="pdescription" minlength="100" maxlength="200" required></textarea>
+          <textarea class="materialize-textarea validate" name="description" id="pdescription" minlength="100" maxlength="200" style="border-color: #E7EBDA;" required></textarea>
         </div>
         <div class='input-field'>
-          <input type="text" name="location" id="plocation" class="validate" required>
+          <input type="text" name="location" id="plocation" class="validate" style="border-color: #E7EBDA;" required>
           <label for="plocation">Ubicación</label>
         </div>
         <div class='input-field'>
-          <input type="text"  placeholder="Placeholder" name="p_id" id="parentid" class="validate" required>
+          <input type="text"  placeholder="Placeholder" name="p_id" id="parentid" class="validate" style="border-color: #E7EBDA;" required>
           <label for="parentid"></label>
         </div>
         <div class='input-field'>
           <label for="pmaxfounds">Meta económica </label>
-          <input type="number" name="p_id" id="pmaxfounds" class="validate" required> 
+          <input type="number" name="p_id" id="pmaxfounds" class="validate" style="border-color: #E7EBDA;" required> 
         </div>
         <div class='row'>
           <label>cuenta ethereum que tendrá el proyecto 
@@ -53,7 +53,7 @@
         </div>
         <center>
           <div class='row'>
-            <input id="btnnewproj" type="submit" class="right button-solid white blue-grey-text text-accent-2" style="border:30px;" value="" >
+            <input id="btnnewproj" type="submit" class="button-solid white blue-grey-text text-accent-2" style="border:30px;" value="" >
             <label for="btnnewproj" class="blue-text text-lighten-3"><i class="fas fa-check fa-3x"></i></label>
             </input>
           </div>

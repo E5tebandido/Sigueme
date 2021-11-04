@@ -62,7 +62,7 @@ var seeMyProjects = (callback) => {
             clearContainer("projectpanel")
             snapshot.forEach ( snapshotId => {
                 var childData = snapshotId.val()
-                renderMyProjects(childData['name'],childData['id'],childData['balance'],childData['description'],childData['maxfounds'])
+                renderMyProjects(childData['name'],childData['id'],childData['balance'],childData['description'],childData['maxfounds'],childData['icon'])
             })
         })
         callback()

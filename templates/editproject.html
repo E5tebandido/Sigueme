@@ -7,27 +7,27 @@
         <form id="project-form" onsubmit="sendEditProject();return false">
           <div class='input-field'>
             <label for="pname">Nombre del proyecto</label>
-            <input type="text" name="name" id="epname" class="validate" maxlength="99" minlength="10" required>
+            <input type="text" name="name" id="epname" class="validate" maxlength="99" minlength="10" style="border-color: #E7EBDA;" required>
           </div>
           <div class='input-field'>
             <label for="pdescription">Descripción</label>
-            <textarea class="materialize-textarea validate" name="description" id="epdescription" minlength="100" maxlength="200" required></textarea>
+            <textarea class="materialize-textarea validate" name="description" id="epdescription" minlength="100" maxlength="200" style="border-color: #E7EBDA;" required></textarea>
           </div>
           <div class='input-field'>
             <label for="pid"></label>
-            <input type="text" name="id" id="epid" class="validate" minlength="12" required>
+            <input type="text" name="id" id="epid" class="validate" minlength="12" style="border-color: #E7EBDA;" required>
           </div>
           <div class='input-field'>
-            <input type="text" name="location" id="eplocation" class="validate" required>
+            <input type="text" name="location" id="eplocation" class="validate" style="border-color: #E7EBDA;" required>
             <label for="plocation">Ubicación</label>
           </div>
           <div class='input-field'>
-            <input type="text"  placeholder="Placeholder" name="p_id" id="eparentid" class="validate" required>
+            <input type="text"  placeholder="Placeholder" name="p_id" id="eparentid" class="validate" style="border-color: #E7EBDA;" required>
             <label for="parentid"></label>
           </div>
           <div class='input-field'>
             <label for="pmaxfounds">Meta económica </label>
-            <input type="number" name="p_id" id="epmaxfounds" class="validate" required> 
+            <input type="number" name="p_id" id="epmaxfounds" class="validate" style="border-color: #E7EBDA;" required> 
           </div>
           <div class='row'>
             <label>cuenta ethereum que tendrá el proyecto 
@@ -56,8 +56,8 @@
           </div>
           <center>
             <div class='row'>
-              <input type="submit" class="btn halfway-fab N/A transparent blue-grey-text text-accent-2" style="border-radius:20px;" value="Editar proyecto">
-              </input>
+              <input id="btneditproj" type="submit" class="button-solid white blue-grey-text text-accent-2" style="border:30px;" value="" >
+              <label for="btneditproj" class="blue-text text-lighten-3"><i class="fas fa-check fa-3x"></i></label>
             </div>
           </center>
         </form>
