@@ -2,34 +2,73 @@
     "icons":
     [
         {
-            "name":"fab fa-mailchimp"
+            "name":"../assets/images/viaje.png"
         },
         {
-            "name":"far fa-laugh-wink"
+            "name":"../assets/images/alimenta-tus-ideas.png"
         },
         {
-            "name":"fas fa-horse"
+            "name":"../assets/images/bonsai.png"
         },
         {
-            "name":"far fa-hand-scissors"
+            "name":"../assets/images/bote.png"
         },
         {
-            "name":"fab fa-github-alt"
+            "name":"../assets/images/cohete.png"
         },
         {
-            "name":"fas fa-ghost"
+            "name":"../assets/images/creatividad.png"
         },
         {
-            "name":"fas fa-dragon"
+            "name":"../assets/images/de-vuelta-a-la-naturaleza.png"
         },
         {
-            "name":"fas fa-chess-rook"
+            "name":"../assets/images/dejalo-crecer.png"
         },
         {
-            "name":"fas fa-anchor"
+            "name":"../assets/images/dinosaurio.png"
         },
         {
-            "name":"fab fa-napster"
+            "name":"../assets/images/divertida.png"
+        },
+        {
+            "name":"../assets/images/fotos.png"
+        },
+        {
+            "name":"../assets/images/gesto-manual.png"
+        },
+        {
+            "name":"../assets/images/globo.png"
+        },
+        {
+            "name":"../assets/images/guau.png"
+        },
+        {
+            "name":"../assets/images/hombre-de-pan-de-jengibre.png"
+        },
+        {
+            "name":"../assets/images/jajaja.png"
+        },
+        {
+            "name":"../assets/images/loro.png"
+        },
+        {
+            "name":"../assets/images/pan-comido.png"
+        },
+        {
+            "name":"../assets/images/paraiso.png"
+        },
+        {
+            "name":"../assets/images/paz.png"
+        },
+        {
+            "name":"../assets/images/reir.png"
+        },
+        {
+            "name":"../assets/images/tambien.png"
+        },
+        {
+            "name":"../assets/images/yoga.png"
         }
     ]
 }

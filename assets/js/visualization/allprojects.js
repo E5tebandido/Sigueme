@@ -6,9 +6,9 @@ var renderProjects = (name,pid,balance,description,maxfounds,icon) => {
                 <center>
                 <div class="container">
                     <div id="${pid}" onclick="getclickedproject(this)" class="allprojects" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px; width: 100%;">
-                        <a href="javascript:;" class="purple-text text-lighten-4 waves-effect"><i class="${icon} fa-3x"></i></a>
+                        <img class="sticker" src="${icon}" alt="">
                         <br>
-                        <h5 class="blue-grey-text accent-3"><b>${name}</b></h5>
+                        <h5 class="grey-text text-accent-1"><b>${name}</b></h5>
                         <br>
                         <h5 class="grey-text text-lighten-1" >${balance}<i class="fab fa-ethereum"></i></h5>
                         <h5 class="grey-text text-lighten-1" >${balance}<i class="fas fa-dollar-sign"></i></h5>
@@ -32,10 +32,9 @@ var renderMyProjects = (name,pid,balance,description,maxfounds,icon) => {
             <div class="col s12 m12">
                 <center>
                 <div class="container">
-                    <div id="${pid}" onclick="editMyProjects(this)" class="allprojects" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px; width: 100%;">
-                        <a href="javascript:;" class="purple-text text-lighten-4 waves-effect"><i class="far fa-edit fa-3x"></i></a>
+                    <div id="${pid}" onclick="editMyProjects(this)" class="allprojects" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #c6b1c9; border-radius: 20px; width: 100%; backgroung-color:white;">
                         <br>
-                        <h5 class="blue-grey-text accent-3"><b>${name}</b></h5>
+                        <h5 class="grey-text text-accent-1"><b>${name}</b></h5>
                         <br>
                         <h5 class="grey-text text-lighten-1" >${balance}<i class="fab fa-ethereum"></i></h5>
                         <h5 class="grey-text text-lighten-1" >${balance}<i class="fas fa-dollar-sign"></i></h5>

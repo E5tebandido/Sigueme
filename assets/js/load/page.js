@@ -3,20 +3,11 @@ $(document).ready( () =>
     callFirebase()
     $("#navsco").load("templates/navbar.html", () => {
         loadSideNav()
-        loadDropdown()
+        loadSideNav2()
         sessionVerificationForNavBar()
     })
     setseeprojectview()
 })
-
-var sethomeview = () => {   
-    clearContainer("contentpage")
-    $("#contentpage").load("templates/home.html", () => {
-        loadCarousel()
-        loadCollapsible()
-        
-    })
-}
 
 var setsigninview = () => {   
     clearContainer("contentpage")
@@ -51,6 +42,7 @@ var setnewentityview = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/newentity.html", () => {
         sessionVerificationForActions()
+        buttonStatus("stickerentity","src",loadIcon())
     })
 }
 
@@ -68,6 +60,7 @@ var getclickedentity = (ent) => {
     $("#contentpage").load("templates/newproject.html", () => {
         formin("parentid",id)
         buttonStatus("parentid","disabled",true)
+        buttonStatus("stickerproject","src",loadIcon())
     })
 }
 

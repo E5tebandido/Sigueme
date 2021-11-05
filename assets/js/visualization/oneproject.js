@@ -8,7 +8,7 @@ var getOneProject = (address,name,balance,location,description,maxfounds,icon) =
     </div>  
     <div class="col s12 m12">
         <a href="javascript:;" class="purple-text text-lighten-4 waves-effect"><i class="${icon} fa-3x"></i></a>
-        <h5 id="p_name" class="blue-grey-text accent-3"><b>${name}</b></h5>
+        <h5 id="p_name" class="grey-text text-accent-1"><b>${name}</b></h5>
         <p>${description}</p>
         <p class="grey-text text-accent-2">${location}</p>
     </div> 

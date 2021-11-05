@@ -15,25 +15,34 @@ var sessionVerificationForActions = () => {
 var sessionVerificationForNavBar = () => {
     firebase.auth().onAuthStateChanged(user => {
         if(user){
-            console.log(user)
-            const signedin = `
-            <a class="blue-grey-text accent-2" href="javascript:;" onClick="signout()"><i class="material-icons">logout</i></a>
-            `;
-            clearContainer("dropdown1")
-            clearContainer("sessionname")
-            loadData( "sessionname", "<b>Don conocido</b>")
+            clearContainer("slide-out2")
+            loadData("slide-out2",loadWebBred(user.email,loadIcon()))
+            
+
+            clearContainer("navbarsignout")
+            clearContainer("navbarong")
+            clearContainer("navbarproject")
+            clearContainer("navbarsignin")
+            clearContainer("navbarsignup")
+            loadData("navbarong",'<a href="javascript:;" class="navitem" onclick="setnewentityview()">Inscribír Ong</a>')
+            loadData("navbarproject",'<a href="javascript:;" class="navitem" onclick="setseeentitiyview()">Crear proyecto</a>')
+            loadData( "sessionname", "<b><i class='fas fa-user-astronaut'></i></b>")
             loadData("dropdown1",user.email)
-            loadData("dropdown1",signedin)
-        }else{
-            console.log("no hay ninguna sesión activa")
-            const signedout = `
-            <a class="blue-grey-text accent-2" href="javascript:;" onClick="setsigninview()"><i class="material-icons">login</i></a>
-            <a class="blue-grey-text accent-2" href="javascript:;" onclick="setsignupview()"><i class="material-icons">how_to_reg</i>
-            `;
+            loadData("navbarsignout",'<a class="navitem hide-on-large-only" href="javascript:;" onClick="signout()"><b><i class="fas fa-sign-out-alt"></i></b></a>')
+        } else {
+            clearContainer("slide-out2")
+            loadData("slide-out2",loadWebBred("anonimoo","../assets/images/anonymus.jpg"))
+
             clearContainer("dropdown1")
             clearContainer("sessionname")
-            loadData( "sessionname", "<b>Don anónimo</b>")
-            loadData("dropdown1",signedout)
+            clearContainer("navbarsignout")
+            clearContainer("navbarong")
+            clearContainer("navbarproject")
+            clearContainer("navbarsignin")
+            clearContainer("navbarsignup")
+            loadData("navbarsignin",'<a class="navitem" href="javascript:;" onClick="setsigninview()"><b><i class="fas fa-sign-in-alt"></i></b></a>')
+            loadData( "sessionname", "<b><i class='fas fa-ghost'></i></b>")
+            loadData("dropdown1","Anónimo")
         }
     })   
 }
@@ -41,9 +50,9 @@ var sessionVerificationForNavBar = () => {
 var sessionVerificationForVisualization = () => {
     firebase.auth().onAuthStateChanged(user => {
         if(user) {
-            loadData( "projectlogo", "<b>Ir a mis proyectos</b>")
-            loadData( "approvedlogo", "<b>Ir a mis aprobadas</b>")
-            loadData( "failedlogo", "<b>Ir a mis rechazadas</b>")
+            loadData( "projectlogo", '<b><i class="far fa-edit fa-3x"></i></b>')
+            loadData( "approvedlogo", '<b><i class="far fa-edit fa-3x"></i></b>')
+            loadData( "failedlogo", '<b><i class="far fa-edit fa-3x"></i></b>')
         }
     })
 }

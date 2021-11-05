@@ -23,25 +23,17 @@
     <body>
         <div id="container">
             <div id="menu">
-                <ul id="slide-out" class="side-nav fixed">
-                    <li>
-                        <nav class="navbar white">
-                            <div class="nav-wrapper">
-                                <img src="../assets/images/scobrand.png" class="App-logo" alt="logo" style="margin-left: 40%;"/>
-                            </div>
-                        </nav> 
-                    </li>  
-                    <li class="homemenu "></li>
-                    <li></li>
-                    <li></li>
-                    <li><a href="javascript:;" class="item purple-text text-lighten-2" onclick="setseeprojectview()"><i class="material-icons purple-text text-lighten-2">favorite_border</i>Dona</a></li>
-                    <li><a href="javascript:;" class="item" onclick="sethistorialaprove()"><i class="material-icons ">check</i>Aprobadas</a></li>
-                    <li><a href="javascript:;" class="item" onclick="sethistorialfailed()"><i class="material-icons ">sms_failed</i>Rechazadas</a></li>   
+                <ul id="slide-out" class="side-nav"> 
+                    <li><a href="https://teban18.github.io/siguemeORG_documentation/dist/index.html" target="_blank"><span class="grey-text text-accent-4">Documentación</span></a></li>
+                    <li><div class="divider"></div></li>
+                    <li class="homemenu"></li>
+                    <li id="navbarong"></li>
+                    <li id="navbarproject"></li>
                 </ul>
             </div>
-            <div class="fixed-action-btn">
-                <a class="btn-floating btn-large purple lighten-3 white-text">
-                    <i class="large material-icons">face</i>
+            <div id="floatbutton" class="fixed-action-btn" >
+                <a class="btn-floating btn-large white">
+                    <i class="large material-icons purple-text text-lighten-4">face</i>
                 </a>
                 <ul>
                     <li><a class="btn-floating blue darken-3" href="https://www.linkedin.com/in/andr%C3%A9s-esteban-posada-rinc%C3%B3n-94424b1a7/" target="blank"><i class="fab fa-linkedin-in fa-3x"></i></a></li>
@@ -75,7 +67,7 @@
         <script src="assets/firebase/db/set.js"></script>
         <script src="assets/firebase/firebase-configuration.js"></script>
         <script src="assets/js/load/content.js"></script>
-        <script src="assets/js/load/carousel.js"></script>
+        <script src="assets/rues/ruesvalidation.js"></script>
         <script src="assets/js/load/page.js"></script>
         <script src="assets/js/load/form.js"></script>
         <script src="assets/js/visualization/allprojects.js"></script>
@@ -83,8 +75,7 @@
         <script src="assets/js/load/sidenav.js"></script>
         <script src="assets/js/visualization/historial.js"></script>
         <script src="./authentication/js/session.js"></script>
-        <script src="./assets/js/load/dropdown.js"></script>
-        <script src="./assets/js/load/collapsible.js"></script>
+        <script src="./assets/js/load/navmenu.js"></script>
         <script src="../authentication/js/signin.js" type="text/javascript"></script> 
         <script src="../authentication/js/signup.js" type="text/javascript"></script>
         <script src="../authentication/js/session.js"></script>

@@ -1,9 +1,10 @@
 #container {
   padding-left: 0;  
+  width: 100%;
 }
 
 #contentpage {
-  padding-left: 256px;
+  padding-left: 0;
 }
 
 #content {
@@ -13,6 +14,7 @@
 @media only screen and (max-width : 992px) {
   #container {
     padding-left: 0px;
+    width: 100%;
   }
 
   #contentpage {
@@ -22,26 +24,20 @@
 
 #slide-out{
   width: 256px;
-  background-image: gradient(to bottom right, #6e96e0, #426683, #467bee , #467bee);
 }
 
 .homemenu {
-  margin-top: 30%;
+  margin-top: 0;
 }
 
 .docmenu {
-  margin-top: 5%;
+  margin-top: 0;
 }
 
 .no-padding {
   margin-left: 0.5%;
 }
 
-.scrollmenu {
-  height: 35%;
-  overflow-x: hidden;
-  overflow:auto;
-}
 
 
 

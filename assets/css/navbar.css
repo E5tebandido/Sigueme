@@ -2,33 +2,44 @@
     z-index: 100;
     position: fixed;
     top: 0;
+    height: 3.6rem;
+  }
+
+  .navbar-breadcumb {
+    height: 3.8rem;
+  }
+
+  .breaditem {
+    color: #90a4ae;
+    height: 3.8rem;
   }
   
+  .navitem {
+    height: 3.3rem;
+    margin-top: -0.4rem;
+    color: #fafafa;
+  }
+
   .App-logo {
-    height: 3.5rem;
-    pointer-events: none;
-    margin-top: 0.7vh;
+    height: 2.5rem;
+    vertical-align: middle;
   }
 
   .brand-logo {
-    margin-top: 1rem;
-    margin-left: 0.5rem;
+    margin-top: -0.5rem;
   }
 
   #sessionlogo {
-    margin-top: -9%;
+    margin-top: 9%;
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
+  @media only screen and (max-width: 800px) {
 
-  @media only screen and (max-width: 600px) {
-    #sessionlogo {
-      margin-top: 14%;
+    .brand-logo {
+      margin-top: -0.5rem;
+      position: left;
     }
+  
   }
 
 
