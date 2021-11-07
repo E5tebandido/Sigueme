@@ -9,15 +9,11 @@
     height: 3.8rem;
   }
 
-  .breaditem {
-    color: #90a4ae;
-    height: 3.8rem;
-  }
-  
-  .navitem {
-    height: 3.3rem;
-    margin-top: -0.4rem;
-    color: #fafafa;
+  #navbutton {
+    margin-top: -0.7rem;
+    border: 0.5px solid white;
+    background-color: #0b2239 !important;
+    text-transform: none;
   }
 
   .App-logo {

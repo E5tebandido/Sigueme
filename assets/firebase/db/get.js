@@ -97,7 +97,7 @@ var seeMyAproveds = (callback) => {
     }
 }
 
-var seeMyEntities = () => {
+var seeMyEntities = (callback) => {
     if (firebase.auth().currentUser !== null) {
         var userId = firebase.auth().currentUser.uid
         firebase.database().ref('entity').child(userId).on("value", snapshot => {
@@ -107,6 +107,7 @@ var seeMyEntities = () => {
                 renderMyEntities(childData['name'],childData['id'],childData['status'])
             })
         })
+        callback()
     }
 }
 

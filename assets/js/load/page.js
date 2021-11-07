@@ -11,38 +11,33 @@ $(document).ready( () =>
 
 var setsigninview = () => {   
     clearContainer("contentpage")
-    $("#contentpage").load("templates/signin.html", () => {
-        
-    })
+    $("#contentpage").load("templates/signin.html")
 }
 
 var setseeentitiyview = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/seeentities.html", () => {
         sessionVerificationForActions()
-        seeMyEntities()
+        seeMyEntities(()=>{
+            makePagination("allentitiestable","allentitiespager")
+        })
     })
 }
 
 var setseenvview = () => {
     clearContainer("contentpage")
-    $("#contentpage").load("templates/notverified.html", () => {
-        
-    })
+    $("#contentpage").load("templates/notverified.html")
 }
 
 var setsignupview = () => {   
     clearContainer("contentpage")
-    $("#contentpage").load("templates/signup.html", () => {
-        
-    })
+    $("#contentpage").load("templates/signup.html")
 }
 
 var setnewentityview = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/newentity.html", () => {
         sessionVerificationForActions()
-        buttonStatus("stickerentity","src",loadIcon())
     })
 }
 
@@ -60,14 +55,12 @@ var getclickedentity = (ent) => {
     $("#contentpage").load("templates/newproject.html", () => {
         formin("parentid",id)
         buttonStatus("parentid","disabled",true)
-        buttonStatus("stickerproject","src",loadIcon())
     })
 }
 
 var setseeprojectview = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/seeproject.html", () => {
-        sessionVerificationForVisualization()
         seeAllProjects(() => {
             makePagination("allprojectstable","allprojectspager")
         })
@@ -77,7 +70,6 @@ var setseeprojectview = () => {
 var sethistorialaprove = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/historialaprove.html", () => {
-        sessionVerificationForVisualization()
         seeAllAproveds(() => {
             makePagination("allapprovedstable","allapprovedspager")
         })
@@ -87,7 +79,6 @@ var sethistorialaprove = () => {
 var sethistorialfailed = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/historialfailed.html", () => {
-        sessionVerificationForVisualization()
         seeAllFaileds(() => {
             makePagination("allfailedtable","allfailedpager")
         })
@@ -97,7 +88,6 @@ var sethistorialfailed = () => {
 var setSeeMyProjects = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/seeproject.html", () => {
-        sessionVerificationForVisualization()
         seeMyProjects(() => {
             makePagination("allprojectstable","allprojectspager")
         })
@@ -107,7 +97,6 @@ var setSeeMyProjects = () => {
 var setSeeMyFaileds = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/historialfailed.html", () => {
-        sessionVerificationForVisualization()
         seeMyFaileds(() => {
             makePagination("allfailedtable","allfailedpager")
         })
@@ -117,7 +106,6 @@ var setSeeMyFaileds = () => {
 var setSeeMyAproveds = () => {
     clearContainer("contentpage")
     $("#contentpage").load("templates/historialaprove.html", () => {
-        sessionVerificationForVisualization()
         seeMyAproveds(() => {
             makePagination("allapprovedstable","allapprovedspager")
         })
