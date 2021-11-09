@@ -1,11 +1,20 @@
 
-<div class="formcontainer">
-  <center>
-  <h4 class="grey-text text-accent-2">Cuéntanos del proyecto</h4>
-  <br>
-  <div class="container">
-    <br>
-    <div class="row white" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px; width: 100%;">     
+<!--- Web -->
+
+<div class="row hide-on-med-and-down">
+  <br><br><br>
+  <div class="col s7 offset-s5">
+    <div class="card-panel blue">
+      <span class="white-text">Créale un proyecto a tu ong, nosotros validamos la información!
+        <img src="../assets/images/colombia.png" alt="" width="3%" style="vertical-align: middle;">
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="row hide-on-med-and-down">
+  <div class="col s7 offset-s5">
+    <div class="card-panel white">
       <form id="project-form" onsubmit="sendProject();return false">
         <div class='input-field'>
           <label for="pname">Nombre del proyecto</label>
@@ -27,7 +36,7 @@
           <label for="pmaxfounds">Meta económica </label>
           <input type="number" name="p_id" id="pmaxfounds" class="validate" style="border-color: #E7EBDA;" required> 
         </div>
-        <div class='row'>
+        <div class=''>
           <label>cuenta ethereum que tendrá el proyecto 
             <div class="file-field input-field">
               <div class="btn  N/A transparent grey-text" onclick=" metamaskInitializationForAddress()" style="margin-left: 0cm;">
@@ -39,7 +48,7 @@
             </div>
           </label>
         </div>
-        <div class='row'>
+        <div class=''>
           <label>documento(s) de constitución del proyecto o legales, debidamente aprobados 
             <div class="file-field input-field">
               <div class="btn  N/A transparent grey-text">
@@ -54,17 +63,82 @@
         </div>
         <center>
           <div class='row'>
-            <input id="btnnewproj" type="submit" class="button-solid white blue-grey-text text-accent-2" style="border:30px;" value="" >
-            <label for="btnnewproj" class="blue-text text-lighten-3"><i class="fas fa-arrow-right fa-3x"></i></label>
-            </input>
+            <input id="btnnewent" type="submit" class="waves-effect waves-light btn yellow darken-1 black-text" value="Inscribír"></input>
           </div>
         </center>
       </form>
+    </div>
+  </div>
+</div>
+          
+<!--- Movile -->
+
+<div class="row hide-on-large-only">
+  <br><br><br>
+  <div class="col s12 m12">
+    <div class="card-panel blue">
+      <span class="white-text">Créale un proyecto a tu ong, nosotros validamos la información!
+        <img src="../assets/images/colombia.png" alt="" width="3%" style="vertical-align: middle;">
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="row hide-on-large-only">
+  <div class="col s12 m12">
+    <div class="card-panel white">
+      <form id="project-form" onsubmit="sendProject();return false">
+        <div class='input-field'>
+          <label for="pname">Nombre del proyecto</label>
+          <input type="text" name="name" id="pname" class="validate" maxlength="99" minlength="10" style="border-color: #E7EBDA;" required>
+        </div>
+        <div class='input-field'>
+          <label for="pdescription">Descripción</label>
+          <textarea class="materialize-textarea validate" name="description" id="pdescription" minlength="100" maxlength="200" style="border-color: #E7EBDA;" required></textarea>
+        </div>
+        <div class='input-field'>
+          <input type="text" name="location" id="plocation" class="validate" style="border-color: #E7EBDA;" required>
+          <label for="plocation">Ubicación</label>
+        </div>
+        <div class='input-field'>
+          <input type="text"  placeholder="Placeholder" name="p_id" id="parentid" class="validate" style="border-color: #E7EBDA;" required>
+          <label for="parentid"></label>
+        </div>
+        <div class='input-field'>
+          <label for="pmaxfounds">Meta económica </label>
+          <input type="number" name="p_id" id="pmaxfounds" class="validate" style="border-color: #E7EBDA;" required> 
+        </div>
+        <div class=''>
+          <label>cuenta ethereum que tendrá el proyecto 
+            <div class="file-field input-field">
+              <div class="btn  N/A transparent grey-text" onclick=" metamaskInitializationForAddress()" style="margin-left: 0cm;">
+                <span>Obtener desde mi wallet</span>
+              </div>
+              <div class="file-path-wrapper">
+                <input class="validate" type="text" id="pethereum-adress" placeholder="Address" style="border-bottom: whitesmoke;" disabled required>
+              </div>
+            </div>
+          </label>
+        </div>
+        <div class=''>
+          <label>documento(s) de constitución del proyecto o legales, debidamente aprobados 
+            <div class="file-field input-field">
+              <div class="btn  N/A transparent grey-text">
+                <span>File</span>
+                <input type="file" multiple>
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" id="plegaldoc" placeholder="Arrastre aquí" style="border-bottom: whitesmoke;" required>
+              </div>
+            </div>
+          </label>
+        </div>
+        <center>
+          <div class='row'>
+            <input id="btnnewent" type="submit" class="waves-effect waves-light btn yellow darken-1 black-text" value="Inscribír"></input>
+          </div>
+        </center>
       </form>
     </div>
   </div>
-  <br>
-  </center>
 </div>
-
-  

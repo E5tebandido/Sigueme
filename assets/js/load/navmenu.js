@@ -3,7 +3,7 @@ var loadWebNavSignIn = (img) => {
      let data = `
     <li><a href="javascript:;" onclick="setseeprojectview()" style="margin-top: -0.2rem; color: white;">Dona ya!</a></li>
     <li><a href="javascript:;" style="margin-top: -0.2rem; color: gainsboro;">nosotros</a></li>
-    <li><a href="javascript:;" data-activates="slide-out2" class="button-collapse2 show-on-large" style="margin-top: -0.2rem; color: gainsboro;">Mi cuenta <img class="circle" src="../assets/images/avatar.png" style="height: 2.5rem; vertical-align: middle; margin-top: -0.3rem;"></a></li>
+    <li><a href="javascript:;" data-activates="slide-out2" class="button-collapse2 show-on-large" style="margin-top: -0.2rem; color: gainsboro;">Mi cuenta <img class="circle" src="../assets/images/avatar2.png" style="height: 2.5rem; vertical-align: middle; margin-top: -0.3rem;"></a></li>
     <li><a id="navbutton" class="btn" onClick="signout()">Cerrar sesión</a></li>
      `;
      return data
@@ -38,7 +38,7 @@ var loadBred = (user,img) => {
     <li>
         <div class="user-view">
         <div class="background">
-            <img src="../assets/images/fondo.png" width="100%" style="filter: brightness(60%);">
+            <img src="../assets/images/bogota.png" width="100%" style="filter: brightness(35%);">
         </div>
         <a href="javascript:;"><img class="circle" src="${img}"></a>
         <a href="javascript:;"><span class="white-text name"><b>Hola!</b></span></a>

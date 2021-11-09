@@ -19,7 +19,7 @@ var sessionVerificationForNavBar = (callback) => {
             clearContainer("slide-out2")
             clearContainer("navbar-web-panel")
             clearContainer("navbar-mov-panel")
-            loadData("slide-out2",loadBred(user.email,"../assets/images/bogota.png"))
+            loadData("slide-out2",loadBred(user.email,"../assets/images/avatar2.png"))
             loadData("navbar-web-panel",loadWebNavSignIn())
             loadData("navbar-mov-panel",loadMovNavSignIn())
             callback()
