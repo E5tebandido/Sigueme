@@ -1,12 +1,9 @@
-.navbar {
+  .navbar {
     z-index: 100;
     position: fixed;
     top: 0;
     height: 3.6rem;
-  }
-
-  .navbar-breadcumb {
-    height: 3.8rem;
+    background-color: #0b2239;
   }
 
   #navbutton {
@@ -19,10 +16,12 @@
   .App-logo {
     height: 2.5rem;
     vertical-align: middle;
+    margin-right: 0.2rem;
   }
 
   .brand-logo {
     margin-top: -0.5rem;
+    white-space: nowrap;
   }
 
   #sessionlogo {
@@ -30,12 +29,11 @@
   }
 
   @media only screen and (max-width: 800px) {
-
     .brand-logo {
       margin-top: -0.5rem;
       position: left;
     }
-  
+
   }
 
 

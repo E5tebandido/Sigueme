@@ -23,8 +23,8 @@ var googleSignin = () => {
     var provider = new firebase.auth.GoogleAuthProvider()
     firebase.auth().signInWithPopup(provider)
     .then(() => {
-        Materialize.toast("Ingreso exitoso", 2000, 'green')
         setseeprojectview()
+        Materialize.toast("Ingreso exitoso", 2000, 'green')
     })
     .catch((error) => {
         var errorMessage = error.message;

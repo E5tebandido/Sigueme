@@ -3,8 +3,9 @@ $(document).ready( () =>
     callFirebase()
     $("#navsco").load("templates/navbar.html", () => {
         loadSideNav()
-        loadSideNav2()
-        sessionVerificationForNavBar()
+        sessionVerificationForNavBar(()=>{
+            loadSideNav2()
+        })
     })
     setseeprojectview()
 })

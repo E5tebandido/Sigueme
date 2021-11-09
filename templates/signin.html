@@ -1,49 +1,79 @@
 
+<!--- Web -->
 
-<div class="formcontainer">
-  <center>
-    <h5 class="blue-grey-text text-accent-2">Ingresa a sígueme</h5>
-    <div class="container">
-      <br><br><br><br>
-      <div class="white" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px; ">
-        <form id="signinform" class="col s12" method="post">
-          <div class='row'>
-            <div class='col s12'>
-            </div>
-          </div>
-          <div class='row'>
-            <div class='input-field col s12'>
-              <input class='validate' type='email' name='email' id='lemail' style="border-color: #E7EBDA;" required/>
-              <label for='email'>Ingresa tu email</label>
-            </div>
-          </div>
-          <div class='row'>
-              <div class='input-field col s12'>
-                  <input class='validate' type='password' name='password' id='lpassword' style="border-color: #E7EBDA;" required/>
-                  <label for='password'>contraseña</label>
-              </div>
-              <label style='float: right;'>
-                <a class='blue-grey-text text-accent-2' href="javascript:;" onclick="setsignupview()"><b>Crear cuenta</b></a>
-              </label>
-          </div>
-          <br />
-          <center>
-            <div class='row'>
-              <a href="javascript:;" onclick="signin()" class='button-solid white blue-text text-lighten-3' style="border-radius:20px;"><i class="fas fa-arrow-right fa-3x"></i></a>
-            </div>
-            <div class='row'>
-              <div class='input-field col s6'>
-                <a href="javascript:;" onclick="googleSignin()" style="border-radius:20px;" class="red-text text-accent-2"><i class="fab fa-google fa-3x"></i></a>
-              </div>
-              <div class='input-field col s6'>
-                <a href="javascript:;" onclick="facebookSignin()" style="border-radius:20px;"><i class="fab fa-facebook fa-3x"></i></a>
-              </div>
-            </div>
-          </center>
-        </form>
+<div class="row hide-on-med-and-down">
+  <br><br><br>
+  <div class="col s12 m6">
+    <div class="card-panel teal">
+      <span class="white-text">Por favor inicia sesión en sígueme y si no tienes cuenta registrate :)
+        <img src="../assets/images/colombia.png" alt="" width="3%" style="vertical-align: middle;">
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="row hide-on-med-and-down">
+  <div class="col s12 m6 ">
+    <div class="card-panel white">
+      <div class='row'>
+        <div class='input-field col s12'>
+          <input class='validate' type='email' name='email' id='lemail' style="border-color: #E7EBDA;" required/>
+          <label for='email'>Ingresa tu email</label>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='input-field col s12'>
+            <input class='validate' type='password' name='password' id='lpassword' style="border-color: #E7EBDA;" required/>
+            <label for='password'>contraseña</label>
+        </div>
+      </div>
+      <div class='row'>
+          <a class="waves-effect waves-light btn yellow darken-1 black-text" href="javascript:;" onclick="signin()">Ingresa</a>
+          <a class="waves-effect waves-light btn red darken-1" href="javascript:;" onclick="googleSignin()"><i class="fab fa-google"></i> Google</a>
+          <a class="waves-effect waves-light btn blue darken-1" href="javascript:;" onclick="facebookSignin()"><i class="fab fa-facebook"></i> Facebook</a>
       </div>
     </div>
-  </center>
+  </div>
 </div>
+          
+<!--- Movile -->
+
+<div class="row hide-on-large-only">
+  <br><br><br>
+  <div class="col s12 m12">
+    <div class="card-panel teal">
+      <span class="white-text">Por favor inicia sesión en sígueme y si no tienes cuenta registrate :)
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="row hide-on-large-only">
+  <div class="col s12 m12">
+    <div class="card-panel white">
+      <div class='row'>
+        <div class='input-field col s12'>
+          <input class='validate' type='email' name='email' id='lemail' style="border-color: #E7EBDA;" required/>
+          <label for='email'>Ingresa tu email</label>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='input-field col s12'>
+            <input class='validate' type='password' name='password' id='lpassword' style="border-color: #E7EBDA;" required/>
+            <label for='password'>contraseña</label>
+        </div>
+      </div>
+      <center>
+      <div class='row'>
+          <a class="waves-effect waves-light btn yellow darken-1 black-text" href="javascript:;" onclick="signin()">Ingresa</a>
+          <a class="waves-effect waves-light btn red darken-1" href="javascript:;" onclick="googleSignin()"><i class="fab fa-google"></i></a>
+          <a class="waves-effect waves-light btn blue darken-1" href="javascript:;" onclick="facebookSignin()"><i class="fab fa-facebook"></i></a>
+      </div>
+      </center>
+    </div>
+  </div>
+</div>
+
+          
   
 

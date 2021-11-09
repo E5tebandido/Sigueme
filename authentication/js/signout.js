@@ -2,8 +2,8 @@ var signout = () => {
     callFirebase()
     firebase.auth().signOut()
     .then(() => {
-        Materialize.toast("Salida exitosa", 2000, 'green')
         setsigninview()
+        Materialize.toast("Salida exitosa", 2000, 'green')
     })
     .catch((error) => {
         var errorMessage = error.message;
