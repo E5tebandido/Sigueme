@@ -1,5 +1,5 @@
 var loadIcon = () => {
-    var mydata = [];
+    var mydata = []
     $.ajax({
     url: '../../../assets/json/icons.json',
     async: false,
