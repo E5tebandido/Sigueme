@@ -19,7 +19,7 @@ var getOneProject = (address,name,balance,location,description) => {
         <form id="donation-form" onsubmit="metamaskInitializationForContract();return false">
             <div class='input-field'>
                 <label>Cantidad de wei a donar</label>
-                <input type="number" id="amount" class="validate" style="text-align: center; border-color: #E7EBDA;" required>
+                <input type="number" step="any" id="amount" class="validate" style="text-align: center; border-color: #E7EBDA;" required>
             </div>
             <div class='row'>
                 <input id="btndonate" type="submit" class="right button-solid white blue-grey-text text-accent-2" style="border:30px;" value="" disabled>
