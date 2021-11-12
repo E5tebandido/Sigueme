@@ -11,7 +11,7 @@ var sendProject = () => {
     
     const table = {
         'approved': 'project',
-        'failed': 'failed_project'
+        'failed': 'project_log'
     }
     
     const data = {
@@ -27,6 +27,7 @@ var sendProject = () => {
         'maxfounds' : maxfounds,
         'icon' : icon
     }
+    
     querySet (table.approved, data, id)
-    resetForm("project-form")
+    buttonStatus("create_project", "disabled", true)
 }

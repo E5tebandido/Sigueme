@@ -1,9 +1,9 @@
 var sendEntity = () => {
     var name = $("#ename").val()
     var nit = $("#enit").val()
-    var id = idGenerator()
     var phone = $("#ephone").val()
     var cel = $("#ecel").val()
+    let id = idGenerator()
     var email = $("#eemail").val()
     var url = $("#eurl").val()
     var facebook = $("#efa").val()
@@ -13,7 +13,7 @@ var sendEntity = () => {
 
     const table = {
         'approved' : 'entity',
-        'failed' : 'failed_entity'
+        'failed' : 'entity_log'
     }
     
     const data = {
@@ -31,8 +31,9 @@ var sendEntity = () => {
         'status' : "confirmed",
         'balance' : 0
     }  
+    
     querySet (table.approved, data, id)
-    resetForm("ong-form")
+    buttonStatus("create_entity", "disabled", true)
 }
 
 

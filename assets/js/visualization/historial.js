@@ -1,53 +1,29 @@
 var renderAproveds = (donator,amount,projectname,date,hour) => {
     let adata = `
-    <tr>
-        <td>
-            <div class="col s12 m12">
-                <center>
-                <div class="container">
-                    <div class="allapptx" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px; width: 100%;">
-                        <br>
-                        <h5 class="grey-text text-accent-1"><b>${projectname}</b></h5>
-                        <br>
-                        <h5 class="grey-text text-lighten-1" >${amount}<i class="fab fa-ethereum"></i></h5>
-                        <input  type="text" class="grey-text text-accent-2" value="${donator}" style="border-bottom: whitesmoke; text-align:center;" readonly>
-                        <p>${date}<i class="far fa-calendar-alt"></i></p>
-                        <p>${hour}<i class="far fa-clock"></i></p>
-                        <br><br>
-                    </div>
-                </div>
-                <br>
-                </center>
+    <div class="col s12 m3">
+        <div class="card">
+            <div class="card-image">
+            <img src="../assets/images/paraiso.png">
+            <span class="card-title black-text"><b>${projectname}</b></span>
             </div>
-        </td>
-    </tr>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Ver detalles<i class="material-icons right">more_vert</i></span>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Detalles de la transacción<i class="material-icons right">close</i></span>
+            <p class="blue-text">Donante</p>
+            <p>${donator}</p>
+            <p class="blue-text">Monto de la transacción</p>
+            <p>${amount}</p>
+            <p class="blue-text">Fecha de la transacción</p>
+            <p>${date}</p>
+            <p class="blue-text">Hora de la transacción</p>
+            <p>${hour}</p>
+            <p class="blue-text">Proyecto que recibió</p>
+            <p>${projectname}</p>
+            </div>
+        </div>
+    </div> 
     `;
     loadData("historialaprovepanel", adata)
-}
-
-var renderFaileds = (donator,amount,projectname,date,hour) => {
-    let fdata = `
-    <tr>
-        <td>
-            <div class="col s12 m12">
-                <center>
-                <div class="container">
-                    <div class="allapptx" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1.5px solid #BDD9F2; border-radius: 20px; width: 100%;">
-                        <br>
-                        <h5 class="grey-text text-accent-1"><b>${projectname}</b></h5>
-                        <br>
-                        <h5 class="grey-text text-lighten-1" >${amount}<i class="fab fa-ethereum"></i></h5>
-                        <input  type="text" class="grey-text text-accent-2" value="${donator}" style="border-bottom: whitesmoke; text-align:center;" readonly>
-                        <p>${date}<i class="far fa-calendar-alt"></i></p>
-                        <p>${hour}<i class="far fa-clock"></i></p>
-                        <br><br>
-                    </div>
-                </div>
-                <br>
-                </center>
-            </div>
-        </td>
-    </tr>
-    `;
-    loadData("historialfailedpanel", fdata)
 }

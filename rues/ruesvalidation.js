@@ -17,5 +17,3 @@ var ruesValidation = (ongdata) => {
         console.log(error);
     })
 }
-
-'curl --location --request POST "https://api.misdatos.com.co/api/co/rues/consultarEmpresaPorNit" \--header "Authorization: xxxxxxxxxxxxxxxxxxxx" \--header "Content-Type: application/x-www-form-urlencoded" \--data-urlencode "nit=901331380" '

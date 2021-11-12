@@ -7,21 +7,55 @@
     margin: 0px;
 }
 
-#ong-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+.form {
+    width: 55%;
+    float: right;
+    margin-right: 1rem;
 }
 
-#project-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+.message {
+    width: 55%;
+    float: right;
+    margin-right: 1rem;
 }
 
-.formcontainer {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+.inupform {
+    width: 37%;
+    margin-left: 5rem;
+}
+
+.inupmessage {
+    width: 37%;
+    margin-left: 5rem;
+    margin-top: 8rem;
 }
 
 
+@media only screen and (max-width: 1060px) {
+    .form {
+        width: 95%;
+        margin-right: 2.5%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .message {
+        width: 95%;
+        margin-right: 2.5%;
+        margin-bottom: 0.5rem;
+    }
+
+    .inupform {
+        width: 95%;
+        margin-right: 2.5%;
+        margin-left: 2.5%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .inupmessage {
+        width: 95%;
+        margin-right: 2.5%;
+        margin-left: 2.5%;
+        margin-bottom: 0.5rem;
+        margin-top: 4.5rem;
+    }
+  }

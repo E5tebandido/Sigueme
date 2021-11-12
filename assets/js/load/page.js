@@ -8,7 +8,7 @@ $(document).ready( () =>
         })
     })
     setseeprojectview()
-    ruesValidation()
+
 })
 
 var setsigninview = () => {   

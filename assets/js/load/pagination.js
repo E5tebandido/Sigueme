@@ -6,6 +6,6 @@ var makePagination = (table,pager) => {
         nextText:'Siguiente',
         showPrevNext:true,
         hidePageNumbers:false,
-        perPage:4
+        perPage:8
     })
 }

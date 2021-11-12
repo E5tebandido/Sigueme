@@ -14,24 +14,21 @@
   }
 
   .App-logo {
-    height: 2.5rem;
+    height: 1.8rem;
     vertical-align: middle;
-    margin-right: 0.2rem;
   }
 
   .brand-logo {
     margin-top: -0.5rem;
-    white-space: nowrap;
   }
 
   #sessionlogo {
     margin-top: 9%;
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1060px) {
     .brand-logo {
       margin-top: -0.5rem;
-      position: left;
     }
 
   }

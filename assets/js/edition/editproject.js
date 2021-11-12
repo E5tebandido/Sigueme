@@ -28,5 +28,5 @@ var sendEditProject = () => {
         'icon' : icon
     }
     querySet (table.approved, data, id)
-    resetForm("project-form")
+    buttonStatus("edit_project", "disabled", true)
 }

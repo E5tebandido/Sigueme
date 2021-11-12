@@ -16,7 +16,7 @@ var Tx = async (amount, address, name, curaccount, instance) => {
                 tx['hour'] = hourGenerator()
                 tx['projectname'] = name
                 let id = idGenerator()
-                querySet ("tx", tx, id)
+                querySet ("transaction", tx, id)
                 Materialize.toast("Transacción aprobada número : " + tx.transactionHash, 6000, 'green')
                 resetForm("donation-form")
                 buttonStatus( "btndonate", "disabled", false) 
@@ -32,7 +32,7 @@ var Tx = async (amount, address, name, curaccount, instance) => {
                 error['hour'] = hourGenerator()
                 error['projectname'] = name
                 let id = idGenerator()
-                querySet ("tx_failed", error, id)
+                querySet ("transaction_log", error, id)
                 Materialize.toast("Transacción no aprobada : " + error.message, 4000, 'red')
                 resetForm("donation-form")
                 buttonStatus( "btndonate", "disabled", false)

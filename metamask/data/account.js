@@ -6,4 +6,5 @@ var getCurrentAccount = async () => {
 var accountForProject = async () => {
     var curaccount = await getCurrentAccount()
     buttonStatus("pethereum-adress","value",curaccount)
+    buttonStatus("pethereum-adress","disabled",true)
 }

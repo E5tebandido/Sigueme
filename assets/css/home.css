@@ -80,6 +80,12 @@ body {
     width: 25%;
 }
 
+.card-title {
+    background-color: white;
+    opacity: 0.9;
+    width: 100%;
+} 
+
 @media only screen and (max-width: 800px) {
     .carousel  {
         height: 30vh !important;
