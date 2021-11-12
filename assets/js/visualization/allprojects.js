@@ -35,5 +35,5 @@ var renderMyProjects = (name,pid,balance,description,maxfounds,icon) => {
         </div>
     </div>
     `;
-    loadData("projectpanel",data)
+    loadData("myprojectpanel",data)
 }

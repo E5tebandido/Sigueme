@@ -78,32 +78,15 @@ var sethistorialaprove = () => {
     })
 }
 
-var sethistorialfailed = () => {
-    clearContainer("contentpage")
-    $("#contentpage").load("templates/historialfailed.html", () => {
-        seeAllFaileds(() => {
-            makePagination("allfailedtable","allfailedpager")
-        })
-    })
-}
-
 var setSeeMyProjects = () => {
     clearContainer("contentpage")
-    $("#contentpage").load("templates/seeproject.html", () => {
+    $("#contentpage").load("templates/seemyprojects.html", () => {
         seeMyProjects(() => {
-            makePagination("allprojectstable","allprojectspager")
+            makePagination("allmyprojectstable","allmyprojectspager")
         })
     })
 }
 
-var setSeeMyFaileds = () => {
-    clearContainer("contentpage")
-    $("#contentpage").load("templates/historialfailed.html", () => {
-        seeMyFaileds(() => {
-            makePagination("allfailedtable","allfailedpager")
-        })
-    })
-}
 
 var setSeeMyAproveds = () => {
     clearContainer("contentpage")
