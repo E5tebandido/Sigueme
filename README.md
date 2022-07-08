@@ -1,1 +1,1 @@
-# sco-app
+# Sígueme Blockchain Donation platform
