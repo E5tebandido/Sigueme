@@ -12,4 +12,25 @@
 
 ![image](https://user-images.githubusercontent.com/44687875/211940820-8914bfcc-85eb-4bc0-ba29-16df5456cac3.png)
 
+For get the app just do this :
+
+1. Download or clone the repo
+
+2. Go to the project directory in the command prompt and execute:
+
+   ### `npm install`
+   
+   ![image](https://user-images.githubusercontent.com/44687875/211939188-ca4020aa-a44c-4dea-83c9-bf70ea54196e.png)
+
+   then
+
+   ### `npm start`
+   
+   ![image](https://user-images.githubusercontent.com/44687875/211937798-c0c045f7-2936-47fd-bc6b-731b8d92081a.png)
+   
+
+
+3. Open [http://localhost:8080](http://localhost:8080) to view the app in dev mode.
+
+4. Cool :)
 
