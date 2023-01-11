@@ -1,6 +1,6 @@
 # Sígueme
 
-[![Ethereum](https://cdn3.emoji.gg/emojis/7675-ethereum.png)](https://emoji.gg/emoji/7675-ethereum)
+[![ETH](https://cdn3.emoji.gg/emojis/5819-eth.png)](https://emoji.gg/emoji/5819-eth)
 
 ¿Have you tested the blockchain world?
 
