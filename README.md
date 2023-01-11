@@ -26,9 +26,7 @@ For get the app just do this :
 
    ### `npm start`
    
-   ![image](https://user-images.githubusercontent.com/44687875/211937798-c0c045f7-2936-47fd-bc6b-731b8d92081a.png)
-   
-
+   ![image](https://user-images.githubusercontent.com/44687875/211941585-019643c8-2851-458c-8197-def45a54605e.png)   
 
 3. Open [http://localhost:8080](http://localhost:8080) to view the app in dev mode.
 
