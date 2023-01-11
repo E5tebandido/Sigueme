@@ -1,6 +1,6 @@
 # Sígueme
 
-¿Have you tested the blockchain already or not?
+¿Have you tested the blockchain world?
 
 For use the project please follow the next steps:
 
