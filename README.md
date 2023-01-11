@@ -20,7 +20,7 @@ For get the app just do this :
 
    ### `npm install`
    
-   ![image](https://user-images.githubusercontent.com/44687875/211939188-ca4020aa-a44c-4dea-83c9-bf70ea54196e.png)
+   ![image](https://user-images.githubusercontent.com/44687875/211941711-d053535f-cc6f-4b13-8795-ff248655bb19.png)
 
    then
 
