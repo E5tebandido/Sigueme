@@ -4,7 +4,7 @@
 
 ¿Have you tested the blockchain?
 
-My laureated thesis :), how it looks like
+My laureated thesis :) how it looks like
 
 ![image](https://user-images.githubusercontent.com/44687875/211940559-115f1ea2-d0b1-449b-92fb-f79aa7332083.png)
 
