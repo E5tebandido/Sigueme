@@ -14,6 +14,16 @@ My laureated thesis :) how it looks like
 
 ![image](https://user-images.githubusercontent.com/44687875/211940820-8914bfcc-85eb-4bc0-ba29-16df5456cac3.png)
 
+![Captura de pantalla 2023-05-15 110324](https://github.com/E5tebandido/Sigueme/assets/44687875/a6fc8dbd-72ea-4010-86f7-d07b1378068b)
+
+![Captura de pantalla 2023-05-15 111429](https://github.com/E5tebandido/Sigueme/assets/44687875/e14459d1-6302-4ab5-9b03-dfc5f86d5712)
+
+![Captura de pantalla 2023-05-15 111251](https://github.com/E5tebandido/Sigueme/assets/44687875/b3603244-165a-4fe1-8ded-c222eaa8ae92)
+
+![Captura de pantalla 2023-05-15 111352](https://github.com/E5tebandido/Sigueme/assets/44687875/172aaf17-2778-4c0e-be68-d14b05d67dbd)
+
+![Captura de pantalla 2023-05-15 111457](https://github.com/E5tebandido/Sigueme/assets/44687875/b5ea6565-ad68-4c2e-a86d-900527d485b9)
+
 For get the app just do this :
 
 1. Download or clone the repo
